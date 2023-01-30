@@ -19,8 +19,8 @@ Begin VB.Form frmmanual
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   9210
+   ScaleWidth      =   14400
    StartUpPosition =   3  'Windows Default
    Begin MSWinsockLib.Winsock Winsock1 
       Left            =   18720
@@ -801,10 +801,10 @@ Next
     
    'txtILLH.Text = PLcdata(150) / 1000
    'txtILRH.Text = PLcdata(151) / 1000
-    txtOd1.Text = PLcdata(185) / 1000
-    txtOd2.Text = PLcdata(186) / 1000
-    txtOd3.Text = PLcdata(187) / 1000
-    //txtOd4.Text = PLcdata(188) / 1000
+    ''txtOd1.Text = PLcdata(185) / 1000
+    ''txtOd2.Text = PLcdata(186) / 1000
+    ''txtOd3.Text = PLcdata(187) / 1000
+    ''txtOd4.Text = PLcdata(188) / 1000
     'plcdata(186) = odil
    'plcdata(187) = odmvd
    
@@ -826,62 +826,62 @@ End Sub
 
 Private Sub LoadData()
 On Error GoTo Error
-PLcdata(340) = 2
+PLcdata(240) = 2
 
-PLcdata(341) = &H1 * flexgridvalue(VSFOutput, 1)
-PLcdata(341) = PLcdata(341) + &H2 * flexgridvalue(VSFOutput, 2)
-PLcdata(341) = PLcdata(341) + &H4 * flexgridvalue(VSFOutput, 3)
-PLcdata(341) = PLcdata(341) + &H8 * flexgridvalue(VSFOutput, 4)
-PLcdata(341) = PLcdata(341) + &H10 * flexgridvalue(VSFOutput, 5)
-PLcdata(341) = PLcdata(341) + &H20 * flexgridvalue(VSFOutput, 6)
-PLcdata(341) = PLcdata(341) + &H40 * flexgridvalue(VSFOutput, 7)
-PLcdata(341) = PLcdata(341) + &H80 * flexgridvalue(VSFOutput, 8)
+PLcdata(241) = &H1 * flexgridvalue(VSFOutput, 1)
+PLcdata(241) = PLcdata(241) + &H2 * flexgridvalue(VSFOutput, 2)
+PLcdata(241) = PLcdata(241) + &H4 * flexgridvalue(VSFOutput, 3)
+PLcdata(241) = PLcdata(241) + &H8 * flexgridvalue(VSFOutput, 4)
+PLcdata(241) = PLcdata(241) + &H10 * flexgridvalue(VSFOutput, 5)
+PLcdata(241) = PLcdata(241) + &H20 * flexgridvalue(VSFOutput, 6)
+PLcdata(241) = PLcdata(241) + &H40 * flexgridvalue(VSFOutput, 7)
+PLcdata(241) = PLcdata(241) + &H80 * flexgridvalue(VSFOutput, 8)
 
-PLcdata(341) = PLcdata(341) + &H100 * flexgridvalue(VSFOutput, 9)
-PLcdata(341) = PLcdata(341) + &H200 * flexgridvalue(VSFOutput, 10)
-PLcdata(341) = PLcdata(341) + &H400 * flexgridvalue(VSFOutput, 11)
-PLcdata(341) = PLcdata(341) + &H800 * flexgridvalue(VSFOutput, 12)
-PLcdata(341) = PLcdata(341) + &H1000 * flexgridvalue(VSFOutput, 13)
-PLcdata(341) = PLcdata(341) + &H2000 * flexgridvalue(VSFOutput, 14)
-PLcdata(341) = PLcdata(341) + &H4000 * flexgridvalue(VSFOutput, 15)
+PLcdata(241) = PLcdata(241) + &H100 * flexgridvalue(VSFOutput, 9)
+PLcdata(241) = PLcdata(241) + &H200 * flexgridvalue(VSFOutput, 10)
+PLcdata(241) = PLcdata(241) + &H400 * flexgridvalue(VSFOutput, 11)
+PLcdata(241) = PLcdata(241) + &H800 * flexgridvalue(VSFOutput, 12)
+PLcdata(241) = PLcdata(241) + &H1000 * flexgridvalue(VSFOutput, 13)
+PLcdata(241) = PLcdata(241) + &H2000 * flexgridvalue(VSFOutput, 14)
+PLcdata(241) = PLcdata(241) + &H4000 * flexgridvalue(VSFOutput, 15)
 
-PLcdata(342) = &H1 * flexgridvalue(VSFOutput, 16)
-PLcdata(342) = PLcdata(342) + &H2 * flexgridvalue(VSFOutput, 17)
-PLcdata(342) = PLcdata(342) + &H4 * flexgridvalue(VSFOutput, 18)
-PLcdata(342) = PLcdata(342) + &H8 * flexgridvalue(VSFOutput, 19)
-PLcdata(342) = PLcdata(342) + &H10 * flexgridvalue(VSFOutput, 20)
-PLcdata(342) = PLcdata(342) + &H20 * flexgridvalue(VSFOutput, 21)
-PLcdata(342) = PLcdata(342) + &H40 * flexgridvalue(VSFOutput, 22)
-PLcdata(342) = PLcdata(342) + &H80 * flexgridvalue(VSFOutput, 23)
+PLcdata(242) = &H1 * flexgridvalue(VSFOutput, 16)
+PLcdata(242) = PLcdata(242) + &H2 * flexgridvalue(VSFOutput, 17)
+PLcdata(242) = PLcdata(242) + &H4 * flexgridvalue(VSFOutput, 18)
+PLcdata(242) = PLcdata(242) + &H8 * flexgridvalue(VSFOutput, 19)
+PLcdata(242) = PLcdata(242) + &H10 * flexgridvalue(VSFOutput, 20)
+PLcdata(242) = PLcdata(242) + &H20 * flexgridvalue(VSFOutput, 21)
+PLcdata(242) = PLcdata(242) + &H40 * flexgridvalue(VSFOutput, 22)
+PLcdata(242) = PLcdata(242) + &H80 * flexgridvalue(VSFOutput, 23)
 
-PLcdata(342) = PLcdata(342) + &H100 * flexgridvalue(VSFOutput, 24)
-PLcdata(342) = PLcdata(342) + &H200 * flexgridvalue(VSFOutput, 25)
-PLcdata(342) = PLcdata(342) + &H400 * flexgridvalue(VSFOutput, 26)
-PLcdata(342) = PLcdata(342) + &H800 * flexgridvalue(VSFOutput, 27)
-PLcdata(342) = PLcdata(342) + &H1000 * flexgridvalue(VSFOutput, 28)
-PLcdata(342) = PLcdata(342) + &H2000 * flexgridvalue(VSFOutput, 29)
-PLcdata(342) = PLcdata(342) + &H4000 * flexgridvalue(VSFOutput, 30)
+PLcdata(242) = PLcdata(242) + &H100 * flexgridvalue(VSFOutput, 24)
+PLcdata(242) = PLcdata(242) + &H200 * flexgridvalue(VSFOutput, 25)
+PLcdata(242) = PLcdata(242) + &H400 * flexgridvalue(VSFOutput, 26)
+PLcdata(242) = PLcdata(242) + &H800 * flexgridvalue(VSFOutput, 27)
+PLcdata(242) = PLcdata(242) + &H1000 * flexgridvalue(VSFOutput, 28)
+PLcdata(242) = PLcdata(242) + &H2000 * flexgridvalue(VSFOutput, 29)
+PLcdata(242) = PLcdata(242) + &H4000 * flexgridvalue(VSFOutput, 30)
 
-PLcdata(343) = &H1 * flexgridvalue(VSFOutput, 31)
-PLcdata(343) = PLcdata(343) + &H2 * flexgridvalue(VSFOutput, 32)
-PLcdata(343) = PLcdata(343) + &H4 * flexgridvalue(VSFOutput, 33)
-PLcdata(343) = PLcdata(343) + &H8 * flexgridvalue(VSFOutput, 34)
-PLcdata(343) = PLcdata(343) + &H10 * flexgridvalue(VSFOutput, 35)
-PLcdata(343) = PLcdata(343) + &H20 * flexgridvalue(VSFOutput, 36)
-PLcdata(343) = PLcdata(343) + &H40 * flexgridvalue(VSFOutput, 37)
-PLcdata(343) = PLcdata(343) + &H80 * flexgridvalue(VSFOutput, 38)
+PLcdata(243) = &H1 * flexgridvalue(VSFOutput, 31)
+PLcdata(243) = PLcdata(243) + &H2 * flexgridvalue(VSFOutput, 32)
+PLcdata(243) = PLcdata(243) + &H4 * flexgridvalue(VSFOutput, 33)
+PLcdata(243) = PLcdata(243) + &H8 * flexgridvalue(VSFOutput, 34)
+PLcdata(243) = PLcdata(243) + &H10 * flexgridvalue(VSFOutput, 35)
+PLcdata(243) = PLcdata(243) + &H20 * flexgridvalue(VSFOutput, 36)
+PLcdata(243) = PLcdata(243) + &H40 * flexgridvalue(VSFOutput, 37)
+PLcdata(243) = PLcdata(243) + &H80 * flexgridvalue(VSFOutput, 38)
 
-PLcdata(343) = PLcdata(343) + &H100 * flexgridvalue(VSFOutput, 39)
-PLcdata(343) = PLcdata(343) + &H200 * flexgridvalue(VSFOutput, 40)
-PLcdata(343) = PLcdata(343) + &H400 * flexgridvalue(VSFOutput, 41)
-PLcdata(343) = PLcdata(343) + &H800 * flexgridvalue(VSFOutput, 42)
-PLcdata(343) = PLcdata(343) + &H1000 * flexgridvalue(VSFOutput, 43)
-PLcdata(343) = PLcdata(343) + &H2000 * flexgridvalue(VSFOutput, 44)
-PLcdata(343) = PLcdata(343) + &H4000 * flexgridvalue(VSFOutput, 45)
+PLcdata(243) = PLcdata(243) + &H100 * flexgridvalue(VSFOutput, 39)
+PLcdata(243) = PLcdata(243) + &H200 * flexgridvalue(VSFOutput, 40)
+PLcdata(243) = PLcdata(243) + &H400 * flexgridvalue(VSFOutput, 41)
+PLcdata(243) = PLcdata(243) + &H800 * flexgridvalue(VSFOutput, 42)
+PLcdata(243) = PLcdata(243) + &H1000 * flexgridvalue(VSFOutput, 43)
+PLcdata(243) = PLcdata(243) + &H2000 * flexgridvalue(VSFOutput, 44)
+PLcdata(243) = PLcdata(243) + &H4000 * flexgridvalue(VSFOutput, 45)
 
-PLcdata(344) = &H1 * flexgridvalue(VSFOutput, 46)
-PLcdata(344) = PLcdata(344) + &H1 * flexgridvalue(VSFOutput, 47)
-PLcdata(344) = PLcdata(344) + &H2 * flexgridvalue(VSFOutput, 48)
+PLcdata(244) = &H1 * flexgridvalue(VSFOutput, 46)
+PLcdata(244) = PLcdata(244) + &H1 * flexgridvalue(VSFOutput, 47)
+PLcdata(244) = PLcdata(244) + &H2 * flexgridvalue(VSFOutput, 48)
 
 Exit Sub
 Error:

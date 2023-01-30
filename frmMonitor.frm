@@ -1,9 +1,10 @@
 VERSION 5.00
+Object = "{D76D7128-4A96-11D3-BD95-D296DC2DD072}#1.0#0"; "Vsflex7.ocx"
 Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
 Object = "{97C0E9D8-AD04-4920-9B7A-4B99616579F9}#2.0#0"; "TextPrinter.ocx"
 Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
 Begin VB.Form frmMonitor 
-   Caption         =   "Switch_Testing_With_Email_Job2"
+   Caption         =   "MI_7646_USB_Charger"
    ClientHeight    =   8625
    ClientLeft      =   60
    ClientTop       =   750
@@ -18,8 +19,8 @@ Begin VB.Form frmMonitor
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   10935
-   ScaleWidth      =   20250
+   ScaleHeight     =   8625
+   ScaleWidth      =   15630
    Begin VB.Frame Frame1 
       BeginProperty Font 
          Name            =   "Arial"
@@ -30,19 +31,19 @@ Begin VB.Form frmMonitor
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   10695
+      Height          =   9015
       Left            =   120
       TabIndex        =   0
       Top             =   120
-      Width           =   19815
+      Width           =   17895
       Begin VB.PictureBox PictureBreakdown 
          BackColor       =   &H80000010&
          Height          =   6015
-         Left            =   5160
+         Left            =   4560
          ScaleHeight     =   5955
          ScaleWidth      =   8595
-         TabIndex        =   109
-         Top             =   1560
+         TabIndex        =   43
+         Top             =   2160
          Visible         =   0   'False
          Width           =   8655
          Begin VB.CommandButton cmdclosebreakdownscreen 
@@ -61,7 +62,7 @@ Begin VB.Form frmMonitor
             MaskColor       =   &H00FFFFFF&
             Picture         =   "frmMonitor.frx":0000
             Style           =   1  'Graphical
-            TabIndex        =   116
+            TabIndex        =   50
             Top             =   4680
             UseMaskColor    =   -1  'True
             Width           =   1275
@@ -78,7 +79,7 @@ Begin VB.Form frmMonitor
             EndProperty
             Height          =   1035
             Left            =   2280
-            TabIndex        =   113
+            TabIndex        =   47
             Top             =   4440
             Width           =   4575
          End
@@ -98,7 +99,7 @@ Begin VB.Form frmMonitor
             Height          =   1215
             Left            =   3240
             Style           =   1  'Graphical
-            TabIndex        =   112
+            TabIndex        =   46
             Top             =   2760
             Width           =   1935
          End
@@ -117,7 +118,7 @@ Begin VB.Form frmMonitor
             Height          =   1335
             Left            =   5280
             Style           =   1  'Graphical
-            TabIndex        =   111
+            TabIndex        =   45
             Top             =   840
             Width           =   1815
          End
@@ -136,7 +137,7 @@ Begin VB.Form frmMonitor
             Height          =   1335
             Left            =   1560
             Style           =   1  'Graphical
-            TabIndex        =   110
+            TabIndex        =   44
             Top             =   840
             Width           =   1815
          End
@@ -154,1063 +155,9 @@ Begin VB.Form frmMonitor
             EndProperty
             Height          =   615
             Left            =   120
-            TabIndex        =   115
+            TabIndex        =   49
             Top             =   4800
             Width           =   2295
-         End
-      End
-      Begin VB.PictureBox PictureSRM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   4920
-         ScaleHeight     =   315
-         ScaleWidth      =   2355
-         TabIndex        =   166
-         Top             =   6120
-         Width           =   2415
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Set/Reset Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   49
-            Left            =   240
-            TabIndex        =   167
-            Top             =   0
-            Width           =   1995
-         End
-      End
-      Begin VB.PictureBox PictureCUM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   2520
-         ScaleHeight     =   315
-         ScaleWidth      =   2355
-         TabIndex        =   164
-         Top             =   6120
-         Width           =   2415
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Custom Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   48
-            Left            =   360
-            TabIndex        =   165
-            Top             =   0
-            Width           =   1800
-         End
-      End
-      Begin VB.PictureBox PictureCRM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   120
-         ScaleHeight     =   315
-         ScaleWidth      =   2355
-         TabIndex        =   162
-         Top             =   6120
-         Width           =   2415
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Cruise Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   47
-            Left            =   360
-            TabIndex        =   163
-            Top             =   0
-            Width           =   1650
-         End
-      End
-      Begin VB.PictureBox PictureSRM 
-         BackColor       =   &H80000010&
-         Height          =   3375
-         Index           =   1
-         Left            =   4920
-         ScaleHeight     =   3315
-         ScaleWidth      =   2355
-         TabIndex        =   154
-         Top             =   6480
-         Width           =   2415
-         Begin VB.Frame Frame19 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   155
-            Top             =   2280
-            Width           =   2175
-            Begin VB.TextBox txtVSRM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   157
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.TextBox txtCurSRM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   156
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   45
-               Left            =   120
-               TabIndex        =   159
-               Top             =   480
-               Width           =   1005
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   44
-               Left            =   120
-               TabIndex        =   158
-               Top             =   120
-               Width           =   1275
-            End
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            Height          =   375
-            Index           =   46
-            Left            =   840
-            TabIndex        =   161
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Label Label24 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "ON"
-            Height          =   435
-            Left            =   960
-            TabIndex        =   160
-            Top             =   1560
-            Width           =   525
-         End
-         Begin VB.Shape ShpSRMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   480
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Shape ShpSRMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   240
-            Top             =   120
-            Width           =   1935
-         End
-         Begin VB.Shape ShpSRMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   480
-            Top             =   1440
-            Width           =   1455
-         End
-         Begin VB.Shape ShpSRMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   240
-            Top             =   1320
-            Width           =   1935
-         End
-      End
-      Begin VB.PictureBox PictureCUM 
-         BackColor       =   &H80000010&
-         Height          =   3375
-         Index           =   1
-         Left            =   2520
-         ScaleHeight     =   3315
-         ScaleWidth      =   2355
-         TabIndex        =   146
-         Top             =   6480
-         Width           =   2415
-         Begin VB.Frame Frame16 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   147
-            Top             =   2280
-            Width           =   2175
-            Begin VB.TextBox txtVCUM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   149
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.TextBox txtCurCUM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   148
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   41
-               Left            =   120
-               TabIndex        =   151
-               Top             =   480
-               Width           =   1005
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   37
-               Left            =   120
-               TabIndex        =   150
-               Top             =   120
-               Width           =   1275
-            End
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            Height          =   375
-            Index           =   42
-            Left            =   840
-            TabIndex        =   153
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Label Label23 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "ON"
-            Height          =   435
-            Left            =   960
-            TabIndex        =   152
-            Top             =   1560
-            Width           =   525
-         End
-         Begin VB.Shape ShpCUMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   480
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Shape ShpCUMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   240
-            Top             =   120
-            Width           =   1935
-         End
-         Begin VB.Shape ShpCUMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   480
-            Top             =   1440
-            Width           =   1455
-         End
-         Begin VB.Shape ShpCUMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   240
-            Top             =   1320
-            Width           =   1935
-         End
-      End
-      Begin VB.PictureBox PictureCRM 
-         BackColor       =   &H80000010&
-         Height          =   3375
-         Index           =   1
-         Left            =   120
-         ScaleHeight     =   3315
-         ScaleWidth      =   2355
-         TabIndex        =   138
-         Top             =   6480
-         Width           =   2415
-         Begin VB.Frame Frame9 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   139
-            Top             =   2280
-            Width           =   2175
-            Begin VB.TextBox txtVCRM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   141
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.TextBox txtCurCRM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   140
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   24
-               Left            =   120
-               TabIndex        =   143
-               Top             =   480
-               Width           =   1005
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   23
-               Left            =   120
-               TabIndex        =   142
-               Top             =   120
-               Width           =   1275
-            End
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            Height          =   375
-            Index           =   25
-            Left            =   840
-            TabIndex        =   145
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Label Label20 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "ON"
-            Height          =   435
-            Left            =   960
-            TabIndex        =   144
-            Top             =   1560
-            Width           =   525
-         End
-         Begin VB.Shape ShpCRMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   480
-            Top             =   1440
-            Width           =   1455
-         End
-         Begin VB.Shape ShpCRMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   480
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Shape ShpCRMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   240
-            Top             =   1320
-            Width           =   1935
-         End
-         Begin VB.Shape ShpCRMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   240
-            Top             =   120
-            Width           =   1935
-         End
-      End
-      Begin VB.PictureBox PictureNM 
-         BackColor       =   &H80000010&
-         Height          =   5655
-         Index           =   1
-         Left            =   7320
-         ScaleHeight     =   5595
-         ScaleWidth      =   7515
-         TabIndex        =   122
-         Top             =   1800
-         Width           =   7575
-         Begin VB.Frame Frame21 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   240
-            TabIndex        =   173
-            Top             =   2880
-            Width           =   2175
-            Begin VB.TextBox txtCurNM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   3
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   175
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.TextBox txtVNM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   3
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   174
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   53
-               Left            =   120
-               TabIndex        =   177
-               Top             =   120
-               Width           =   1275
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   52
-               Left            =   120
-               TabIndex        =   176
-               Top             =   480
-               Width           =   1005
-            End
-         End
-         Begin VB.Frame Frame20 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   2640
-            TabIndex        =   168
-            Top             =   1080
-            Width           =   2175
-            Begin VB.TextBox txtVNM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   0
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   170
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.TextBox txtCurNM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   0
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   169
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   51
-               Left            =   120
-               TabIndex        =   172
-               Top             =   480
-               Width           =   1005
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   50
-               Left            =   120
-               TabIndex        =   171
-               Top             =   120
-               Width           =   1275
-            End
-         End
-         Begin VB.Frame Frame17 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   2640
-            TabIndex        =   128
-            Top             =   4560
-            Width           =   2175
-            Begin VB.TextBox txtVNM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   1
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   130
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.TextBox txtCurNM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   1
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   129
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   26
-               Left            =   120
-               TabIndex        =   132
-               Top             =   480
-               Width           =   1005
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   27
-               Left            =   120
-               TabIndex        =   131
-               Top             =   120
-               Width           =   1275
-            End
-         End
-         Begin VB.Frame Frame18 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   5160
-            TabIndex        =   123
-            Top             =   2880
-            Width           =   2175
-            Begin VB.TextBox txtCurNM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   2
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   125
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.TextBox txtVNM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   2
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   124
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   30
-               Left            =   120
-               TabIndex        =   127
-               Top             =   120
-               Width           =   1275
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   31
-               Left            =   120
-               TabIndex        =   126
-               Top             =   480
-               Width           =   1005
-            End
-         End
-         Begin VB.Label Label25 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "BACK"
-            Height          =   435
-            Left            =   720
-            TabIndex        =   178
-            Top             =   2160
-            Width           =   1020
-         End
-         Begin VB.Shape ShpNMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   4
-            Left            =   600
-            Top             =   2040
-            Width           =   1455
-         End
-         Begin VB.Shape ShpNMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   4
-            Left            =   360
-            Top             =   1920
-            Width           =   1935
-         End
-         Begin VB.Label Label21 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "DOWN"
-            Height          =   435
-            Left            =   3120
-            TabIndex        =   135
-            Top             =   3840
-            Width           =   1125
-         End
-         Begin VB.Shape ShpNMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   3000
-            Top             =   3720
-            Width           =   1455
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "UP"
-            Height          =   375
-            Index           =   29
-            Left            =   3360
-            TabIndex        =   134
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Shape ShpNMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   2
-            Left            =   3000
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Label Label22 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "ENTER"
-            Height          =   435
-            Left            =   5640
-            TabIndex        =   133
-            Top             =   2160
-            Width           =   1215
-         End
-         Begin VB.Shape ShpNMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   3
-            Left            =   5520
-            Top             =   2040
-            Width           =   1455
-         End
-         Begin VB.Shape ShpNMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   3
-            Left            =   5280
-            Top             =   1920
-            Width           =   1935
-         End
-         Begin VB.Shape ShpNMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   2
-            Left            =   2760
-            Top             =   120
-            Width           =   1935
-         End
-         Begin VB.Shape ShpNMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   2760
-            Top             =   3600
-            Width           =   1935
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            Height          =   375
-            Index           =   28
-            Left            =   3360
-            TabIndex        =   136
-            Top             =   2520
-            Width           =   855
-         End
-         Begin VB.Shape ShpNMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   3000
-            Top             =   2400
-            Width           =   1455
-         End
-         Begin VB.Shape ShpNMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   2760
-            Top             =   2280
-            Width           =   1935
          End
       End
       Begin VB.CommandButton Command1 
@@ -1225,9 +172,9 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   10800
-         TabIndex        =   121
-         Top             =   8640
+         Left            =   3240
+         TabIndex        =   55
+         Top             =   6840
          Visible         =   0   'False
          Width           =   855
       End
@@ -1243,19 +190,17 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   555
          Left            =   5760
-         TabIndex        =   120
+         TabIndex        =   54
          Text            =   "Text3"
          Top             =   480
-         Visible         =   0   'False
          Width           =   6135
       End
       Begin VB.CommandButton Command3 
          Caption         =   "Command3"
          Height          =   615
          Left            =   4320
-         TabIndex        =   119
+         TabIndex        =   53
          Top             =   360
-         Visible         =   0   'False
          Width           =   975
       End
       Begin VB.TextBox txtproductioncounter 
@@ -1270,9 +215,9 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   9600
-         TabIndex        =   118
-         Top             =   9120
+         Left            =   2160
+         TabIndex        =   52
+         Top             =   7440
          Width           =   2490
       End
       Begin VB.TextBox txtTargetProduction 
@@ -1286,9 +231,9 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   9720
-         TabIndex        =   117
-         Top             =   8640
+         Left            =   2160
+         TabIndex        =   51
+         Top             =   6840
          Width           =   975
       End
       Begin VB.CommandButton Command2 
@@ -1304,7 +249,7 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   615
          Left            =   2520
-         TabIndex        =   108
+         TabIndex        =   42
          Top             =   360
          Width           =   1575
       End
@@ -1313,7 +258,7 @@ Begin VB.Form frmMonitor
          Left            =   120
          ScaleHeight     =   1035
          ScaleWidth      =   2235
-         TabIndex        =   107
+         TabIndex        =   41
          Top             =   240
          Width           =   2295
          Begin VB.Image Image1 
@@ -1323,1271 +268,6 @@ Begin VB.Form frmMonitor
             Stretch         =   -1  'True
             Top             =   0
             Width           =   2295
-         End
-      End
-      Begin VB.TextBox txtILLH 
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   12
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   390
-         Left            =   9720
-         TabIndex        =   100
-         Top             =   8160
-         Width           =   975
-      End
-      Begin VB.PictureBox PictureNM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   7320
-         ScaleHeight     =   315
-         ScaleWidth      =   7515
-         TabIndex        =   97
-         Top             =   1440
-         Width           =   7575
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Navigation Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   38
-            Left            =   2640
-            TabIndex        =   98
-            Top             =   0
-            Width           =   2130
-         End
-      End
-      Begin VB.PictureBox PictureHAM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   4920
-         ScaleHeight     =   315
-         ScaleWidth      =   2355
-         TabIndex        =   95
-         Top             =   1440
-         Width           =   2415
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Hazard Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   36
-            Left            =   240
-            TabIndex        =   96
-            Top             =   0
-            Width           =   1725
-         End
-      End
-      Begin VB.PictureBox PictureHOM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   17280
-         ScaleHeight     =   315
-         ScaleWidth      =   2355
-         TabIndex        =   93
-         Top             =   1440
-         Width           =   2415
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Horn Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   35
-            Left            =   240
-            TabIndex        =   94
-            Top             =   0
-            Width           =   1470
-         End
-      End
-      Begin VB.PictureBox PictureBM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   14880
-         ScaleHeight     =   315
-         ScaleWidth      =   2355
-         TabIndex        =   91
-         Top             =   1440
-         Width           =   2415
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Blinker Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   33
-            Left            =   240
-            TabIndex        =   92
-            Top             =   0
-            Width           =   1710
-         End
-      End
-      Begin VB.PictureBox PicturePM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   2520
-         ScaleHeight     =   315
-         ScaleWidth      =   2355
-         TabIndex        =   89
-         Top             =   1440
-         Width           =   2415
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Pass Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   32
-            Left            =   480
-            TabIndex        =   90
-            Top             =   0
-            Width           =   1470
-         End
-      End
-      Begin VB.PictureBox PictureHAM 
-         BackColor       =   &H80000010&
-         Height          =   4215
-         Index           =   1
-         Left            =   4920
-         ScaleHeight     =   4155
-         ScaleWidth      =   2355
-         TabIndex        =   81
-         Top             =   1800
-         Width           =   2415
-         Begin VB.Frame Frame15 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   82
-            Top             =   3120
-            Width           =   2175
-            Begin VB.TextBox txtCurHAM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   84
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.TextBox txtVHAM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   83
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   21
-               Left            =   120
-               TabIndex        =   86
-               Top             =   120
-               Width           =   1275
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   20
-               Left            =   120
-               TabIndex        =   85
-               Top             =   480
-               Width           =   1005
-            End
-         End
-         Begin VB.Label Label19 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "ON"
-            Height          =   435
-            Left            =   960
-            TabIndex        =   88
-            Top             =   2400
-            Width           =   525
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            Height          =   375
-            Index           =   22
-            Left            =   840
-            TabIndex        =   87
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Shape ShpHAMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   480
-            Top             =   2280
-            Width           =   1455
-         End
-         Begin VB.Shape ShpHAMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   240
-            Top             =   2160
-            Width           =   1935
-         End
-         Begin VB.Shape ShpHAMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   480
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Shape ShpHAMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   240
-            Top             =   120
-            Width           =   1935
-         End
-      End
-      Begin VB.PictureBox PictureHOM 
-         BackColor       =   &H80000010&
-         Height          =   3735
-         Index           =   1
-         Left            =   17280
-         ScaleHeight     =   3675
-         ScaleWidth      =   2355
-         TabIndex        =   73
-         Top             =   1800
-         Width           =   2415
-         Begin VB.Frame Frame14 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   74
-            Top             =   2400
-            Width           =   2175
-            Begin VB.TextBox txtCurHOM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   76
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.TextBox txtVHOM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   75
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   18
-               Left            =   120
-               TabIndex        =   78
-               Top             =   120
-               Width           =   1275
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   17
-               Left            =   120
-               TabIndex        =   77
-               Top             =   480
-               Width           =   1005
-            End
-         End
-         Begin VB.Label Label18 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "ON"
-            Height          =   435
-            Left            =   840
-            TabIndex        =   80
-            Top             =   1680
-            Width           =   525
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            Height          =   375
-            Index           =   19
-            Left            =   840
-            TabIndex        =   79
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Shape ShpHOMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   480
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Shape ShpHOMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   240
-            Top             =   120
-            Width           =   1935
-         End
-         Begin VB.Shape ShpHOMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   480
-            Top             =   1560
-            Width           =   1455
-         End
-         Begin VB.Shape ShpHOMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   240
-            Top             =   1440
-            Width           =   1935
-         End
-      End
-      Begin VB.PictureBox PicturePM 
-         BackColor       =   &H80000010&
-         Height          =   4215
-         Index           =   1
-         Left            =   2520
-         ScaleHeight     =   4155
-         ScaleWidth      =   2355
-         TabIndex        =   65
-         Top             =   1800
-         Width           =   2415
-         Begin VB.Frame Frame7 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   66
-            Top             =   3120
-            Width           =   2175
-            Begin VB.TextBox txtCurPM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   68
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.TextBox txtVPM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   67
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   6
-               Left            =   120
-               TabIndex        =   70
-               Top             =   120
-               Width           =   1275
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   7
-               Left            =   120
-               TabIndex        =   69
-               Top             =   480
-               Width           =   1005
-            End
-         End
-         Begin VB.Label Label11 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "PASS"
-            Height          =   435
-            Left            =   720
-            TabIndex        =   72
-            Top             =   2400
-            Width           =   975
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            Height          =   375
-            Index           =   10
-            Left            =   840
-            TabIndex        =   71
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Shape ShpPMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   480
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Shape ShpPMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   240
-            Top             =   120
-            Width           =   1935
-         End
-         Begin VB.Shape ShpPMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   480
-            Top             =   2280
-            Width           =   1455
-         End
-         Begin VB.Shape ShpPMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   240
-            Top             =   2160
-            Width           =   1935
-         End
-      End
-      Begin VB.PictureBox PictureBM 
-         BackColor       =   &H80000010&
-         Height          =   5895
-         Index           =   1
-         Left            =   14880
-         ScaleHeight     =   5835
-         ScaleWidth      =   2355
-         TabIndex        =   51
-         Top             =   1800
-         Width           =   2415
-         Begin VB.Frame Frame22 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   179
-            Top             =   4920
-            Width           =   2175
-            Begin VB.TextBox txtCurBM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   2
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   181
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.TextBox txtVBM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   2
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   180
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   55
-               Left            =   120
-               TabIndex        =   183
-               Top             =   120
-               Width           =   1275
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   54
-               Left            =   120
-               TabIndex        =   182
-               Top             =   480
-               Width           =   1005
-            End
-         End
-         Begin VB.Frame Frame12 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   57
-            Top             =   3000
-            Width           =   2175
-            Begin VB.TextBox txtCurBM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   1
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   59
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.TextBox txtVBM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   1
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   58
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   14
-               Left            =   120
-               TabIndex        =   61
-               Top             =   120
-               Width           =   1275
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   13
-               Left            =   120
-               TabIndex        =   60
-               Top             =   480
-               Width           =   1005
-            End
-         End
-         Begin VB.Frame Frame11 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   52
-            Top             =   1080
-            Width           =   2175
-            Begin VB.TextBox txtVBM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   0
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   54
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.TextBox txtCurBM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   0
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   53
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   12
-               Left            =   120
-               TabIndex        =   56
-               Top             =   480
-               Width           =   1005
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   11
-               Left            =   120
-               TabIndex        =   55
-               Top             =   120
-               Width           =   1275
-            End
-         End
-         Begin VB.Label Label13 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "RIGHT"
-            Height          =   435
-            Left            =   600
-            TabIndex        =   64
-            Top             =   4200
-            Width           =   1125
-         End
-         Begin VB.Shape ShpBMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   2
-            Left            =   480
-            Top             =   4080
-            Width           =   1455
-         End
-         Begin VB.Shape ShpBMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   2
-            Left            =   240
-            Top             =   3960
-            Width           =   1935
-         End
-         Begin VB.Label Label12 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "OFF"
-            Height          =   435
-            Left            =   840
-            TabIndex        =   63
-            Top             =   2280
-            Width           =   720
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "LEFT"
-            Height          =   375
-            Index           =   15
-            Left            =   720
-            TabIndex        =   62
-            Top             =   360
-            Width           =   975
-         End
-         Begin VB.Shape ShpBMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   480
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Shape ShpBMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   240
-            Top             =   120
-            Width           =   1935
-         End
-         Begin VB.Shape ShpBMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   480
-            Top             =   2160
-            Width           =   1455
-         End
-         Begin VB.Shape ShpBMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   240
-            Top             =   2040
-            Width           =   1935
-         End
-      End
-      Begin VB.PictureBox PictureDM 
-         BackColor       =   &H80000010&
-         Height          =   4215
-         Index           =   1
-         Left            =   120
-         ScaleHeight     =   4155
-         ScaleWidth      =   2355
-         TabIndex        =   37
-         Top             =   1800
-         Width           =   2415
-         Begin VB.Frame Frame4 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   46
-            Top             =   3120
-            Width           =   2175
-            Begin VB.TextBox txtCurDM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   1
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   48
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.TextBox txtVDM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   1
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   47
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   5
-               Left            =   120
-               TabIndex        =   50
-               Top             =   120
-               Width           =   1275
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   4
-               Left            =   120
-               TabIndex        =   49
-               Top             =   480
-               Width           =   1005
-            End
-         End
-         Begin VB.Frame Frame2 
-            BackColor       =   &H8000000B&
-            BorderStyle     =   0  'None
-            Height          =   855
-            Left            =   120
-            TabIndex        =   40
-            Top             =   1080
-            Width           =   2175
-            Begin VB.TextBox txtVDM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   0
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   45
-               Text            =   "0.000"
-               Top             =   480
-               Width           =   615
-            End
-            Begin VB.TextBox txtCurDM 
-               Alignment       =   2  'Center
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   400
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               Height          =   315
-               Index           =   0
-               Left            =   1440
-               Locked          =   -1  'True
-               TabIndex        =   44
-               Text            =   "0.000"
-               Top             =   120
-               Width           =   615
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured V"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   3
-               Left            =   120
-               TabIndex        =   43
-               Top             =   480
-               Width           =   1005
-            End
-            Begin VB.Label Label4 
-               AutoSize        =   -1  'True
-               BackStyle       =   0  'Transparent
-               Caption         =   "Measured Amp"
-               BeginProperty Font 
-                  Name            =   "Arial"
-                  Size            =   8.25
-                  Charset         =   0
-                  Weight          =   700
-                  Underline       =   0   'False
-                  Italic          =   0   'False
-                  Strikethrough   =   0   'False
-               EndProperty
-               ForeColor       =   &H000000C0&
-               Height          =   210
-               Index           =   1
-               Left            =   120
-               TabIndex        =   41
-               Top             =   120
-               Width           =   1275
-            End
-         End
-         Begin VB.Label Label10 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "HIGH"
-            Height          =   435
-            Left            =   720
-            TabIndex        =   39
-            Top             =   2400
-            Width           =   900
-         End
-         Begin VB.Shape ShpDMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   1
-            Left            =   480
-            Top             =   2280
-            Width           =   1455
-         End
-         Begin VB.Shape ShpDMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   1
-            Left            =   240
-            Top             =   2160
-            Width           =   1935
-         End
-         Begin VB.Label Label4 
-            BackStyle       =   0  'Transparent
-            Caption         =   "LOW"
-            Height          =   375
-            Index           =   0
-            Left            =   720
-            TabIndex        =   38
-            Top             =   360
-            Width           =   855
-         End
-         Begin VB.Shape ShpDMInner 
-            BackStyle       =   1  'Opaque
-            Height          =   615
-            Index           =   0
-            Left            =   480
-            Top             =   240
-            Width           =   1455
-         End
-         Begin VB.Shape ShpDMOuter 
-            BackStyle       =   1  'Opaque
-            Height          =   855
-            Index           =   0
-            Left            =   240
-            Top             =   120
-            Width           =   1935
-         End
-      End
-      Begin VB.PictureBox PictureDM 
-         BackColor       =   &H80000010&
-         Height          =   375
-         Index           =   0
-         Left            =   120
-         ScaleHeight     =   315
-         ScaleWidth      =   2355
-         TabIndex        =   36
-         Top             =   1440
-         Width           =   2415
-         Begin VB.Label Label4 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Dipper Module"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   12
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   285
-            Index           =   2
-            Left            =   360
-            TabIndex        =   42
-            Top             =   0
-            Width           =   1665
          End
       End
       Begin VB.TextBox txtBarcode 
@@ -2601,10 +281,10 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   8760
+         Left            =   1320
          TabIndex        =   34
-         Top             =   7560
-         Width           =   5175
+         Top             =   6240
+         Width           =   4575
       End
       Begin VB.Frame Frame6 
          BorderStyle     =   0  'None
@@ -2618,9 +298,9 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   855
-         Left            =   18360
+         Left            =   16440
          TabIndex        =   26
-         Top             =   9720
+         Top             =   7320
          Width           =   1335
          Begin VB.CommandButton CmdClose 
             Caption         =   "Close"
@@ -2634,7 +314,7 @@ Begin VB.Form frmMonitor
                Strikethrough   =   0   'False
             EndProperty
             Height          =   765
-            Left            =   0
+            Left            =   -120
             MaskColor       =   &H00FFFFFF&
             Picture         =   "frmMonitor.frx":37C8
             Style           =   1  'Graphical
@@ -2655,9 +335,9 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1815
-         Left            =   17400
+         Left            =   15360
          TabIndex        =   23
-         Top             =   7680
+         Top             =   5400
          Width           =   2295
          Begin VB.Label lblGo 
             Alignment       =   2  'Center
@@ -2715,10 +395,10 @@ Begin VB.Form frmMonitor
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   2295
-         Left            =   17280
+         Height          =   1935
+         Left            =   15240
          TabIndex        =   18
-         Top             =   5520
+         Top             =   3480
          Width           =   2415
          Begin VB.TextBox txtNGCounter 
             Alignment       =   2  'Center
@@ -2901,7 +581,7 @@ Begin VB.Form frmMonitor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1215
-         Left            =   17160
+         Left            =   15480
          TabIndex        =   15
          Top             =   240
          Width           =   2415
@@ -3030,8 +710,8 @@ Begin VB.Form frmMonitor
          MultiLine       =   -1  'True
          TabIndex        =   14
          Text            =   "frmMonitor.frx":440A
-         Top             =   9960
-         Width           =   18015
+         Top             =   8280
+         Width           =   17535
       End
       Begin VB.Frame Frame13 
          Caption         =   "Frame13"
@@ -3157,7 +837,7 @@ Begin VB.Form frmMonitor
          TabIndex        =   10
          Text            =   "MODEL DESC"
          Top             =   240
-         Width           =   14175
+         Width           =   12975
       End
       Begin VB.Frame Frame10 
          Caption         =   "Frame10"
@@ -3316,20 +996,19 @@ Begin VB.Form frmMonitor
             End
          End
       End
-      Begin VB.Shape ShapeWLC 
-         BackColor       =   &H000000FF&
-         BackStyle       =   1  'Opaque
-         Height          =   255
-         Left            =   12840
-         Top             =   8280
-         Width           =   855
-      End
-      Begin VB.Label Label1 
-         AutoSize        =   -1  'True
-         BackColor       =   &H00808080&
-         BackStyle       =   0  'Transparent
-         Caption         =   "Wire Length OK"
-         BeginProperty Font 
+      Begin VSFlex7Ctl.VSFlexGrid Grid1 
+         Height          =   1845
+         Left            =   240
+         TabIndex        =   56
+         Top             =   1920
+         Width           =   8475
+         _cx             =   14949
+         _cy             =   3254
+         _ConvInfo       =   1
+         Appearance      =   1
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
             Size            =   9.75
             Charset         =   0
@@ -3338,19 +1017,178 @@ Begin VB.Form frmMonitor
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         ForeColor       =   &H00000000&
-         Height          =   240
-         Index           =   2
-         Left            =   11280
-         TabIndex        =   137
-         Top             =   8280
-         Width           =   1395
+         MousePointer    =   0
+         BackColor       =   -2147483643
+         ForeColor       =   -2147483640
+         BackColorFixed  =   -2147483633
+         ForeColorFixed  =   -2147483630
+         BackColorSel    =   -2147483635
+         ForeColorSel    =   -2147483634
+         BackColorBkg    =   -2147483638
+         BackColorAlternate=   -2147483643
+         GridColor       =   -2147483633
+         GridColorFixed  =   -2147483632
+         TreeColor       =   -2147483632
+         FloodColor      =   192
+         SheetBorder     =   -2147483642
+         FocusRect       =   1
+         HighLight       =   0
+         AllowSelection  =   -1  'True
+         AllowBigSelection=   -1  'True
+         AllowUserResizing=   0
+         SelectionMode   =   0
+         GridLines       =   1
+         GridLinesFixed  =   2
+         GridLineWidth   =   1
+         Rows            =   50
+         Cols            =   2
+         FixedRows       =   1
+         FixedCols       =   1
+         RowHeightMin    =   400
+         RowHeightMax    =   0
+         ColWidthMin     =   0
+         ColWidthMax     =   0
+         ExtendLastCol   =   -1  'True
+         FormatString    =   $"frmMonitor.frx":441C
+         ScrollTrack     =   0   'False
+         ScrollBars      =   3
+         ScrollTips      =   0   'False
+         MergeCells      =   0
+         MergeCompare    =   0
+         AutoResize      =   -1  'True
+         AutoSizeMode    =   0
+         AutoSearch      =   0
+         AutoSearchDelay =   2
+         MultiTotals     =   -1  'True
+         SubtotalPosition=   1
+         OutlineBar      =   0
+         OutlineCol      =   0
+         Ellipsis        =   0
+         ExplorerBar     =   0
+         PicturesOver    =   0   'False
+         FillStyle       =   0
+         RightToLeft     =   0   'False
+         PictureType     =   0
+         TabBehavior     =   1
+         OwnerDraw       =   0
+         Editable        =   0
+         ShowComboButton =   -1  'True
+         WordWrap        =   0   'False
+         TextStyle       =   0
+         TextStyleFixed  =   0
+         OleDragMode     =   0
+         OleDropMode     =   0
+         DataMode        =   0
+         VirtualData     =   -1  'True
+         DataMember      =   ""
+         ComboSearch     =   3
+         AutoSizeMouse   =   -1  'True
+         FrozenRows      =   0
+         FrozenCols      =   0
+         AllowUserFreezing=   0
+         BackColorFrozen =   0
+         ForeColorFrozen =   0
+         WallPaperAlignment=   9
+      End
+      Begin VSFlex7Ctl.VSFlexGrid Grid2 
+         Height          =   1845
+         Left            =   240
+         TabIndex        =   57
+         Top             =   4080
+         Width           =   8475
+         _cx             =   14949
+         _cy             =   3254
+         _ConvInfo       =   1
+         Appearance      =   1
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         MousePointer    =   0
+         BackColor       =   -2147483643
+         ForeColor       =   -2147483640
+         BackColorFixed  =   -2147483633
+         ForeColorFixed  =   -2147483630
+         BackColorSel    =   -2147483635
+         ForeColorSel    =   -2147483634
+         BackColorBkg    =   -2147483638
+         BackColorAlternate=   -2147483643
+         GridColor       =   -2147483633
+         GridColorFixed  =   -2147483632
+         TreeColor       =   -2147483632
+         FloodColor      =   192
+         SheetBorder     =   -2147483642
+         FocusRect       =   1
+         HighLight       =   0
+         AllowSelection  =   -1  'True
+         AllowBigSelection=   -1  'True
+         AllowUserResizing=   0
+         SelectionMode   =   0
+         GridLines       =   1
+         GridLinesFixed  =   2
+         GridLineWidth   =   1
+         Rows            =   50
+         Cols            =   2
+         FixedRows       =   1
+         FixedCols       =   1
+         RowHeightMin    =   400
+         RowHeightMax    =   0
+         ColWidthMin     =   0
+         ColWidthMax     =   0
+         ExtendLastCol   =   -1  'True
+         FormatString    =   $"frmMonitor.frx":448B
+         ScrollTrack     =   0   'False
+         ScrollBars      =   3
+         ScrollTips      =   0   'False
+         MergeCells      =   0
+         MergeCompare    =   0
+         AutoResize      =   -1  'True
+         AutoSizeMode    =   0
+         AutoSearch      =   0
+         AutoSearchDelay =   2
+         MultiTotals     =   -1  'True
+         SubtotalPosition=   1
+         OutlineBar      =   0
+         OutlineCol      =   0
+         Ellipsis        =   0
+         ExplorerBar     =   0
+         PicturesOver    =   0   'False
+         FillStyle       =   0
+         RightToLeft     =   0   'False
+         PictureType     =   0
+         TabBehavior     =   1
+         OwnerDraw       =   0
+         Editable        =   0
+         ShowComboButton =   -1  'True
+         WordWrap        =   0   'False
+         TextStyle       =   0
+         TextStyleFixed  =   0
+         OleDragMode     =   0
+         OleDropMode     =   0
+         DataMode        =   0
+         VirtualData     =   -1  'True
+         DataMember      =   ""
+         ComboSearch     =   3
+         AutoSizeMouse   =   -1  'True
+         FrozenRows      =   0
+         FrozenCols      =   0
+         AllowUserFreezing=   0
+         BackColorFrozen =   0
+         ForeColorFrozen =   0
+         WallPaperAlignment=   9
       End
       Begin VB.Image ImgPart 
          Height          =   1695
-         Left            =   14040
+         Left            =   14520
          Stretch         =   -1  'True
-         Top             =   7800
+         Top             =   1560
          Width           =   3135
       End
       Begin VB.Label Label4 
@@ -3368,12 +1206,12 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   240
          Index           =   43
-         Left            =   7680
-         TabIndex        =   106
-         Top             =   9240
+         Left            =   240
+         TabIndex        =   40
+         Top             =   7440
          Width           =   1665
       End
-      Begin VB.Label Label4 
+      Begin VB.Label t 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
          Caption         =   "Target Production"
@@ -3388,50 +1226,10 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   240
          Index           =   40
-         Left            =   7680
-         TabIndex        =   105
-         Top             =   8760
+         Left            =   240
+         TabIndex        =   39
+         Top             =   6840
          Width           =   1530
-      End
-      Begin VB.Label Label4 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "A"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   39
-         Left            =   10800
-         TabIndex        =   104
-         Top             =   8280
-         Width           =   135
-      End
-      Begin VB.Label Label4 
-         AutoSize        =   -1  'True
-         BackStyle       =   0  'Transparent
-         Caption         =   "ILLumination Curr. "
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   240
-         Index           =   9
-         Left            =   7680
-         TabIndex        =   101
-         Top             =   8280
-         Width           =   1635
       End
       Begin VB.Label Label4 
          AutoSize        =   -1  'True
@@ -3448,9 +1246,9 @@ Begin VB.Form frmMonitor
          EndProperty
          Height          =   240
          Index           =   8
-         Left            =   7680
-         TabIndex        =   99
-         Top             =   7680
+         Left            =   240
+         TabIndex        =   36
+         Top             =   6240
          Width           =   720
       End
    End
@@ -3466,7 +1264,7 @@ Begin VB.Form frmMonitor
       Caption         =   "Label7"
       Height          =   495
       Left            =   9480
-      TabIndex        =   114
+      TabIndex        =   48
       Top             =   5280
       Width           =   1215
    End
@@ -3486,7 +1284,7 @@ Begin VB.Form frmMonitor
       Height          =   240
       Index           =   34
       Left            =   7920
-      TabIndex        =   103
+      TabIndex        =   38
       Top             =   7800
       Width           =   375
    End
@@ -3506,7 +1304,7 @@ Begin VB.Form frmMonitor
       Height          =   240
       Index           =   16
       Left            =   7920
-      TabIndex        =   102
+      TabIndex        =   37
       Top             =   7320
       Width           =   375
    End
@@ -3629,7 +1427,8 @@ End Sub
 
 Private Sub Command3_Click()
 'PLcdata(109) = Val(Text3.Text)
-AssignPLCdata
+'AssignPLCdata
+sendEmail
 End Sub
 
 Private Sub Command7_Click()
@@ -3661,8 +1460,8 @@ Dim Rs As ADODB.Recordset
 ''      ComPortBP(2) = Rs("ComPortBP2")
    PrinterName = Rs("PrinterName1")
    Initialise
-   WinSock1.Protocol = sckTCPProtocol
-   txtIP.Text = WinSock1.LocalIP
+   Winsock1.Protocol = sckTCPProtocol
+   txtIP.Text = Winsock1.LocalIP
    txtIP_Host = Rs("PLC_IP") '"192.168.1.30"
    txtPort = Rs("PLC_Port")
 Exit Sub
@@ -3689,6 +1488,7 @@ runningreportdate = GetSetting(App.Title, ModelName, "savedate", 0)
 PLcdata(340) = 1
 GetCounterValue
 ConnectToPLC
+LoadGrid
 Timer1.Enabled = True
 Timer1.Interval = 1000
 Timer2.Enabled = True
@@ -3717,130 +1517,70 @@ Private Sub UserAccess()
       'CmdNgCounter.Visible = True
    End If
 End Sub
+Private Sub LoadGrid()
+With Grid1
+    .CellAlignment = flexAlignLeftCenter
+    .RowHeight(0) = 1000
+    .ColWidthMin = 1100
+    .ColWidthMax = 1200
+    .Cols = 6
+    .Rows = 2
+    .TextMatrix(0, 0) = "Reverse" & vbNewLine & "Polarity"
+    .TextMatrix(0, 1) = "Cut-Off" & vbNewLine & "Voltage" & vbNewLine & "(AT<12.8V)"
+    .TextMatrix(0, 2) = "O/P" & vbNewLine & "Voltage" & vbNewLine & "AT 12.8V"
+    .TextMatrix(0, 3) = "O/P" & vbNewLine & "Voltage" & vbNewLine & "AT 14.3V"
+    .TextMatrix(0, 4) = "O/P" & vbNewLine & "Voltage" & vbNewLine & "AT 18V"
+    .TextMatrix(0, 5) = "O/P" & vbNewLine & "Voltage" & vbNewLine & "Short Test"
+End With
+With Grid2
+    .CellAlignment = flexAlignLeftCenter
+    .RowHeight(0) = 1000
+    .ColWidthMin = 1100
+    .ColWidthMax = 1200
+    .Cols = 6
+    .Rows = 2
+    .TextMatrix(0, 0) = "Test" & vbNewLine & "Voltage"
+    .TextMatrix(0, 1) = "Input" & vbNewLine & "Current"
+    .TextMatrix(0, 2) = "O/P" & vbNewLine & "Voltage"
+    .TextMatrix(0, 3) = "O/P" & vbNewLine & "Current"
+    .TextMatrix(0, 4) = "Efficiency" & vbNewLine & "(>75%)"
+    .TextMatrix(0, 5) = "Result"
+End With
+
+End Sub
 
 Private Function AssignPLCdata()
 On Error GoTo Error
    MsgCode = PLcdata(108)
-   ShapeColorsinglefunction PLcdata(100), &H1, ShpDMOuter(0)
-   ShapeColorsinglefunction PLcdata(100), &H2, ShpDMOuter(1)
-   ShapeColorsinglefunction PLcdata(100), &H4, ShpPMOuter(0)
-   ShapeColorsinglefunction PLcdata(100), &H8, ShpPMOuter(1)
-   ShapeColorsinglefunction PLcdata(100), &H10, ShpHAMOuter(0)
-   ShapeColorsinglefunction PLcdata(100), &H20, ShpHAMOuter(1)
-   ShapeColorsinglefunction PLcdata(100), &H40, ShpNMOuter(0)
-   ShapeColorsinglefunction PLcdata(100), &H80, ShpNMOuter(1)
-   ShapeColorsinglefunction PLcdata(100), &H100, ShpNMOuter(2)
-   ShapeColorsinglefunction PLcdata(100), &H200, ShpNMOuter(3)
-   ShapeColorsinglefunction PLcdata(100), &H400, ShpNMOuter(4)
-   ShapeColorsinglefunction PLcdata(101), &H1, ShpBMOuter(0)
-   ShapeColorsinglefunction PLcdata(101), &H2, ShpBMOuter(1)
-   ShapeColorsinglefunction PLcdata(101), &H4, ShpBMOuter(2)
-   ShapeColorsinglefunction PLcdata(101), &H8, ShpHOMOuter(0)
-   ShapeColorsinglefunction PLcdata(101), &H10, ShpHOMOuter(1)
-   ShapeColorsinglefunction PLcdata(101), &H20, ShpCRMOuter(0)
-   ShapeColorsinglefunction PLcdata(101), &H40, ShpCRMOuter(1)
-   ShapeColorsinglefunction PLcdata(101), &H80, ShpCUMOuter(0)
-   ShapeColorsinglefunction PLcdata(101), &H100, ShpCUMOuter(1)
-   ShapeColorsinglefunction PLcdata(101), &H200, ShpSRMOuter(0)
-   ShapeColorsinglefunction PLcdata(101), &H400, ShpSRMOuter(1)
+   GridColorfunction Grid1, 1, 0, PLcdata(100), &H1, &H2
+   GridColorfunction Grid1, 1, 1, PLcdata(100), &H4, &H8
+   GridColorfunction Grid1, 1, 2, PLcdata(100), &H10, &H20
+   GridColorfunction Grid1, 1, 3, PLcdata(100), &H40, &H80
+   GridColorfunction Grid1, 1, 4, PLcdata(100), &H100, &H200
+   GridColorfunction Grid1, 1, 5, PLcdata(100), &H400, &H800
    
-   ShapeColorfunction1 PLcdata(102), &H1, &H2, ShpDMInner(0)
-   ShapeColorfunction1 PLcdata(102), &H4, &H8, ShpDMInner(1)
-   ShapeColorfunction1 PLcdata(102), &H10, &H20, ShpPMInner(0)
-   ShapeColorfunction1 PLcdata(102), &H40, &H80, ShpPMInner(1)
-   ShapeColorfunction1 PLcdata(102), &H100, &H200, ShpHAMInner(0)
-   ShapeColorfunction1 PLcdata(102), &H400, &H800, ShpHAMInner(1)
-   ShapeColorfunction1 PLcdata(103), &H1, &H2, ShpNMInner(0)
-   ShapeColorfunction1 PLcdata(103), &H4, &H8, ShpNMInner(1)
-   ShapeColorfunction1 PLcdata(103), &H10, &H20, ShpNMInner(2)
-   ShapeColorfunction1 PLcdata(103), &H40, &H80, ShpNMInner(3)
-   ShapeColorfunction1 PLcdata(103), &H100, &H200, ShpNMInner(4)
-   ShapeColorfunction1 PLcdata(104), &H1, &H2, ShpBMInner(0)
-   ShapeColorfunction1 PLcdata(104), &H4, &H8, ShpBMInner(1)
-   ShapeColorfunction1 PLcdata(104), &H10, &H20, ShpBMInner(2)
-   ShapeColorfunction1 PLcdata(104), &H40, &H80, ShpHOMInner(0)
-   ShapeColorfunction1 PLcdata(104), &H100, &H200, ShpHOMInner(1)
-   ShapeColorfunction1 PLcdata(105), &H1, &H2, ShpCRMInner(0)
-   ShapeColorfunction1 PLcdata(105), &H4, &H8, ShpCRMInner(1)
-   ShapeColorfunction1 PLcdata(105), &H10, &H20, ShpCUMInner(0)
-   ShapeColorfunction1 PLcdata(105), &H40, &H80, ShpCUMInner(1)
-   ShapeColorfunction1 PLcdata(105), &H100, &H200, ShpSRMInner(0)
-   ShapeColorfunction1 PLcdata(105), &H400, &H800, ShpSRMInner(1)
+   GridColorfunction Grid2, 1, 0, PLcdata(101), &H1, &H2
+   GridColorfunction Grid2, 1, 1, PLcdata(101), &H4, &H8
+   GridColorfunction Grid2, 1, 2, PLcdata(101), &H10, &H20
+   GridColorfunction Grid2, 1, 3, PLcdata(101), &H40, &H80
+   GridColorfunction Grid2, 1, 4, PLcdata(101), &H100, &H200
+   GridColorfunction Grid2, 1, 5, PLcdata(101), &H400, &H800
 
-   ShapeColorfunction PLcdata(160), &H1, &H2, PictureDM(0)
-   ShapeColorfunction PLcdata(160), &H4, &H8, PicturePM(0)
-   ShapeColorfunction PLcdata(160), &H10, &H20, PictureHAM(0)
-   ShapeColorfunction PLcdata(160), &H40, &H80, PictureNM(0)
-   ShapeColorfunction PLcdata(160), &H100, &H200, PictureBM(0)
-   ShapeColorfunction PLcdata(160), &H400, &H800, PictureHOM(0)
-   ShapeColorfunction PLcdata(160), &H1000, &H2000, PictureCRM(0)
-   ShapeColorfunction PLcdata(161), &H1, &H2, PictureCUM(0)
-   ShapeColorfunction PLcdata(161), &H4, &H8, PictureSRM(0)
+   GridTextFunction Grid1, 1, 1, PLcdata(110), 100, "0.00"
+   GridTextFunction Grid1, 1, 2, PLcdata(111), 100, "0.00"
+   GridTextFunction Grid1, 1, 3, PLcdata(112), 100, "0.00"
+   GridTextFunction Grid1, 1, 4, PLcdata(113), 100, "0.00"
+
+   GridTextFunction Grid2, 1, 0, PLcdata(120), 100, "0.00"
+   GridTextFunction Grid2, 1, 1, PLcdata(121), 100, "0.00"
+   GridTextFunction Grid2, 1, 2, PLcdata(122), 100, "0.00"
+   GridTextFunction Grid2, 1, 3, PLcdata(123), 100, "0.00"
+   GridTextFunction Grid2, 1, 4, PLcdata(124), 100, "0.00"
+
    
    txtCycleTime.Text = Format(PLcdata(107) / 10, "0.0")
 
 
-   txtVDM(0).Text = Format(PLcdata(110) / 1000, "0.000")
-   txtCurDM(0).Text = Format(PLcdata(111) / 1000, "0.000")
-   txtVDM(1).Text = Format(PLcdata(112) / 1000, "0.000")
-   txtCurDM(1).Text = Format(PLcdata(113) / 1000, "0.000")
-   txtVPM.Text = Format(PLcdata(114) / 1000, "0.000")
-   txtCurPM.Text = Format(PLcdata(115) / 1000, "0.000")
-   txtVHAM.Text = Format(PLcdata(116) / 1000, "0.000")
-   txtCurHAM.Text = Format(PLcdata(117) / 1000, "0.000")
-   txtVNM(0).Text = Format(PLcdata(118) / 1000, "0.000")
-   txtCurNM(0).Text = Format(PLcdata(119) / 1000, "0.000")
-   txtVNM(1).Text = Format(PLcdata(120) / 1000, "0.000")
-   txtCurNM(1).Text = Format(PLcdata(121) / 1000, "0.000")
-   txtVNM(2).Text = Format(PLcdata(122) / 1000, "0.000")
-   txtCurNM(2).Text = Format(PLcdata(123) / 1000, "0.000")
-   txtVNM(3).Text = Format(PLcdata(124) / 1000, "0.000")
-   txtCurNM(3).Text = Format(PLcdata(125) / 1000, "0.000")
-   txtVBM(0).Text = Format(PLcdata(126) / 1000, "0.000")
-   txtCurBM(0).Text = Format(PLcdata(127) / 1000, "0.000")
-   txtVBM(1).Text = Format(PLcdata(128) / 1000, "0.000")
-   txtCurBM(1).Text = Format(PLcdata(129) / 1000, "0.000")
-   txtVBM(2).Text = Format(PLcdata(130) / 1000, "0.000")
-   txtCurBM(2).Text = Format(PLcdata(131) / 1000, "0.000")
-   txtVHOM.Text = Format(PLcdata(132) / 1000, "0.000")
-   txtCurHOM.Text = Format(PLcdata(133) / 1000, "0.000")
-   txtVCRM.Text = Format(PLcdata(134) / 1000, "0.000")
-   txtCurCRM.Text = Format(PLcdata(135) / 1000, "0.000")
-   txtVCUM.Text = Format(PLcdata(136) / 1000, "0.000")
-   txtCurCUM.Text = Format(PLcdata(137) / 1000, "0.000")
-   txtVSRM.Text = Format(PLcdata(138) / 1000, "0.000")
-   txtCurSRM.Text = Format(PLcdata(139) / 1000, "0.000")
-
-
-   
-   txtILLH.Text = Format(PLcdata(150) / 1000, "0.000")
-   'txtILRH.Text = Format(PLcdata(151) / 100, "0.00")
-   'txtWireVoltage.Text = Format(PLcdata(152) / 100, "0.00")
-   'plcdata(185) = odcurrent
-   'plcdata(186) = odil
-   'plcdata(187) = odmvd
-   
-   If (PLcdata(155) And &H1) <> 0 Then
-        ShapeWLC.BackColor = vbGreen
-   ElseIf (PLcdata(155) And &H2) <> 0 Then
-        ShapeWLC.BackColor = vbRed
-   Else
-        ShapeWLC.BackColor = vbWhite
-   End If
-   'If (PLcdata(156) And &H1) <> 0 Then
-   '     ShapeRhBolt.BackColor = vbGreen
-   'ElseIf (PLcdata(156) And &H2) <> 0 Then
-   '     ShapeRhBolt.BackColor = vbRed
-   'Else
-   '     ShapeRhBolt.BackColor = vbWhite
-   'End If
-   'If (PLcdata(157) And &H1) <> 0 Then
-   '     ShapeLHBolt.BackColor = vbGreen
-   'ElseIf (PLcdata(157) And &H2) <> 0 Then
-   '     ShapeLHBolt.BackColor = vbRed
-   'Else
-   '     ShapeLHBolt.BackColor = vbWhite
-   'End If
    If PLcdata(165) = 0 And pulseBreakdown = True Then
       pulseBreakdown = False
       'PictureBreakdown.Visible = False
@@ -3888,7 +1628,7 @@ On Error GoTo Error
       txtTargetProduction.Text = Val(txtTargetProduction.Text) - 1
       txtCouplerCounter.Text = Val(txtCouplerCounter.Text) + 1
       If pulsePrinterBypass = False Then
-      PrintLabel JustPrinter1
+        PrintLabel JustPrinter1
       End If
       SaveProductioncounter
       SaveReport 1
@@ -3910,30 +1650,21 @@ Error:
    Resume Next
 End Function
 
-Private Sub ShapeColorfunction(Data As Integer, reg1 As Integer, reg2 As Integer, ctrl As Object)
-    If (Data And reg1) Then
-        If (Data And reg2) Then
-           ctrl.BackColor = vbRed
-        Else
-           ctrl.BackColor = vbYellow
-         End If
-    ElseIf (Data And reg2) Then
-          ctrl.BackColor = vbGreen
-    Else
-          ctrl.BackColor = vbWhite
-    End If
+Private Sub GridTextFunction(Grid As VSFlexGrid, Row As Integer, Col As Integer, Data As Integer, Devision As Integer, formatstring As String)
+Grid.TextMatrix(Row, Col) = Format(Data / Devision, formatstring)
 End Sub
-Private Sub ShapeColorfunction1(Data As Integer, reg1 As Integer, reg2 As Integer, ctrl As Object)
+Private Sub GridColorfunction(Grid As VSFlexGrid, Row As Integer, Col As Integer, Data As Integer, reg1 As Integer, reg2 As Integer)
     If (Data And reg1) Then
         If (Data And reg2) Then
-           ctrl.BackColor = vbRed
+           Grid.Cell(flexcpBackColor, Row, Col, Row, Col) = vbYellow
         Else
-           ctrl.BackColor = vbGreen
-         End If
+           Grid.Cell(flexcpBackColor, Row, Col, Row, Col) = vbGreen
+        End If
     ElseIf (Data And reg2) Then
-          ctrl.BackColor = vbRed
+          Grid.Cell(flexcpBackColor, Row, Col, Row, Col) = vbRed
     Else
-          ctrl.BackColor = vbWhite
+          Grid.Cell(flexcpBackColor, Row, Col, Row, Col) = vbWhite
+    
     End If
 End Sub
 
@@ -3971,22 +1702,22 @@ Private Sub Timer2_Timer()
        
     If InternetGetConnectedState(0, 0) = 1 Then
         shapeInternet.BackColor = vbGreen
-        sendEmail
+        'sendEmail
     Else
         shapeInternet.BackColor = vbRed
     End If
     
-    Text1.Text = WinsockStstus(WinSock1.State)
+    Text1.Text = WinsockStstus(Winsock1.State)
 
 
-    If WinSock1.State = 7 Then
+    If Winsock1.State = 7 Then
         ShapePLCState.BackColor = vbGreen
     Else
         ShapePLCState.BackColor = vbRed
     End If
     Dim Description As String
     
-    Select Case WinSock1.State
+    Select Case Winsock1.State
         Case 0
             Description = "Connection Closed"
         Case 1
@@ -4051,7 +1782,8 @@ Sql = "Select * from Common_Set where SetType ='CommonSet'"
 Set rs1 = New ADODB.Recordset
 rs1.Open Sql, Con, adOpenDynamic, adLockOptimistic
 If rs1("SenderEmail") <> "" And rs1("ToEmail1") <> "" Then
-    Sql = "select Top 1 * from model_report_counter where MailSent = false order by id desc"
+    'Sql = "select Top 1 * from model_report_counter where MailSent = false order by id desc"
+    Sql = "select Top 1 * from model_report_counter order by id desc"
     Set rs2 = New ADODB.Recordset
     rs2.Open Sql, Con, adOpenDynamic, adLockOptimistic
     Do While rs2.EOF = False
@@ -4161,254 +1893,55 @@ Dim j As Integer
     Sql = "Select * from Model_Set where ModelName='" & ModelName & "'"
     Set Rs = New ADODB.Recordset
     Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
-    'txtModelDesc.Text = Trim(Rs("ModelDesc"))
-    PLcdata(210) = Val(Rs("DMBypass"))
-    If Val(txtCouplerCounter.Text) >= setCouplerCounter Then
-        PLcdata(335) = 1
-    ElseIf Val(txtBatchCounter.Text) >= setBatchCounter Then
-        PLcdata(335) = 2
-    Else
-        PLcdata(335) = 0
-    End If
-   If Val(Rs("DMBypass")) = 0 Then
-    PLcdata(213) = Val(Rs("DM1CurMin")) * 1000
-    PLcdata(214) = Val(Rs("DM1CurMax")) * 1000
-    PLcdata(217) = Val(Rs("DM2CurMin")) * 1000
-    PLcdata(218) = Val(Rs("DM2CurMax")) * 1000
-    PLcdata(211) = Val(Rs("DM1VoltMin")) * 1000
-    PLcdata(212) = Val(Rs("DM1VoltMax")) * 1000
-    PLcdata(215) = Val(Rs("DM2VoltMin")) * 1000
-    PLcdata(216) = Val(Rs("DM2VoltMax")) * 1000
-    PLcdata(219) = Val(Rs("DMTestCycle"))
-  Else
-    PictureDM(0).Visible = False
-    PictureDM(1).Visible = False
-    PLcdata(211) = 0
-    PLcdata(212) = 0
-    PLcdata(213) = 0
-    PLcdata(214) = 0
-    PLcdata(215) = 0
-    PLcdata(216) = 0
-    PLcdata(217) = 0
-    PLcdata(218) = 0
-    PLcdata(219) = 0
-   End If
-    PLcdata(220) = Val(Rs("PMBypass"))
-   If Val(Rs("PMBypass")) = 0 Then
-    PLcdata(223) = Val(Rs("PM1CurMin")) * 1000
-    PLcdata(224) = Val(Rs("PM1CurMax")) * 1000
-    PLcdata(221) = Val(Rs("PM1VoltMin")) * 1000
-    PLcdata(222) = Val(Rs("PM1VoltMax")) * 1000
-    PLcdata(225) = Val(Rs("PMTestCycle"))
-   Else
-    PicturePM(0).Visible = False
-    PicturePM(1).Visible = False
-    PLcdata(221) = 0
-    PLcdata(222) = 0
-    PLcdata(223) = 0
-    PLcdata(224) = 0
-    PLcdata(225) = 0
-   End If
-    
-     PLcdata(230) = Val(Rs("HAMBypass"))
-   If Val(Rs("HAMBypass")) = 0 Then
-    PLcdata(233) = Val(Rs("HAM1CurMin")) * 1000
-    PLcdata(234) = Val(Rs("HAM1CurMax")) * 1000
-    PLcdata(231) = Val(Rs("HAM1VoltMin")) * 1000
-    PLcdata(232) = Val(Rs("HAM1VoltMax")) * 1000
-    PLcdata(235) = Val(Rs("HAMTestCycle"))
-   Else
-    PictureHAM(0).Visible = False
-    PictureHAM(1).Visible = False
-    PLcdata(231) = 0
-    PLcdata(232) = 0
-    PLcdata(233) = 0
-    PLcdata(234) = 0
-    PLcdata(235) = 0
-   End If
-   
-    PLcdata(240) = Val(Rs("NMBypass"))
-   If Val(Rs("NMBypass")) = 0 Then
-    PLcdata(241) = Val(Rs("NM1VoltMin")) * 1000
-    PLcdata(242) = Val(Rs("NM1VoltMax")) * 1000
-    PLcdata(243) = Val(Rs("NM1CurMin")) * 1000
-    PLcdata(244) = Val(Rs("NM1CurMax")) * 1000
-    PLcdata(245) = Val(Rs("NM2VoltMin")) * 1000
-    PLcdata(246) = Val(Rs("NM2VoltMax")) * 1000
-    PLcdata(247) = Val(Rs("NM2CurMin")) * 1000
-    PLcdata(248) = Val(Rs("NM2CurMax")) * 1000
-    PLcdata(249) = Val(Rs("NM3VoltMin")) * 1000
-    PLcdata(250) = Val(Rs("NM3VoltMax")) * 1000
-    PLcdata(251) = Val(Rs("NM3CurMin")) * 1000
-    PLcdata(252) = Val(Rs("NM3CurMax")) * 1000
-    PLcdata(253) = Val(Rs("NM4VoltMin")) * 1000
-    PLcdata(254) = Val(Rs("NM4VoltMax")) * 1000
-    PLcdata(255) = Val(Rs("NM4CurMin")) * 1000
-    PLcdata(256) = Val(Rs("NM4CurMax")) * 1000
+    PLcdata(240) = 1
+    PLcdata(210) = Val(Rs("testVoltage")) * 100
+    PLcdata(211) = Val(Rs("RPCheckTime")) * 100
+    PLcdata(212) = Val(Rs("STCheckTime")) * 100
+    PLcdata(213) = Val(Rs("Efficiency")) * 100
+    PLcdata(214) = Val(Rs("OutputVoltMin")) * 100
+    PLcdata(215) = Val(Rs("OutputVoltMax")) * 100
+    PLcdata(216) = Val(Rs("OutputCurrentMin")) * 100
+    PLcdata(217) = Val(Rs("OutputCurrentMax")) * 100
+    PLcdata(218) = Val(Rs("VoltageOffset")) * 100
+    PLcdata(219) = Val(Rs("CurrentOffset")) * 100
 
-    PLcdata(257) = Val(Rs("NMTestCycle"))
-   Else
-    PictureNM(0).Visible = False
-    PictureNM(1).Visible = False
-    PLcdata(241) = 0
-    PLcdata(242) = 0
-    PLcdata(243) = 0
-    PLcdata(244) = 0
-    PLcdata(245) = 0
-    PLcdata(246) = 0
-    PLcdata(247) = 0
-    PLcdata(248) = 0
-    PLcdata(249) = 0
-    PLcdata(250) = 0
-    PLcdata(251) = 0
-    PLcdata(252) = 0
-    PLcdata(253) = 0
-    PLcdata(254) = 0
-    PLcdata(255) = 0
-    PLcdata(256) = 0
-    PLcdata(257) = 0
-   End If
-   
-    PLcdata(260) = Val(Rs("BMBypass"))
-   If Val(Rs("BMBypass")) = 0 Then
-    PLcdata(261) = Val(Rs("BM1VoltMin")) * 1000
-    PLcdata(262) = Val(Rs("BM1VoltMax")) * 1000
-    PLcdata(263) = Val(Rs("BM1CurMin")) * 1000
-    PLcdata(264) = Val(Rs("BM1CurMax")) * 1000
-    PLcdata(265) = Val(Rs("BM2VoltMin")) * 1000
-    PLcdata(266) = Val(Rs("BM2VoltMax")) * 1000
-    PLcdata(267) = Val(Rs("BM2CurMin")) * 1000
-    PLcdata(268) = Val(Rs("BM2CurMax")) * 1000
-    PLcdata(269) = Val(Rs("BM3VoltMin")) * 1000
-    PLcdata(270) = Val(Rs("BM3VoltMax")) * 1000
-    PLcdata(271) = Val(Rs("BM3CurMin")) * 1000
-    PLcdata(272) = Val(Rs("BM3CurMax")) * 1000
-    PLcdata(273) = Val(Rs("BMTestCycle"))
-   Else
-    PictureBM(0).Visible = False
-    PictureBM(1).Visible = False
-    PLcdata(261) = 0
-    PLcdata(262) = 0
-    PLcdata(263) = 0
-    PLcdata(264) = 0
-    PLcdata(265) = 0
-    PLcdata(266) = 0
-    PLcdata(267) = 0
-    PLcdata(268) = 0
-    PLcdata(269) = 0
-    PLcdata(270) = 0
-    PLcdata(271) = 0
-    PLcdata(272) = 0
-    PLcdata(273) = 0
-   End If
-   
-    PLcdata(275) = Val(Rs("HOMBypass"))
-   If Val(Rs("HOMBypass")) = 0 Then
-    PLcdata(276) = Val(Rs("HOM1VoltMin")) * 1000
-    PLcdata(277) = Val(Rs("HOM1VoltMax")) * 1000
-    PLcdata(278) = Val(Rs("HOM1CurMin")) * 1000
-    PLcdata(279) = Val(Rs("HOM1CurMax")) * 1000
-    PLcdata(280) = Val(Rs("HOMTestCycle"))
-   Else
-    PictureHOM(0).Visible = False
-    PictureHOM(1).Visible = False
-    PLcdata(276) = 0
-    PLcdata(277) = 0
-    PLcdata(278) = 0
-    PLcdata(279) = 0
-    PLcdata(280) = 0
-   End If
-    PLcdata(285) = Val(Rs("CRMBypass"))
-   If Val(Rs("CRMBypass")) = 0 Then
-    PLcdata(286) = Val(Rs("CRM1VoltMin")) * 1000
-    PLcdata(287) = Val(Rs("CRM1VoltMax")) * 1000
-    PLcdata(288) = Val(Rs("CRM1CurMin")) * 1000
-    PLcdata(289) = Val(Rs("CRM1CurMax")) * 1000
-    PLcdata(290) = Val(Rs("CRMTestCycle"))
-   Else
-    PictureCRM(0).Visible = False
-    PictureCRM(1).Visible = False
-    PLcdata(286) = 0
-    PLcdata(287) = 0
-    PLcdata(288) = 0
-    PLcdata(289) = 0
-    PLcdata(290) = 0
-   End If
-    PLcdata(295) = Val(Rs("CUMBypass"))
-   If Val(Rs("CUMBypass")) = 0 Then
-    PLcdata(296) = Val(Rs("CUM1VoltMin")) * 1000
-    PLcdata(297) = Val(Rs("CUM1VoltMax")) * 1000
-    PLcdata(298) = Val(Rs("CUM1CurMin")) * 1000
-    PLcdata(299) = Val(Rs("CUM1CurMax")) * 1000
-    PLcdata(300) = Val(Rs("CUMTestCycle"))
-   Else
-    PictureCUM(0).Visible = False
-    PictureCUM(1).Visible = False
-    PLcdata(296) = 0
-    PLcdata(297) = 0
-    PLcdata(298) = 0
-    PLcdata(299) = 0
-    PLcdata(300) = 0
-   End If
-    PLcdata(305) = Val(Rs("SRMBypass"))
-   If Val(Rs("SRMBypass")) = 0 Then
-    PLcdata(306) = Val(Rs("SRM1VoltMin")) * 1000
-    PLcdata(307) = Val(Rs("SRM1VoltMax")) * 1000
-    PLcdata(308) = Val(Rs("SRM1CurMin")) * 1000
-    PLcdata(309) = Val(Rs("SRM1CurMax")) * 1000
-    PLcdata(310) = Val(Rs("SRMTestCycle"))
-   Else
-    PictureSRM(0).Visible = False
-    PictureSRM(1).Visible = False
-    PLcdata(306) = 0
-    PLcdata(307) = 0
-    PLcdata(308) = 0
-    PLcdata(309) = 0
-    PLcdata(310) = 0
-   End If
-   
-   
-    For i = 0 To 8
-     PLcdata(351 + i) = Val(Rs("CurrentOffset" & i + 1)) * 1000
-     PLcdata(361 + i) = Val(Rs("VoltageOffset" & i + 1)) * 1000
-    Next
+    txtModelDesc.Text = Trim(Rs("ModelDesc"))
+    If Val(txtCouplerCounter.Text) >= setCouplerCounter Then
+        PLcdata(235) = 1
+    ElseIf Val(txtBatchCounter.Text) >= setBatchCounter Then
+        PLcdata(235) = 2
+    Else
+        PLcdata(235) = 0
+    End If
+    PartNo = Rs("PrintPartNo")
+    BarcodeLength = Rs("BarcodeLength")
+    HardwareNo = Rs("HardwareNo")
+    SerialStartingtxt = Rs("SerialStartingtxt")
     
-    PLcdata(325) = Val(Rs("ICMin")) * 1000
-    PLcdata(326) = Val(Rs("ICMax")) * 1000
-    'PLcdata(327) = Val(Rs("ICMinRH")) * 100
-    'PLcdata(328) = Val(Rs("ICMaxRH")) * 100
+ '   PLcdata(320) = Val(Rs("DebounceTime")) * 100
+ '   PLcdata(321) = Val(Rs("HoldTime")) * 100
+ '   PLcdata(322) = Val(Rs("CheckTime")) * 1000
     
-    'PLcdata(318) = Val(Rs("WVMin")) * 100
-    'PLcdata(319) = Val(Rs("WVMax")) * 100
-    'PartNo = Rs("PrintPartNo")
-    'BarcodeLength = Rs("BarcodeLength")
-    'HardwareNo = Rs("HardwareNo")
-    'SerialStartingtxt = Rs("SerialStartingtxt")
-    
-    PLcdata(320) = Val(Rs("DebounceTime")) * 100
-    PLcdata(321) = Val(Rs("HoldTime")) * 100
-    PLcdata(322) = Val(Rs("CheckTime")) * 1000
-    
-    PLcdata(332) = Val(Rs("DotMarkingTime")) * 10
+ '   PLcdata(332) = Val(Rs("DotMarkingTime")) * 10
     
     ModelNo = Rs("ModelNo")
-    PLcdata(331) = Rs("ModelNo")
+    PLcdata(231) = Rs("ModelNo")
     
     'Rs("BatchCounter").Text
     'Rs("CouplerCounter") = .Text
     'Rs ("PartImage")
     'Rs("productioncounter") =
     
-    PLcdata(330) = 0
-    PLcdata(330) = PLcdata(330) + &H1 * Val(Rs("Bypass1"))
-    PLcdata(330) = PLcdata(330) + &H2 * Val(Rs("Bypass2"))
-    PLcdata(330) = PLcdata(330) + &H4 * Val(Rs("Bypass3"))
-    PLcdata(330) = PLcdata(330) + &H8 * Val(Rs("Bypass4"))
-    PLcdata(330) = PLcdata(330) + &H10 * Val(Rs("Bypass5"))
-    PLcdata(330) = PLcdata(330) + &H20 * Val(Rs("Bypass6"))
-    PLcdata(330) = PLcdata(330) + &H40 * Val(Rs("Bypass7"))
-    PLcdata(330) = PLcdata(330) + &H80 * Val(Rs("ByPass8"))
-    PLcdata(330) = PLcdata(330) + &H100 * Val(Rs("ByPass9"))
+    PLcdata(230) = 0
+    PLcdata(230) = PLcdata(230) + &H1 * Val(Rs("Bypass1"))
+    PLcdata(230) = PLcdata(230) + &H2 * Val(Rs("Bypass2"))
+    PLcdata(230) = PLcdata(230) + &H4 * Val(Rs("Bypass3"))
+    PLcdata(230) = PLcdata(230) + &H8 * Val(Rs("Bypass4"))
+    PLcdata(230) = PLcdata(230) + &H10 * Val(Rs("Bypass5"))
+    PLcdata(230) = PLcdata(230) + &H20 * Val(Rs("Bypass6"))
+    PLcdata(230) = PLcdata(230) + &H40 * Val(Rs("Bypass7"))
+    PLcdata(230) = PLcdata(230) + &H80 * Val(Rs("ByPass8"))
+  '  PLcdata(330) = PLcdata(330) + &H100 * Val(Rs("ByPass9"))
     'PLcdata(330) = PLcdata(330) + &H200 * Val(Rs("ByPass10"))
     'PLcdata(330) = PLcdata(330) + &H400 * Val(Rs("ByPass11"))
     chkproductioncount
@@ -4429,7 +1962,7 @@ Private Sub chkproductioncount()
             txtTargetProduction.SetFocus
             txtTargetProduction.BackColor = vbYellow
             Command1.Visible = True
-            PLcdata(349) = 1
+            PLcdata(236) = 1
             Exit Sub
         Else
             If tempgetshift <> tempshift Then
@@ -4438,7 +1971,7 @@ Private Sub chkproductioncount()
                 txtTargetProduction.SetFocus
                 txtTargetProduction.BackColor = vbYellow
                 Command1.Visible = True
-                PLcdata(349) = 1
+                PLcdata(236) = 1
                 Exit Sub
             End If
         End If
@@ -4448,7 +1981,7 @@ Private Sub chkproductioncount()
         txtTargetProduction.SetFocus
         txtTargetProduction.BackColor = vbYellow
         Command1.Visible = True
-        PLcdata(349) = 1
+        PLcdata(236) = 1
         
     End If
 End Sub
@@ -4471,22 +2004,6 @@ Dim Sql As String
     VendorId = Rs("VendorId")
     ImgPart.Picture = LoadPicture(Rs("PartImage"))
     txtproductioncounter.Text = Rs("productioncounter")
-    If Val(Rs("bypass3")) = 1 Then
-      Label1(2).Visible = False
-      ShapeWLC.Visible = False
-    End If
-    If Val(Rs("bypass6")) = 1 Then
-        txtILLH.Visible = False
-        Label4(9).Visible = False
-        Label4(39).Visible = False
-        
-'        ShapeRhBolt.Visible = False
-'        Label1(2).Visible = False
-    End If
-    If Val(Rs("bypass10")) = 1 Then
-            
-    End If
-    
     If Val(Rs("PrinterBypass")) = 1 Then
         pulsePrinterBypass = True
     Else
@@ -4521,48 +2038,7 @@ Dim Rs As ADODB.Recordset
       Rs("Time") = Format(Now(), "hh:mm:ss")
       Rs("Barcode") = barcode
       Rs("Result") = result
-      Rs("DMResult") = getresult(PictureDM(0))
-      Rs("DM1Cur") = txtCurDM(0).Text
-      Rs("DM1Volt") = txtVDM(0).Text
-      Rs("DM2Cur") = txtCurDM(1).Text
-      Rs("DM2Volt") = txtVDM(1).Text
-      Rs("PMResult") = getresult(PicturePM(0))
-      Rs("PM1Cur") = txtCurPM.Text
-      Rs("PM1Volt") = txtVPM.Text
-      Rs("HAMResult") = getresult(PictureHAM(0))
-      Rs("HAM1Cur") = txtCurHAM.Text
-      Rs("HAM1Volt") = txtVHAM.Text
-      Rs("NMResult") = getresult(PictureNM(0))
-      Rs("NM1Cur") = txtCurNM(0).Text
-      Rs("NM1Volt") = txtVNM(0).Text
-      Rs("NM2Cur") = txtCurNM(1).Text
-      Rs("NM2Volt") = txtVNM(1).Text
-      Rs("NM3Cur") = txtCurNM(2).Text
-      Rs("NM3Volt") = txtVNM(2).Text
-      Rs("NM4Cur") = txtCurNM(2).Text
-      Rs("NM4Volt") = txtVNM(2).Text
-      Rs("BMResult") = getresult(PictureBM(0))
-      Rs("BM1Cur") = txtCurBM(0).Text
-      Rs("BM1Volt") = txtVBM(0).Text
-      Rs("BM2Cur") = txtCurBM(1).Text
-      Rs("BM2Volt") = txtVBM(1).Text
-      Rs("BM3Cur") = txtCurBM(2).Text
-      Rs("BM3Volt") = txtVBM(2).Text
-      Rs("HOMResult") = getresult(PictureHOM(0))
-      Rs("HOM1Cur") = txtCurHOM.Text
-      Rs("HOM1Volt") = txtVHOM.Text
-      Rs("CUMResult") = getresult(PictureCUM(0))
-      Rs("CUM1Cur") = txtCurCUM.Text
-      Rs("CUM1Volt") = txtVCUM.Text
-      Rs("CRMResult") = getresult(PictureCRM(0))
-      Rs("CRM1Cur") = txtCurCRM.Text
-      Rs("CRM1Volt") = txtVCRM.Text
-      Rs("SRMResult") = getresult(PictureSRM(0))
-      Rs("SRM1Cur") = txtCurSRM.Text
-      Rs("SRM1volt") = txtVSRM.Text
-      'Rs("ICLH") = txtILLH.Text
-      'Rs("ICRH") = txtILRH.Text
-   Rs.Update
+    Rs.Update
 End Sub
 Private Sub SaveCounter()
 Dim Sql As String
@@ -4654,10 +2130,10 @@ Dim Today As String
 End Sub
 
 Private Function cmdCon()
-   WinSock1.Close
-   WinSock1.RemoteHost = txtIP_Host.Text
-   WinSock1.RemotePort = txtPort.Text
-   WinSock1.Connect
+   Winsock1.Close
+   Winsock1.RemoteHost = txtIP_Host.Text
+   Winsock1.RemotePort = txtPort.Text
+   Winsock1.Connect
 End Function
 
 Private Function WinsockStstus(ByVal Value As Integer)
@@ -4691,25 +2167,25 @@ Dim Description As String
 End Function
 
 Private Sub Timer1_Timer()
-   If (WinSock1.State = 7) And (CommandOn = False) Then
+   If (Winsock1.State = 7) And (CommandOn = False) Then
       Timer1.Enabled = False
       Select Case CommandType
          Case 1
             Call GetReadArray(StdReadStartAddress, StdReadCount, ReadArray)
-            WinSock1.SendData ReadArray
+            Winsock1.SendData ReadArray
             CVRead = CVRead + 1
             CommandOn = True
             Timer5.Interval = 800
             Timer5.Enabled = True
          Case 2
             Call GetWriteArray(StdWriteStartAddress, StdWriteCount, WriteArray)
-            WinSock1.SendData WriteArray
+            Winsock1.SendData WriteArray
             CommandOn = True
             Timer5.Interval = 800
             Timer5.Enabled = True
          Case 3
             Call GetReadArray((ExtendedReadStartAddress + (ExtendedReadCount * CVExtPktNo)), ExtendedReadCount, ReadArray)
-            WinSock1.SendData ReadArray
+            Winsock1.SendData ReadArray
             CommandOn = True
             Timer5.Interval = 800
             Timer5.Enabled = True
@@ -4722,7 +2198,7 @@ Private Sub Timer1_Timer()
       Timer1.Interval = 100
    End If
 
-   If (WinSock1.State <> 7) Then 'And (WinSock1.State <> 6) Then
+   If (Winsock1.State <> 7) Then 'And (WinSock1.State <> 6) Then
       Timer1.Interval = 1000
       Call cmdCon
    Else
@@ -4783,7 +2259,7 @@ Dim Idata1 As Long
 
    Timer5.Enabled = False
    PLC_Communication_Error = False
-   WinSock1.GetData SocketData
+   Winsock1.GetData SocketData
    CommandOn = False
    PlcCommCheck = False
    Select Case CommandType
