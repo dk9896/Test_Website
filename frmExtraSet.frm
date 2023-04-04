@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form frmExtraSet 
    Caption         =   "Extra Settings"
    ClientHeight    =   8205
@@ -20,18 +21,18 @@ Begin VB.Form frmExtraSet
    StartUpPosition =   3  'Windows Default
    Begin VB.PictureBox Picture1 
       BackColor       =   &H80000010&
-      Height          =   7215
-      Left            =   1320
-      ScaleHeight     =   7155
-      ScaleWidth      =   11880
+      Height          =   8055
+      Left            =   120
+      ScaleHeight     =   7995
+      ScaleWidth      =   13080
       TabIndex        =   0
       Top             =   120
-      Width           =   11940
+      Width           =   13140
       Begin VB.Frame Frame6 
          Caption         =   "Send Mail"
-         Height          =   5415
-         Left            =   5520
-         TabIndex        =   33
+         Height          =   5295
+         Left            =   6720
+         TabIndex        =   18
          Top             =   120
          Width           =   6255
          Begin VB.CheckBox chkTomailbypass 
@@ -41,7 +42,7 @@ Begin VB.Form frmExtraSet
             Height          =   240
             Index           =   0
             Left            =   2040
-            TabIndex        =   60
+            TabIndex        =   45
             Top             =   2280
             Width           =   975
          End
@@ -52,7 +53,7 @@ Begin VB.Form frmExtraSet
             Height          =   240
             Index           =   5
             Left            =   2040
-            TabIndex        =   59
+            TabIndex        =   44
             Top             =   4680
             Width           =   975
          End
@@ -63,7 +64,7 @@ Begin VB.Form frmExtraSet
             Height          =   240
             Index           =   4
             Left            =   2040
-            TabIndex        =   58
+            TabIndex        =   43
             Top             =   4200
             Width           =   975
          End
@@ -74,7 +75,7 @@ Begin VB.Form frmExtraSet
             Height          =   240
             Index           =   3
             Left            =   2040
-            TabIndex        =   57
+            TabIndex        =   42
             Top             =   3720
             Width           =   975
          End
@@ -85,7 +86,7 @@ Begin VB.Form frmExtraSet
             Height          =   240
             Index           =   2
             Left            =   2040
-            TabIndex        =   56
+            TabIndex        =   41
             Top             =   3240
             Width           =   975
          End
@@ -96,7 +97,7 @@ Begin VB.Form frmExtraSet
             Height          =   240
             Index           =   1
             Left            =   2040
-            TabIndex        =   55
+            TabIndex        =   40
             Top             =   2760
             Width           =   975
          End
@@ -104,7 +105,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   6
             Left            =   3120
-            TabIndex        =   53
+            TabIndex        =   38
             Top             =   4680
             Width           =   3015
          End
@@ -112,7 +113,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   5
             Left            =   3120
-            TabIndex        =   51
+            TabIndex        =   36
             Top             =   4200
             Width           =   3015
          End
@@ -120,7 +121,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   4
             Left            =   3120
-            TabIndex        =   49
+            TabIndex        =   34
             Top             =   3720
             Width           =   3015
          End
@@ -128,7 +129,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   3
             Left            =   3120
-            TabIndex        =   45
+            TabIndex        =   30
             Top             =   3240
             Width           =   3015
          End
@@ -136,7 +137,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   2
             Left            =   3120
-            TabIndex        =   44
+            TabIndex        =   29
             Top             =   2760
             Width           =   3015
          End
@@ -144,7 +145,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   1
             Left            =   3120
-            TabIndex        =   43
+            TabIndex        =   28
             Top             =   2280
             Width           =   3015
          End
@@ -152,7 +153,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   0
             Left            =   3120
-            TabIndex        =   41
+            TabIndex        =   26
             Text            =   "ABC@GMAIL"
             Top             =   1800
             Width           =   3015
@@ -160,7 +161,7 @@ Begin VB.Form frmExtraSet
          Begin VB.TextBox txtfromPassword 
             Height          =   360
             Left            =   3120
-            TabIndex        =   37
+            TabIndex        =   22
             Text            =   "PASSWORD"
             Top             =   1320
             Width           =   3015
@@ -168,7 +169,7 @@ Begin VB.Form frmExtraSet
          Begin VB.TextBox txtfromMail 
             Height          =   360
             Left            =   3120
-            TabIndex        =   36
+            TabIndex        =   21
             Text            =   "mAIL"
             Top             =   840
             Width           =   3015
@@ -176,7 +177,7 @@ Begin VB.Form frmExtraSet
          Begin VB.TextBox txtapilink 
             Height          =   360
             Left            =   3120
-            TabIndex        =   35
+            TabIndex        =   20
             Text            =   "www.MindaRikaSendEmail.com"
             Top             =   360
             Width           =   3015
@@ -185,7 +186,7 @@ Begin VB.Form frmExtraSet
             Caption         =   "Bypass"
             Height          =   255
             Left            =   1320
-            TabIndex        =   34
+            TabIndex        =   19
             Top             =   0
             Width           =   1095
          End
@@ -205,7 +206,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   17
             Left            =   120
-            TabIndex        =   54
+            TabIndex        =   39
             Top             =   4680
             Width           =   2895
          End
@@ -225,7 +226,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   16
             Left            =   120
-            TabIndex        =   52
+            TabIndex        =   37
             Top             =   4200
             Width           =   2895
          End
@@ -245,7 +246,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   15
             Left            =   120
-            TabIndex        =   50
+            TabIndex        =   35
             Top             =   3720
             Width           =   2895
          End
@@ -265,7 +266,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   14
             Left            =   120
-            TabIndex        =   48
+            TabIndex        =   33
             Top             =   2280
             Width           =   2895
          End
@@ -285,7 +286,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   13
             Left            =   120
-            TabIndex        =   47
+            TabIndex        =   32
             Top             =   2760
             Width           =   2895
          End
@@ -305,7 +306,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   12
             Left            =   120
-            TabIndex        =   46
+            TabIndex        =   31
             Top             =   3240
             Width           =   2895
          End
@@ -325,7 +326,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   11
             Left            =   120
-            TabIndex        =   42
+            TabIndex        =   27
             Top             =   1800
             Width           =   2895
          End
@@ -345,7 +346,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   10
             Left            =   120
-            TabIndex        =   40
+            TabIndex        =   25
             Top             =   360
             Width           =   2895
          End
@@ -365,7 +366,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   9
             Left            =   120
-            TabIndex        =   39
+            TabIndex        =   24
             Top             =   840
             Width           =   2895
          End
@@ -385,7 +386,7 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   7
             Left            =   120
-            TabIndex        =   38
+            TabIndex        =   23
             Top             =   1320
             Width           =   2895
          End
@@ -393,9 +394,9 @@ Begin VB.Form frmExtraSet
       Begin VB.Frame Frame4 
          Height          =   1815
          Left            =   120
-         TabIndex        =   24
-         Top             =   2040
-         Width           =   5295
+         TabIndex        =   10
+         Top             =   4560
+         Width           =   5775
          Begin VB.CheckBox ChkComPortBP2 
             BackColor       =   &H00808080&
             Caption         =   "ByPass"
@@ -411,7 +412,7 @@ Begin VB.Form frmExtraSet
             ForeColor       =   &H0000FFFF&
             Height          =   360
             Left            =   2040
-            TabIndex        =   30
+            TabIndex        =   16
             Top             =   1320
             Visible         =   0   'False
             Width           =   1215
@@ -420,7 +421,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Left            =   3480
             Style           =   2  'Dropdown List
-            TabIndex        =   29
+            TabIndex        =   15
             Top             =   1320
             Visible         =   0   'False
             Width           =   1695
@@ -429,7 +430,7 @@ Begin VB.Form frmExtraSet
             Appearance      =   0  'Flat
             Height          =   360
             Left            =   2520
-            TabIndex        =   27
+            TabIndex        =   13
             Text            =   "1234"
             Top             =   840
             Width           =   2655
@@ -438,7 +439,7 @@ Begin VB.Form frmExtraSet
             Appearance      =   0  'Flat
             Height          =   360
             Left            =   2520
-            TabIndex        =   26
+            TabIndex        =   12
             Text            =   "192.168.1.12"
             Top             =   360
             Width           =   2655
@@ -459,7 +460,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   6
             Left            =   120
-            TabIndex        =   31
+            TabIndex        =   17
             Top             =   1320
             Visible         =   0   'False
             Width           =   1815
@@ -480,7 +481,7 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   4
             Left            =   120
-            TabIndex        =   28
+            TabIndex        =   14
             Top             =   840
             Width           =   2295
          End
@@ -500,106 +501,26 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   3
             Left            =   120
-            TabIndex        =   25
+            TabIndex        =   11
             Top             =   360
             Width           =   2295
          End
       End
       Begin VB.Frame Frame3 
          Caption         =   "Other"
-         Height          =   855
-         Left            =   120
-         TabIndex        =   15
-         Top             =   4680
-         Width           =   5295
-         Begin VB.CheckBox ChkNetworkDBBP 
-            Alignment       =   1  'Right Justify
-            BackColor       =   &H00808080&
-            Caption         =   "SQL DB ByPass"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H0000FFFF&
-            Height          =   360
-            Left            =   120
-            TabIndex        =   23
-            Top             =   1440
-            Visible         =   0   'False
-            Width           =   2415
-         End
-         Begin VB.TextBox txtNetworkDB 
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   2160
-            TabIndex        =   20
-            Text            =   "M1"
-            Top             =   840
-            Visible         =   0   'False
-            Width           =   7935
-         End
+         Height          =   975
+         Left            =   6000
+         TabIndex        =   7
+         Top             =   5400
+         Width           =   6255
          Begin VB.TextBox txtPrinterName1 
             Appearance      =   0  'Flat
             Height          =   360
-            Left            =   2160
-            TabIndex        =   18
+            Left            =   2400
+            TabIndex        =   8
             Text            =   "ZDesigner ZD230-203dpi ZPL"
             Top             =   360
             Width           =   3015
-         End
-         Begin VB.TextBox txtMachineNo 
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   2160
-            TabIndex        =   17
-            Text            =   "M1"
-            Top             =   360
-            Visible         =   0   'False
-            Width           =   2175
-         End
-         Begin VB.Label Label2 
-            Caption         =   "Provider=MSDASQL;DRIVER=Sql Server;SERVER=ServerName; DATABASE=DataBase Name; UID=UserName; PWD=Password;"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000000C0&
-            Height          =   255
-            Left            =   120
-            TabIndex        =   32
-            Top             =   1200
-            Width           =   10215
-         End
-         Begin VB.Label Label1 
-            BackColor       =   &H00808080&
-            Caption         =   "SQL DB Path"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H0000FFFF&
-            Height          =   360
-            Index           =   8
-            Left            =   120
-            TabIndex        =   21
-            Top             =   840
-            Visible         =   0   'False
-            Width           =   1950
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -618,43 +539,311 @@ Begin VB.Form frmExtraSet
             Height          =   360
             Index           =   5
             Left            =   120
-            TabIndex        =   19
+            TabIndex        =   9
             Top             =   360
             Width           =   1485
          End
-         Begin VB.Label Label1 
-            BackColor       =   &H00808080&
-            Caption         =   "Machine No"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H0000FFFF&
-            Height          =   360
-            Index           =   2
-            Left            =   210
-            TabIndex        =   16
-            Top             =   360
-            Visible         =   0   'False
-            Width           =   1995
+      End
+      Begin VB.Frame Frame5 
+         BackColor       =   &H80000008&
+         BorderStyle     =   0  'None
+         Height          =   1440
+         Left            =   120
+         TabIndex        =   5
+         Top             =   6480
+         Width           =   12135
+         Begin VB.CommandButton cmdSave 
+            BackColor       =   &H8000000B&
+            Caption         =   "Save"
+            Height          =   1005
+            Left            =   4080
+            Picture         =   "frmExtraSet.frx":0000
+            Style           =   1  'Graphical
+            TabIndex        =   83
+            ToolTipText     =   "Close Screen"
+            Top             =   240
+            Width           =   1095
+         End
+         Begin VB.CommandButton cmdClose 
+            BackColor       =   &H8000000B&
+            Height          =   1005
+            Left            =   7320
+            Picture         =   "frmExtraSet.frx":066A
+            Style           =   1  'Graphical
+            TabIndex        =   6
+            ToolTipText     =   "Close Screen"
+            Top             =   240
+            Width           =   1095
          End
       End
-      Begin VB.Frame Frame2 
-         Caption         =   "ComPort Selection"
-         Height          =   975
+      Begin VB.Frame Frame1 
+         Caption         =   "Time Shift"
+         Height          =   4335
          Left            =   120
-         TabIndex        =   11
-         Top             =   3960
-         Visible         =   0   'False
-         Width           =   5295
-         Begin VB.CheckBox ChkComPortBP1 
+         TabIndex        =   1
+         Top             =   120
+         Width           =   6495
+         Begin VB.CheckBox chkBreakEnable 
             BackColor       =   &H00808080&
-            Caption         =   "ByPass"
+            ForeColor       =   &H0000FFFF&
+            Height          =   240
+            Index           =   1
+            Left            =   1440
+            TabIndex        =   88
+            Top             =   2280
+            Width           =   210
+         End
+         Begin VB.CheckBox chkBreakEnable 
+            BackColor       =   &H00808080&
+            ForeColor       =   &H0000FFFF&
+            Height          =   240
+            Index           =   2
+            Left            =   1440
+            TabIndex        =   87
+            Top             =   2760
+            Width           =   255
+         End
+         Begin VB.CheckBox chkBreakEnable 
+            BackColor       =   &H00808080&
+            ForeColor       =   &H0000FFFF&
+            Height          =   240
+            Index           =   3
+            Left            =   1440
+            TabIndex        =   86
+            Top             =   3240
+            Width           =   255
+         End
+         Begin VB.CheckBox chkBreakEnable 
+            BackColor       =   &H00808080&
+            ForeColor       =   &H0000FFFF&
+            Height          =   240
+            Index           =   4
+            Left            =   1440
+            TabIndex        =   85
+            Top             =   3720
+            Width           =   255
+         End
+         Begin VB.CheckBox chkBreakEnable 
+            BackColor       =   &H00808080&
+            ForeColor       =   &H0000FFFF&
+            Height          =   240
+            Index           =   0
+            Left            =   1440
+            TabIndex        =   84
+            Top             =   1800
+            Width           =   255
+         End
+         Begin MSComCtl2.DTPicker DTShift1Start 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   46
+            Top             =   360
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTShift1End 
+            Height          =   375
+            Left            =   4800
+            TabIndex        =   47
+            Top             =   360
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTShift2Start 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   48
+            Top             =   840
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTShift2End 
+            Height          =   375
+            Left            =   4800
+            TabIndex        =   49
+            Top             =   840
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTShift3Start 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   50
+            Top             =   1320
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTShift3End 
+            Height          =   375
+            Left            =   4800
+            TabIndex        =   51
+            Top             =   1320
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak1Start 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   53
+            Top             =   1800
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak1End 
+            Height          =   375
+            Left            =   4800
+            TabIndex        =   54
+            Top             =   1800
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak2Start 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   56
+            Top             =   2280
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak2End 
+            Height          =   375
+            Left            =   4800
+            TabIndex        =   57
+            Top             =   2280
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak3Start 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   59
+            Top             =   2760
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak3End 
+            Height          =   375
+            Left            =   4800
+            TabIndex        =   60
+            Top             =   2760
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak4Start 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   62
+            Top             =   3240
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak4End 
+            Height          =   375
+            Left            =   4800
+            TabIndex        =   63
+            Top             =   3240
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak5Start 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   65
+            Top             =   3720
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin MSComCtl2.DTPicker DTBreak5End 
+            Height          =   375
+            Left            =   4800
+            TabIndex        =   66
+            Top             =   3720
+            Width           =   1575
+            _ExtentX        =   2778
+            _ExtentY        =   661
+            _Version        =   393216
+            CustomFormat    =   "HH:MM"
+            Format          =   110231554
+            CurrentDate     =   44970
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "End"
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   9.75
@@ -665,25 +854,18 @@ Begin VB.Form frmExtraSet
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H0000FFFF&
-            Height          =   360
-            Left            =   1920
-            TabIndex        =   22
-            Top             =   360
-            Width           =   1335
-         End
-         Begin VB.ComboBox CboCom1 
-            Height          =   360
-            Left            =   3360
-            Style           =   2  'Dropdown List
-            TabIndex        =   12
-            Top             =   360
-            Width           =   1575
+            Height          =   375
+            Index           =   36
+            Left            =   4200
+            TabIndex        =   82
+            Top             =   3720
+            Width           =   615
          End
          Begin VB.Label Label1 
             BackColor       =   &H00808080&
-            Caption         =   "PLC ComPort"
+            Caption         =   "End"
             BeginProperty Font 
-               Name            =   "MS Sans Serif"
+               Name            =   "Arial"
                Size            =   9.75
                Charset         =   0
                Weight          =   700
@@ -692,83 +874,392 @@ Begin VB.Form frmExtraSet
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H0000FFFF&
-            Height          =   360
-            Index           =   50
-            Left            =   120
-            TabIndex        =   13
-            Top             =   360
-            Width           =   1815
+            Height          =   375
+            Index           =   35
+            Left            =   4200
+            TabIndex        =   81
+            Top             =   3240
+            Width           =   615
          End
-      End
-      Begin VB.Frame Frame5 
-         BackColor       =   &H80000008&
-         BorderStyle     =   0  'None
-         Height          =   1440
-         Left            =   120
-         TabIndex        =   8
-         Top             =   5640
-         Width           =   11655
-         Begin VB.CommandButton cmdSave 
-            BackColor       =   &H80000014&
-            Height          =   1005
-            Left            =   3600
-            Picture         =   "frmExtraSet.frx":0000
-            Style           =   1  'Graphical
-            TabIndex        =   10
-            ToolTipText     =   "Save to Modulaor.Mdb"
-            Top             =   240
-            Width           =   1095
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "End"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   34
+            Left            =   4200
+            TabIndex        =   80
+            Top             =   2760
+            Width           =   615
          End
-         Begin VB.CommandButton cmdClose 
-            BackColor       =   &H80000012&
-            Height          =   1005
-            Left            =   5880
-            Picture         =   "frmExtraSet.frx":3D04
-            Style           =   1  'Graphical
-            TabIndex        =   9
-            ToolTipText     =   "Close Screen"
-            Top             =   240
-            Width           =   1095
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "End"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   33
+            Left            =   4200
+            TabIndex        =   79
+            Top             =   2280
+            Width           =   615
          End
-      End
-      Begin VB.Frame Frame1 
-         Caption         =   "Time Shift"
-         Height          =   1815
-         Left            =   120
-         TabIndex        =   1
-         Top             =   120
-         Width           =   5295
-         Begin VB.CheckBox ChkShift4 
-            Caption         =   "Check For General"
-            Height          =   255
-            Left            =   1200
-            TabIndex        =   14
-            Top             =   0
-            Width           =   1935
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "End"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   32
+            Left            =   4200
+            TabIndex        =   78
+            Top             =   1800
+            Width           =   615
          End
-         Begin VB.TextBox txtShift1 
-            Height          =   360
-            Left            =   2160
-            TabIndex        =   4
-            Text            =   "06:00 AM"
-            Top             =   360
-            Width           =   2415
-         End
-         Begin VB.TextBox txtShift2 
-            Height          =   360
-            Left            =   2160
-            TabIndex        =   3
-            Text            =   "02:00 PM"
-            Top             =   840
-            Width           =   2415
-         End
-         Begin VB.TextBox txtShift3 
-            Height          =   360
-            Left            =   2160
-            TabIndex        =   2
-            Text            =   "09:00 PM"
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "End"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   31
+            Left            =   4200
+            TabIndex        =   77
             Top             =   1320
-            Width           =   2415
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "End"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   30
+            Left            =   4200
+            TabIndex        =   76
+            Top             =   840
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "End"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   29
+            Left            =   4200
+            TabIndex        =   75
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "Start"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   28
+            Left            =   1800
+            TabIndex        =   74
+            Top             =   3720
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "Start"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   27
+            Left            =   1800
+            TabIndex        =   73
+            Top             =   3240
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "Start"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   26
+            Left            =   1800
+            TabIndex        =   72
+            Top             =   2760
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "Start"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   25
+            Left            =   1800
+            TabIndex        =   71
+            Top             =   2280
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "Start"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   24
+            Left            =   1800
+            TabIndex        =   70
+            Top             =   1800
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "Start"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   23
+            Left            =   1800
+            TabIndex        =   69
+            Top             =   1320
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "Start"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   22
+            Left            =   1800
+            TabIndex        =   68
+            Top             =   840
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "Start"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   21
+            Left            =   1800
+            TabIndex        =   67
+            Top             =   360
+            Width           =   615
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "BreakTime 5"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   20
+            Left            =   120
+            TabIndex        =   64
+            Top             =   3720
+            Width           =   1575
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "BreakTime 4"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   19
+            Left            =   120
+            TabIndex        =   61
+            Top             =   3240
+            Width           =   1575
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "BreakTime 3"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   18
+            Left            =   120
+            TabIndex        =   58
+            Top             =   2760
+            Width           =   1575
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "BreakTime 2"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   8
+            Left            =   120
+            TabIndex        =   55
+            Top             =   2280
+            Width           =   1575
+         End
+         Begin VB.Label Label1 
+            BackColor       =   &H00808080&
+            Caption         =   "BreakTime 1"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   9.75
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H0000FFFF&
+            Height          =   375
+            Index           =   2
+            Left            =   120
+            TabIndex        =   52
+            Top             =   1800
+            Width           =   1575
          End
          Begin VB.Label Label1 
             BackColor       =   &H00808080&
@@ -786,9 +1277,9 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   1
             Left            =   120
-            TabIndex        =   7
+            TabIndex        =   4
             Top             =   1320
-            Width           =   1935
+            Width           =   1335
          End
          Begin VB.Label Label1 
             BackColor       =   &H00808080&
@@ -806,13 +1297,13 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   0
             Left            =   120
-            TabIndex        =   6
+            TabIndex        =   3
             Top             =   840
-            Width           =   1935
+            Width           =   1335
          End
          Begin VB.Label Label1 
             BackColor       =   &H00808080&
-            Caption         =   "Shift 1"
+            Caption         =   "Shift 1 "
             BeginProperty Font 
                Name            =   "Arial"
                Size            =   9.75
@@ -826,9 +1317,9 @@ Begin VB.Form frmExtraSet
             Height          =   375
             Index           =   57
             Left            =   120
-            TabIndex        =   5
+            TabIndex        =   2
             Top             =   360
-            Width           =   1935
+            Width           =   1335
          End
       End
    End
@@ -844,7 +1335,7 @@ Public Enum BasicAction
     Save = 2
 End Enum
 
-Private Sub CmdClose_Click()
+Private Sub cmdClose_Click()
     frmmenu.Show
     Unload Me
 End Sub
@@ -854,14 +1345,14 @@ On Error GoTo Error
 'Dim Sql As String
 'Dim Rs As ADODB.Recordset
 
-    If ChkShift4.Value = 0 Then
-        If getShiftValid(txtShift1, txtShift2, txtShift3) = False Then Exit Sub
-    End If
+    'If ChkShift4.Value = 0 Then
+    'If getShiftValid(txtShift1, txtShift2, txtShift3) = False Then Exit Sub
+    'End If
     
-    If ValidLen(1, 3, txtMachineNo) = False Then Exit Sub
+    'If ValidLen(1, 3, txtMachineNo) = False Then Exit Sub
     
 
-    If ValidLen(1, 255, txtNetworkDB) = False Then Exit Sub
+    'If ValidLen(1, 255, txtNetworkDB) = False Then Exit Sub
 
     ExtraSetting Save
     
@@ -895,12 +1386,6 @@ Picture1.Left = (Screen.Width - Picture1.Width) / 2
 Picture1.Top = (Screen.Height - Picture1.Height) / 2 - 400
 
     'My cboCom Load
-    For i = 0 To 19
-        CboCom1.AddItem "Com " & i + 1, i
-        CboCom1.ListIndex = 0
-        CboCom2.AddItem "Com " & i + 1, i
-        CboCom2.ListIndex = 0
-    Next
     
     ExtraSetting Load
 
@@ -913,73 +1398,92 @@ End Sub
 Private Sub ExtraSetting(Action As BasicAction)
 On Error GoTo Error
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 
     Sql = "Select * from Common_Set where SetType ='CommonSet'" 'SetType = Settings Type
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
 
     If Action = 1 Then
-        CboCom1.ListIndex = (Rs("ComPort1") - 1)
-       
-        ChkComPortBP1.Value = Rs("ComPortBP1")
-        txtShift1 = Rs("Shift1")
-        txtShift2 = Rs("Shift2")
-        txtShift3 = Rs("Shift3")
-        ChkShift4.Value = Rs("Shift4")
-        txtMachineNo = Rs("MachineNo")
-        txtPrinterName1 = Rs("PrinterName1")
-        txtNetworkDB = Rs("NetworkDB")
-        ChkNetworkDBBP.Value = Rs("NetworkDBBP")
-        txtPLC_IP = Rs("PLC_IP")
-        txtPLC_Port = Rs("PLC_Port")
-        CboCom2.ListIndex = (Rs("ComPort2") - 1)
-        ChkComPortBP2.Value = Rs("ComPortBP2")
-        txtapilink.Text = Rs("WebApiLink")
-        txtfromMail.Text = Rs("SenderEmail")
-        txtfromPassword.Text = Rs("SenderPassword")
-        txtTomail(0).Text = Rs("ToEmail1")
-        txtTomail(1).Text = Rs("ToEmail2")
-        txtTomail(2).Text = Rs("ToEmail3")
-        txtTomail(3).Text = Rs("ToEmail4")
-        txtTomail(4).Text = Rs("ToEmail5")
-        txtTomail(5).Text = Rs("ToEmail6")
-        txtTomail(6).Text = Rs("ToEmail7")
-        Check1.Value = Val(Rs("EmailBypass"))
+        txtPrinterName1 = rs("PrinterName1")
+        txtPLC_IP = rs("PLC_IP")
+        txtPLC_Port = rs("PLC_Port")
+        txtapilink.Text = rs("WebApiLink")
+        txtfromMail.Text = rs("SenderEmail")
+        txtfromPassword.Text = rs("SenderPassword")
+        txtTomail(0).Text = rs("ToEmail1")
+        txtTomail(1).Text = rs("ToEmail2")
+        txtTomail(2).Text = rs("ToEmail3")
+        txtTomail(3).Text = rs("ToEmail4")
+        txtTomail(4).Text = rs("ToEmail5")
+        txtTomail(5).Text = rs("ToEmail6")
+        txtTomail(6).Text = rs("ToEmail7")
+        Check1.Value = Val(rs("EmailBypass"))
         For i = 0 To 5
-         chkTomailbypass(i).Value = Val(Rs("EmailBypass" & i + 1))
-        Next
-    ElseIf Action = 2 Then
-        Rs("ComPort1") = CboCom1.ListIndex + 1
-        Rs("ComPort2") = CboCom2.ListIndex + 1
-        Rs("ComPortBP2") = ChkComPortBP2.Value
-        Rs("ComPortBP1") = ChkComPortBP1.Value
-        Rs("Shift1") = Trim(txtShift1.Text)
-        Rs("Shift2") = Trim(txtShift2.Text)
-        Rs("Shift3") = Trim(txtShift3.Text)
-        Rs("Shift4") = Val(ChkShift4.Value)
-        Rs("MachineNo") = Trim$(txtMachineNo)
-        Rs("PrinterName1") = Trim$(txtPrinterName1)
-        Rs("NetworkDB") = Trim$(txtNetworkDB)
-        Rs("NetworkDBBP") = ChkNetworkDBBP.Value
-        Rs("PLC_IP") = Trim$(txtPLC_IP.Text)
-        Rs("PLC_Port") = Trim$(txtPLC_Port.Text)
-        Rs("EmailBypass") = Check1.Value
-        Rs("WebApiLink") = txtapilink.Text
-        Rs("SenderEmail") = txtfromMail.Text
-        Rs("SenderPassword") = txtfromPassword.Text
-        Rs("ToEmail1") = txtTomail(0).Text
-        Rs("ToEmail2") = txtTomail(1).Text
-        Rs("ToEmail3") = txtTomail(2).Text
-        Rs("ToEmail4") = txtTomail(3).Text
-        Rs("ToEmail5") = txtTomail(4).Text
-        Rs("ToEmail6") = txtTomail(5).Text
-        Rs("ToEmail7") = txtTomail(6).Text
-        For i = 0 To 5
-           Rs("EmailBypass" & i + 1) = chkTomailbypass(i).Value
+         chkTomailbypass(i).Value = Val(rs("EmailBypass" & i + 1))
         Next
         
-        Rs.Update
+        chkBreakEnable(0).Value = Val(rs("Break1Enable"))
+        chkBreakEnable(1).Value = Val(rs("Break2Enable"))
+        chkBreakEnable(2).Value = Val(rs("Break3Enable"))
+        chkBreakEnable(3).Value = Val(rs("Break4Enable"))
+        chkBreakEnable(4).Value = Val(rs("Break5Enable"))
+        DTBreak1Start.Value = Format(rs("Break1Start"), "HH:MM")
+        DTBreak1End.Value = TimeValue(rs("Break1End"))
+        DTBreak2Start.Value = TimeValue(rs("Break2Start"))
+        DTBreak2End.Value = TimeValue(rs("Break2End"))
+        DTBreak3Start.Value = TimeValue(rs("Break3Start"))
+        DTBreak3End.Value = TimeValue(rs("Break3End"))
+        DTBreak4Start.Value = TimeValue(rs("Break4Start"))
+        DTBreak4End.Value = TimeValue(rs("Break4End"))
+        DTBreak5Start.Value = TimeValue(rs("Break5Start"))
+        DTBreak5End.Value = TimeValue(rs("Break5End"))
+        DTShift1Start.Value = TimeValue(rs("Shift1Start"))
+        DTShift1End.Value = TimeValue(rs("Shift1End"))
+        DTShift2Start.Value = TimeValue(rs("Shift2Start"))
+        DTShift2End.Value = TimeValue(rs("Shift2End"))
+        DTShift3Start.Value = TimeValue(rs("Shift3Start"))
+        DTShift3End.Value = TimeValue(rs("Shift3End"))
+    ElseIf Action = 2 Then
+        rs("PrinterName1") = Trim$(txtPrinterName1)
+        rs("PLC_IP") = Trim$(txtPLC_IP.Text)
+        rs("PLC_Port") = Trim$(txtPLC_Port.Text)
+        rs("EmailBypass") = Check1.Value
+        rs("WebApiLink") = txtapilink.Text
+        rs("SenderEmail") = txtfromMail.Text
+        rs("SenderPassword") = txtfromPassword.Text
+        rs("ToEmail1") = txtTomail(0).Text
+        rs("ToEmail2") = txtTomail(1).Text
+        rs("ToEmail3") = txtTomail(2).Text
+        rs("ToEmail4") = txtTomail(3).Text
+        rs("ToEmail5") = txtTomail(4).Text
+        rs("ToEmail6") = txtTomail(5).Text
+        rs("ToEmail7") = txtTomail(6).Text
+        For i = 0 To 5
+           rs("EmailBypass" & i + 1) = chkTomailbypass(i).Value
+        Next
+        rs("Break1Enable") = chkBreakEnable(0).Value
+        rs("Break2Enable") = chkBreakEnable(1).Value
+        rs("Break3Enable") = chkBreakEnable(2).Value
+        rs("Break4Enable") = chkBreakEnable(3).Value
+        rs("Break5Enable") = chkBreakEnable(4).Value
+        rs("Break1Start") = DTBreak1Start.Value
+        rs("Break1End") = DTBreak1End.Value
+        rs("Break2Start") = DTBreak2Start.Value
+        rs("Break2End") = DTBreak2End.Value
+        rs("Break3Start") = DTBreak3Start.Value
+        rs("Break3End") = DTBreak3End.Value
+        rs("Break4Start") = DTBreak4Start.Value
+        rs("Break4End") = DTBreak4End.Value
+        rs("Break5Start") = DTBreak5Start.Value
+        rs("Break5End") = DTBreak5End.Value
+        rs("Shift1Start") = DTShift1Start.Value
+        rs("Shift1End") = DTShift1End.Value
+        rs("Shift2Start") = DTShift2Start.Value
+        rs("Shift2End") = DTShift2End.Value
+        rs("Shift3Start") = DTShift3Start.Value
+        rs("Shift3End") = DTShift3End.Value
+        rs.Update
     End If
 
 Exit Sub

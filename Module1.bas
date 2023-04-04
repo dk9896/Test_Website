@@ -4,6 +4,7 @@ Public LoginUser, LoginCode As String
 'Public Declare Function SetFileAttributes Lib "kernel32.dll" Alias "SetFileAttributesA" (ByVal lpFileName As String, ByVal dwFileAttributes As Long) As Long
 'Public Graph_array() As Variant
 'Public LoginID As Double
+Public printDateTime As String
 Public UDefault As Boolean
 Public CopyLabel As Boolean
 Public DataIn() As Byte
@@ -29,6 +30,9 @@ Public PrinterBypass As Boolean
 Public Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 Public ModelName As String
 Public AccessType As String
+Public PrintSwitchName As String
+Public PrintLineCode As String
+
 'Barcode Related
 Public barcode As String
 Public RetryCount, Sec_10 As Integer
@@ -55,7 +59,7 @@ Sub Initialise()
     StdReadStartAddress = 100       'D100
     StdReadCount = 100            'D100-D149
     StdWriteStartAddress = 200     'D200
-    StdWriteCount = 200              'D200-D249
+    StdWriteCount = 100              'D200-D249
     ExtendedReadStartAddress = 1000 'D1000
     ExtendedReadCount = 700 '960         'D1000-D1300
     NoOfExtendedPackets = 6         '
@@ -144,10 +148,10 @@ Writestream(21) = Val(NoOfWriteRegisters) \ 256
 j = WriteStartAddress + NoOfWriteRegisters
 K = 22
 For i = WriteStartAddress To (j - 1)
-    If PLcdata(i) < 0 Then Data = (65536 + PLcdata(i)) Else Data = PLcdata(i)
-    Writestream(K) = Data Mod 256
+    If PLcdata(i) < 0 Then data = (65536 + PLcdata(i)) Else data = PLcdata(i)
+    Writestream(K) = data Mod 256
     K = K + 1
-    Writestream(K) = Data \ 256
+    Writestream(K) = data \ 256
     K = K + 1
 Next
 WriteArray = Writestream()
@@ -157,13 +161,20 @@ End Sub
 
 Public Sub MakeConn()
     Set Con = New ADODB.Connection
-    Con.Provider = "Microsoft.Jet.OLEDB.4.0"
-    Con.Open App.Path & "\Database\" & App.Title & "_DB.mdb", "admin", ""
+    StrMdbPath = App.Path & "\Database\" & App.Title & "_DB.mdb"
+    'StrConn = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & StrMdbPath & ";Jet OLEDB:Database Password=DRAutomation;"
+    'Con.Open StrConn
+
+    
+    'Con.Provider = "Microsoft.Jet.OLEDB.4.0"
+    'Con.Open App.Path & "\Database\" & App.Title & "_DB.mdb", "admin", "DRAutomation"
+    Con.Open "Provider=Microsoft.Jet.OLEDB.4.0;" _
+                & "Data Source=" & App.Path & "\Database\" & App.Title & "_DB.mdb;" _
+                & "Jet OLEDB:Database Password=DRAutomation;"
 End Sub
 Public Sub SqlConn()
 On Error GoTo Error
     Set Con1 = New ADODB.Connection
-    
     Con1.Open SQLpath '"Provider=MSDASQL;DRIVER=Sql Server;SERVER=LAPTOP-SUSHANT\SQLEXPRESS; DATABASE=Exicom_Laser_Marking_19_1145; UID=sa; PWD=authentic;"
 Exit Sub
 Error:
@@ -173,32 +184,85 @@ Public Function PrintLabel(lPrinter As JustPrinter)
 On Error GoTo err1
 Dim TempFileTextLine As String
 Dim PrnFile As String
-    If CopyLabel = True Then
-        Counter = SerialStartingtxt & Format(frmPrintLabel.txtCopyNo.Text, "0000000000000000")
-        CopyLabel = False
-    Else
-        Counter = SerialStartingtxt & Format(Val(frmMonitor.txtproductioncounter), "0000000000000000")
-    End If
-     PrnFile = "switch.prn"
-     barcode = PartNo & Counter
-    
-    TempFileTextLine = ReadLabel(App.Path & "\PrnFiles\" & PrnFile)
-    TempFileTextLine = Replace(TempFileTextLine, "#034#", HardwareNo)
-    TempFileTextLine = Replace(TempFileTextLine, "#28511012044#", PartNo)
-    TempFileTextLine = Replace(TempFileTextLine, "#JJWW0000000000001#", Counter)
-    TempFileTextLine = Replace(TempFileTextLine, "#28511012044JJWW0000000000001034#", barcode)
+Dim TempDate As String
+Dim TempTime As String
+Dim TempHardwareNo As String
+Dim TempPartNo As String
+Dim TempVendorId As String
+Dim TempBarcode As String
+Dim TempStartingString As String
 
+    If CopyLabel = True Then
+        CopyLabel = False
+        'TempStartingString = frmPrintLabel.txtStartString.Text
+        'Counter = TempStartingString & Format(frmPrintLabel.txtCopyNo.Text, "0000000000000")
+        TempDate = frmPrintLabel.txtDatePr.Text
+        TempTime = frmPrintLabel.txtTimePr.Text
+       ' TempVendorId = frmPrintLabel.txtVendorCode.Text
+        TempPartNo = frmPrintLabel.txtPartNumber.Text
+        TempHardwareNo = frmPrintLabel.txtIndexAR.Text
+        TempBarcode = TempPartNo & TempHardwareNo & TempDate & " " & TempTime
+     Else
+        'Counter = SerialStartingtxt & Format(Val(frmMonitor.txtProductionCounter), "0000000000000")
+        TempDate = Format(Now, "ddmmyy")
+        printDateTime = Format(Now, "ddmmyy HH.MM.SS AM/PM")
+        'TempVendorId = VendorId
+        TempPartNo = PartNo
+        TempHardwareNo = HardwareNo
+        barcode = TempPartNo & TempHardwareNo & printDateTime
+        TempBarcode = barcode
+    End If
+    
+    PrnFile = "switch.prn"
+    'barcode = PartNo & Counter & TempDate
+    TempFileTextLine = ReadLabel(App.Path & "\PrnFiles\" & PrnFile)
+'    TempFileTextLine = Replace(TempFileTextLine, "#HW: 003#", TempHardwareNo)
+    TempFileTextLine = Replace(TempFileTextLine, "#RAC00443#", TempPartNo)
+    TempFileTextLine = Replace(TempFileTextLine, "#MI-7646AF#", TempHardwareNo)
+    TempFileTextLine = Replace(TempFileTextLine, "#MI-7646AFRAC00443140323#", TempBarcode)
+'    TempFileTextLine = Replace(TempFileTextLine, "#3000557#", TempVendorId)
+    TempFileTextLine = Replace(TempFileTextLine, "#140323#", TempDate)
+    
     lPrinter.PrinterName = PrinterName
     lPrinter.PrintText TempFileTextLine
     lPrinter.EndJob
     CreateTempPrn TempFileTextLine
 
-
 Exit Function
 err1:
 MsgBox "Error found in " & Err.Source & vbNewLine & Err.Description, vbCritical, "Printer Error"
 End Function
-
+Public Function GetCurrentDate() As String
+ Dim month
+ month = Val(Format(Date, "MM"))
+ If month = 1 Then
+    GetCurrentDate = Format(Date, "DD") & "A" & Format(Date, "YYYY")
+ ElseIf month = 2 Then
+    GetCurrentDate = Format(Date, "DD") & "B" & Format(Date, "YYYY")
+ ElseIf month = 3 Then
+    GetCurrentDate = Format(Date, "DD") & "C" & Format(Date, "YYYY")
+ ElseIf month = 4 Then
+    GetCurrentDate = Format(Date, "DD") & "D" & Format(Date, "YYYY")
+ ElseIf month = 5 Then
+    GetCurrentDate = Format(Date, "DD") & "E" & Format(Date, "YYYY")
+ ElseIf month = 6 Then
+    GetCurrentDate = Format(Date, "DD") & "F" & Format(Date, "YYYY")
+ ElseIf month = 7 Then
+    GetCurrentDate = Format(Date, "DD") & "G" & Format(Date, "YYYY")
+ ElseIf month = 8 Then
+    GetCurrentDate = Format(Date, "DD") & "H" & Format(Date, "YYYY")
+ ElseIf month = 9 Then
+    GetCurrentDate = Format(Date, "DD") & "J" & Format(Date, "YYYY")
+ ElseIf month = 10 Then
+    GetCurrentDate = Format(Date, "DD") & "K" & Format(Date, "YYYY")
+ ElseIf month = 11 Then
+    GetCurrentDate = Format(Date, "DD") & "L" & Format(Date, "YYYY")
+ ElseIf month = 12 Then
+    GetCurrentDate = Format(Date, "DD") & "M" & Format(Date, "YYYY")
+ End If
+ 
+ 
+End Function
 Private Function ReadLabel(FileName As String) As String
     Open FileName For Binary As #1
     ReadLabel = Input(LOF(1), 1)
@@ -303,37 +367,51 @@ End Function
 
 Public Function getShift() As String
 On Error GoTo Error
-Dim sTime1, sTime2, sTime3, sTime4 As String
+Dim sTime1Start, sTime1End, sTime2Start, stime2End, stime3Start, stime3End As String
+'Dim sTime1, sTime2, sTime3, sTime4 As String
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 Dim NowTime As String
 
     Sql = "Select * from Common_Set where SetType ='CommonSet'" 'SetType = Settings Type
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
-    sTime1 = Rs("Shift1")
-    sTime2 = Rs("Shift2")
-    sTime3 = Rs("Shift3")
-    sTime4 = Rs("Shift4")
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    'sTime1 = rs("Shift1")
+    'sTime2 = rs("Shift2")
+    'sTime3 = rs("Shift3")
+    'sTime4 = rs("Shift4")
+    sTime1Start = TimeValue(rs("Shift1Start"))
+    sTime1End = TimeValue(rs("Shift1End"))
+    sTime2Start = TimeValue(rs("Shift2Start"))
+    stime2End = TimeValue(rs("Shift2End"))
+    stime3Start = TimeValue(rs("Shift3Start"))
+    stime3End = TimeValue(rs("Shift3End"))
+    'If sTime4 = "1" Then
+    '    getShift = "04"
+    '    Exit Function
+    'End If
 
-    If sTime4 = "1" Then
-        getShift = "04"
-        Exit Function
-    End If
+    sTime1Start = Format(TimeValue(sTime1Start), "hh:mm AM/PM")
+    sTime2Start = Format(TimeValue(sTime2Start), "hh:mm AM/PM")
+    stime3Start = Format(TimeValue(stime3Start), "hh:mm AM/PM")
+    sTime1End = Format(TimeValue(sTime1End), "hh:mm AM/PM")
+    stime2End = Format(TimeValue(stime2End), "hh:mm AM/PM")
+    stime3End = Format(TimeValue(stime3End), "hh:mm AM/PM")
 
-    sTime1 = Format(TimeValue(sTime1), "hh:mm AM/PM")
-    sTime2 = Format(TimeValue(sTime2), "hh:mm AM/PM")
-    sTime3 = Format(TimeValue(sTime3), "hh:mm AM/PM")
+
+'    sTime1 = Format(TimeValue(sTime1), "hh:mm AM/PM")
+'    sTime2 = Format(TimeValue(sTime2), "hh:mm AM/PM")
+'    sTime3 = Format(TimeValue(sTime3), "hh:mm AM/PM")
     NowTime = Format(Time, "hh:mm AM/PM")
-    TempReportDate = Format(Now(), "mm/dd/yyyy")
+    TempReportDate = Format(Now(), "dd/mm/yyyy")
     'Time 1 and Time 2 Should Be < 24 hrs
-    If (TimeValue(NowTime) >= TimeValue(sTime1)) And (TimeValue(NowTime) < TimeValue(sTime2)) Then
+    If (TimeValue(NowTime) >= TimeValue(sTime1Start)) And (TimeValue(NowTime) < TimeValue(sTime1End)) Then
         getShift = "1"
-    ElseIf (TimeValue(NowTime) >= TimeValue(sTime2)) And (TimeValue(NowTime) < TimeValue(sTime3)) Then
+    ElseIf (TimeValue(NowTime) >= TimeValue(sTime2Start)) And (TimeValue(NowTime) < TimeValue(stime2End)) Then
         getShift = "2"
     Else
         getShift = "3"
-        If TimeValue(NowTime) < TimeValue(sTime1) Then
+        If TimeValue(NowTime) < TimeValue(stime3End) Then
             TempReportDate = DateAdd("d", -1, TempReportDate)
         End If
     End If

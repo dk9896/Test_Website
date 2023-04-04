@@ -17,8 +17,8 @@ Begin VB.Form FrmMaintain
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6810
-   ScaleWidth      =   11370
+   ScaleHeight     =   10935
+   ScaleWidth      =   20250
    StartUpPosition =   2  'CenterScreen
    Begin VB.PictureBox Picture1 
       Height          =   6615

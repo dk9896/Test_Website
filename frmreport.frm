@@ -187,7 +187,7 @@ Begin VB.Form frmReport
                EndProperty
                CalendarForeColor=   16711680
                CalendarTitleForeColor=   49344
-               Format          =   112066561
+               Format          =   111345665
                CurrentDate     =   39022
             End
             Begin MSComCtl2.DTPicker DTTo 
@@ -210,7 +210,7 @@ Begin VB.Form frmReport
                EndProperty
                CalendarForeColor=   16711680
                CalendarTitleForeColor=   49344
-               Format          =   112066561
+               Format          =   111345665
                CurrentDate     =   39022
             End
             Begin VB.Label lblTo 
@@ -515,7 +515,7 @@ Dim Row As Long
 Dim Col As Long
 
 Private Sub ExportToCSV()
-On Error GoTo error
+On Error GoTo Error
 Dim Row, Col As Long
 Dim strData As String
 Dim strLine As String
@@ -550,8 +550,8 @@ Dim FilePath As String
     Close #1
 
 Exit Sub
-error:
-MsgBox error, vbInformation
+Error:
+MsgBox Error, vbInformation
 End Sub
 
 Private Sub CboReportType_Click()
@@ -576,14 +576,14 @@ End If
 End Sub
 
 
-Private Sub CmdClose_Click()
+Private Sub cmdClose_Click()
     On Error Resume Next
     frmmenu.Show
     Unload Me
 End Sub
 
 Private Sub cmdDelete_Click()
-On Error GoTo error
+On Error GoTo Error
 Dim Sql As String
 Dim SqlWhere(5) As String
     
@@ -627,8 +627,8 @@ End If
 Con1.Execute Sql
 
 Exit Sub
-error:
-MsgBox error, vbInformation
+Error:
+MsgBox Error, vbInformation
 End Sub
 
 Private Sub cmdExportToExcel_Click()
@@ -640,12 +640,10 @@ Private Sub cmdSearch_Click()
 On Error Resume Next
 Dim Row As Double
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 Dim TotalRow As Long
 Dim SqlWhere(5) As String
 
-VSFReport.Rows = 2
-Row = 1
 
 SqlWhere(1) = "Where Date BETWEEN #" & Format(DTFrom.Value, "mm/dd/yyyy") & "# AND #" & Format(DTTo.Value, "mm/dd/yyyy") & "#"
 SqlWhere(2) = " and Result = 1"
@@ -653,6 +651,9 @@ SqlWhere(3) = " and Result = 2"
 SqlWhere(4) = " and ModelName = '" & cbomodelname.Text & "'"
 SqlWhere(5) = " where Barcode='" & Trim$(txtBarcode) & "'"
 If reporttype = 1 Then
+
+VSFReport.Rows = 3
+Row = 2
    Sql = "Select * from Model_Report "
    If CboReportType.ListIndex = 0 Then
       SqlWhere(0) = SqlWhere(1)
@@ -677,64 +678,49 @@ If reporttype = 1 Then
     
     TotalRow = RecordCount(Sql)
     
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
     
-    Do While Rs.EOF = False
+    Do While rs.EOF = False
       VSFReport.Rows = VSFReport.Rows + 1
       Row = Row + 1
     With VSFReport
       .TextMatrix(Row, 0) = Row - 1
-      .TextMatrix(Row, 1) = Rs("ModelName")
-      .TextMatrix(Row, 2) = Rs("Operatorname")
-      .TextMatrix(Row, 3) = Rs("Date")
-      .TextMatrix(Row, 4) = Rs("Time")
-      .TextMatrix(Row, 5) = Rs("Barcode")
-      .TextMatrix(Row, 6) = Rs("Result")
-      .TextMatrix(Row, 7) = Rs("DMResult")
-      .TextMatrix(Row, 8) = Rs("DM1Cur")
-      .TextMatrix(Row, 9) = Rs("DM1Volt")
-      .TextMatrix(Row, 10) = Rs("DM2Cur")
-      .TextMatrix(Row, 11) = Rs("DM2Volt")
-      .TextMatrix(Row, 12) = Rs("PMResult")
-      .TextMatrix(Row, 13) = Rs("PM1Cur")
-      .TextMatrix(Row, 14) = Rs("PM1Volt")
-      .TextMatrix(Row, 15) = Rs("HAMResult")
-      .TextMatrix(Row, 16) = Rs("HAM1Cur")
-      .TextMatrix(Row, 17) = Rs("HAM1Volt")
-      .TextMatrix(Row, 18) = Rs("NMResult")
-      .TextMatrix(Row, 19) = Rs("NM1Cur")
-      .TextMatrix(Row, 20) = Rs("NM1Volt")
-      .TextMatrix(Row, 21) = Rs("NM2Cur")
-      .TextMatrix(Row, 22) = Rs("NM2Volt")
-      .TextMatrix(Row, 23) = Rs("NM3Cur")
-      .TextMatrix(Row, 24) = Rs("NM3Volt")
-      .TextMatrix(Row, 25) = Rs("NM4Cur")
-      .TextMatrix(Row, 26) = Rs("NM4Volt")
-      .TextMatrix(Row, 27) = Rs("BMResult")
-      .TextMatrix(Row, 28) = Rs("BM1Cur")
-      .TextMatrix(Row, 29) = Rs("BM1Volt")
-      .TextMatrix(Row, 30) = Rs("BM2Cur")
-      .TextMatrix(Row, 31) = Rs("BM2Volt")
-      .TextMatrix(Row, 32) = Rs("HOMResult")
-      .TextMatrix(Row, 33) = Rs("HOM1Cur")
-      .TextMatrix(Row, 34) = Rs("HOM1Volt")
-      .TextMatrix(Row, 35) = Rs("CUMMResult")
-      .TextMatrix(Row, 36) = Rs("CUM1Cur")
-      .TextMatrix(Row, 37) = Rs("CUM1Volt")
-      .TextMatrix(Row, 38) = Rs("CRMResult")
-      .TextMatrix(Row, 39) = Rs("CRM1Cur")
-      .TextMatrix(Row, 40) = Rs("CRM1Volt")
-      .TextMatrix(Row, 41) = Rs("SRMResult")
-      .TextMatrix(Row, 42) = Rs("SRM1Cur")
-      .TextMatrix(Row, 43) = Rs("SRM1Volt")
-      '.TextMatrix(Row, 30) = Rs("ICLH")
-      '.TextMatrix(Row, 31) = Rs("ICRH")
+      .TextMatrix(Row, 1) = rs("ModelName")
+      .TextMatrix(Row, 2) = rs("Operatorname")
+      .TextMatrix(Row, 3) = rs("Date")
+      .TextMatrix(Row, 4) = rs("Time")
+      .TextMatrix(Row, 5) = rs("Barcode")
+      .TextMatrix(Row, 6) = rs("Result")
+      .TextMatrix(Row, 7) = rs("ReversePolarity")
+      .TextMatrix(Row, 8) = rs("CutOffVoltageStatus")
+      .TextMatrix(Row, 9) = rs("CutOffVoltage")
+      .TextMatrix(Row, 10) = rs("Output1Status")
+      .TextMatrix(Row, 11) = rs("Output1")
+      .TextMatrix(Row, 12) = rs("Output2Status")
+      .TextMatrix(Row, 13) = rs("Output2")
+      .TextMatrix(Row, 14) = rs("Output3Status")
+      .TextMatrix(Row, 15) = rs("Output3")
+      .TextMatrix(Row, 16) = rs("OutputShortTest")
+    
+      .TextMatrix(Row, 17) = rs("TestVoltageStatus")
+      .TextMatrix(Row, 18) = rs("TestVoltage")
+      .TextMatrix(Row, 19) = rs("InputCurrentStatus")
+      .TextMatrix(Row, 20) = rs("InputCurrent")
+      .TextMatrix(Row, 21) = rs("OPVoltageStatus")
+      .TextMatrix(Row, 22) = rs("OPVoltage")
+      .TextMatrix(Row, 23) = rs("OPCurrentStatus")
+      .TextMatrix(Row, 24) = rs("OPCurrent")
+      .TextMatrix(Row, 25) = rs("EfficiencyStatus")
+      .TextMatrix(Row, 26) = rs("Efficiency")
+      
      End With
       If Row > (TotalRow + 1) Then Exit Sub
-      Rs.MoveNext
+      rs.MoveNext
     Loop
 ElseIf reporttype = 2 Then
+    VSFReport.Rows = 1
+    Row = 0
 SqlWhere(1) = "Where starttime BETWEEN #" & Format(DTFrom.Value, "mm/dd/yyyy") & " 00:00:00" & "# AND #" & Format(DTTo.Value, "mm/dd/yyyy") & " 23:59:59" & "# or endtime BETWEEN #" & Format(DTFrom.Value, "mm/dd/yyyy") & " 00:00:00" & "# AND #" & Format(DTTo.Value, "mm/dd/yyyy") & " 23:59:59" & "# "
 SqlWhere(4) = " and ModelName = '" & cbomodelname.Text & "'"
    Sql = "Select * from Model_Report_breakdown "
@@ -742,25 +728,28 @@ SqlWhere(4) = " and ModelName = '" & cbomodelname.Text & "'"
       Sql = Sql & SqlWhere(0) & " order by ID Desc"
     
     TotalRow = RecordCount(Sql)
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
-    Do While Rs.EOF = False
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Do While rs.EOF = False
       VSFReport.Rows = VSFReport.Rows + 1
       Row = Row + 1
      With VSFReport
     
     .TextMatrix(Row, 0) = Row
-    .TextMatrix(Row, 1) = Rs("StartTime")
-    .TextMatrix(Row, 2) = Rs("EndTime")
-    .TextMatrix(Row, 3) = Rs("BreakdownType")
-    .TextMatrix(Row, 4) = Rs("Remarks")
+    .TextMatrix(Row, 1) = rs("StartTime")
+    .TextMatrix(Row, 2) = rs("EndTime")
+    .TextMatrix(Row, 3) = rs("BreakdownType")
+    .TextMatrix(Row, 4) = rs("Remarks")
     
      End With
       If Row > (TotalRow + 1) Then Exit Sub
-      Rs.MoveNext
+      rs.MoveNext
     Loop
 ElseIf reporttype = 3 Then
-   SqlWhere(1) = "Where DateTime BETWEEN #" & Format(DTFrom.Value, "mm/dd/yyyy") & "# AND #" & Format(DTTo.Value, "mm/dd/yyyy") & "#"
+
+    VSFReport.Rows = 1
+    Row = 0
+    SqlWhere(1) = "Where DateTime BETWEEN #" & Format(DTFrom.Value, "mm/dd/yyyy") & "# AND #" & Format(DTTo.Value, "mm/dd/yyyy") & "#"
 
    Sql = "Select * from Model_Report_counter "
    SqlWhere(0) = SqlWhere(1)
@@ -769,54 +758,54 @@ ElseIf reporttype = 3 Then
     
    TotalRow = RecordCount(Sql)
     
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
     
-    Do While Rs.EOF = False
+    Do While rs.EOF = False
       VSFReport.Rows = VSFReport.Rows + 1
       Row = Row + 1
       With VSFReport
      
     .TextMatrix(Row, 0) = Row
-    .TextMatrix(Row, 1) = Rs("ModelName")
-    .TextMatrix(Row, 2) = Rs("DateTime")
-    .TextMatrix(Row, 3) = Rs("ShiftTime")
-    .TextMatrix(Row, 4) = Rs("ProductionCounter")
-    .TextMatrix(Row, 5) = Rs("OKCounter")
-    .TextMatrix(Row, 6) = Rs("NGCounter")
-    .TextMatrix(Row, 7) = Rs("CouplerCounter")
-    .TextMatrix(Row, 8) = Rs("BatchCounter")
-    .TextMatrix(Row, 9) = Rs("Mailsent")
-    .TextMatrix(Row, 10) = Rs("ModelNo")
-    .TextMatrix(Row, 11) = Rs("TargetProducation")
+    .TextMatrix(Row, 1) = rs("ModelName")
+    .TextMatrix(Row, 2) = rs("DateTime")
+    .TextMatrix(Row, 3) = rs("ShiftTime")
+    .TextMatrix(Row, 4) = rs("ProductionCounter")
+    .TextMatrix(Row, 5) = rs("OKCounter")
+    .TextMatrix(Row, 6) = rs("NGCounter")
+    .TextMatrix(Row, 7) = rs("CouplerCounter")
+    .TextMatrix(Row, 8) = rs("BatchCounter")
+    .TextMatrix(Row, 9) = rs("Mailsent")
+    .TextMatrix(Row, 10) = rs("ModelNo")
+    .TextMatrix(Row, 11) = rs("TargetProducation")
       End With
       If Row > (TotalRow + 1) Then Exit Sub
-      Rs.MoveNext
+      rs.MoveNext
     Loop
 End If
 
 
 Exit Sub
-error:
+Error:
    MsgBox "Error in Searching Record", vbCritical, "Search Error"
 End Sub
 
 Private Sub LoadModelCombo(Combo As ComboBox)
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 Dim i As Integer
 
     Combo.Clear
     ' To Fill Combo Box With Switch Names
     Sql = "Select * from Model_Set"
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
     Combo.AddItem "All", 0
     i = 1
-    Do While Rs.EOF = False
-        Combo.AddItem Rs("ModelName"), i
+    Do While rs.EOF = False
+        Combo.AddItem rs("ModelName"), i
         i = i + 1
-        Rs.MoveNext
+        rs.MoveNext
     Loop
     Combo.ListIndex = 0
      ' Combo Load End
@@ -824,27 +813,27 @@ Dim i As Integer
 End Sub
 
 Private Function RecordCount(ByVal Sql As String)
-On Error GoTo error
+On Error GoTo Error
 'Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 Dim Row As Long
 
 '    Sql = "Select * from " & Table
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenStatic, , adCmdText
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenStatic, , adCmdText
 
-    Row = Format$(Rs.RecordCount)
-    Rs.Close
+    Row = Format$(rs.RecordCount)
+    rs.Close
 
     RecordCount = Row
 
 Exit Function
-error:
-MsgBox error, vbInformation
+Error:
+MsgBox Error, vbInformation
 End Function
 
 Private Sub Form_Load()
-On Error GoTo error
+On Error GoTo Error
 
 'Advance
 Me.WindowState = 2
@@ -882,19 +871,19 @@ End With
 LoadModelCombo cbomodelname
 
 Exit Sub
-error:
-MsgBox error, vbInformation
+Error:
+MsgBox Error, vbInformation
 End Sub
 
 Private Sub LoadGrid()
 Dim X As String
 With VSFReport
-    .Cols = 47
-    .Rows = 2
-    .FixedRows = 2
+    .Cols = 27
+    .Rows = 3
+    .FixedRows = 3
     .RowHeightMin = 400
-    .RowHeight(0) = 600
-    .RowHeight(1) = 600
+    '.RowHeight(0) = 600
+    '.RowHeight(1) = 600
     .WordWrap = True
     .ExtendLastCol = True
     .HighLight = flexHighlightWithFocus
@@ -904,7 +893,8 @@ With VSFReport
     
     .MergeRow(0) = True
     .MergeRow(1) = True
-    For i = 0 To 6
+    .MergeRow(2) = True
+    For i = 0 To 26
     .MergeCol(i) = True
     Next
     .TextMatrix(0, 0) = "Sn."
@@ -921,95 +911,81 @@ With VSFReport
     .TextMatrix(1, 4) = "Time"
     .TextMatrix(1, 5) = "Barcode"
     .TextMatrix(1, 6) = "Result"
+    .TextMatrix(2, 0) = "Sn."
+    .TextMatrix(2, 1) = "Model Name"
+    .TextMatrix(2, 2) = "Operator"
+    .TextMatrix(2, 3) = "Date"
+    .TextMatrix(2, 4) = "Time"
+    .TextMatrix(2, 5) = "Barcode"
+    .TextMatrix(2, 6) = "Result"
     
-    .TextMatrix(0, 7) = "Dipper Module"
-    .TextMatrix(0, 8) = "Dipper Module"
-    .TextMatrix(0, 9) = "Dipper Module"
-    .TextMatrix(0, 10) = "Dipper Module"
-    .TextMatrix(0, 11) = "Dipper Module"
-    .TextMatrix(1, 7) = "Result"
-    .TextMatrix(1, 8) = "Low Current"
-    .TextMatrix(1, 9) = "Low Voltage"
-    .TextMatrix(1, 10) = "High Current"
-    .TextMatrix(1, 11) = "High Voltage"
+    .TextMatrix(0, 7) = "With Load Testing"
+    .TextMatrix(0, 8) = "With Load Testing"
+    .TextMatrix(0, 9) = "With Load Testing"
+    .TextMatrix(0, 10) = "With Load Testing"
+    .TextMatrix(0, 11) = "With Load Testing"
+    .TextMatrix(0, 12) = "With Load Testing"
+    .TextMatrix(0, 13) = "With Load Testing"
+    .TextMatrix(0, 14) = "With Load Testing"
+    .TextMatrix(0, 15) = "With Load Testing"
+    .TextMatrix(0, 16) = "With Load Testing"
     
-    .TextMatrix(0, 12) = "Pass Module"
-    .TextMatrix(0, 13) = "Pass Module"
-    .TextMatrix(0, 14) = "Pass Module"
-    .TextMatrix(1, 12) = "Result"
-    .TextMatrix(1, 13) = "Current"
-    .TextMatrix(1, 14) = "Voltage"
+    .TextMatrix(1, 7) = "Reverse" & vbNewLine & "Polarity"
+    .TextMatrix(2, 7) = "Reverse" & vbNewLine & "Polarity"
     
-    .TextMatrix(0, 15) = "Hazard Module"
-    .TextMatrix(0, 16) = "Hazard Module"
-    .TextMatrix(0, 17) = "Hazard Module"
-    .TextMatrix(1, 15) = "Result"
-    .TextMatrix(1, 16) = "ON Current"
-    .TextMatrix(1, 17) = "ON MVD"
+    .TextMatrix(1, 8) = "CutOff Voltage"
+    .TextMatrix(1, 9) = "CutOff Voltage"
+    .TextMatrix(2, 8) = "Status"
+    .TextMatrix(2, 9) = "Value"
     
-    .TextMatrix(0, 18) = "Navigation Module"
-    .TextMatrix(0, 19) = "Navigation Module"
-    .TextMatrix(0, 20) = "Navigation Module"
-    .TextMatrix(0, 21) = "Navigation Module"
-    .TextMatrix(0, 22) = "Navigation Module"
-    .TextMatrix(0, 23) = "Navigation Module"
-    .TextMatrix(0, 24) = "Navigation Module"
-    .TextMatrix(0, 25) = "Navigation Module"
-    .TextMatrix(0, 26) = "Navigation Module"
-    .TextMatrix(1, 18) = "Result"
-    .TextMatrix(1, 19) = "UP Current"
-    .TextMatrix(1, 20) = "UP MVD"
-    .TextMatrix(1, 21) = "Down Current"
-    .TextMatrix(1, 22) = "Down Voltage"
-    .TextMatrix(1, 23) = "Enter Current"
-    .TextMatrix(1, 24) = "Enter Voltage"
-    .TextMatrix(1, 25) = "Back Current"
-    .TextMatrix(1, 26) = "Back Voltage"
+    .TextMatrix(1, 10) = "Output1 Voltage"
+    .TextMatrix(1, 11) = "Output1 Voltage"
+    .TextMatrix(2, 10) = "Status"
+    .TextMatrix(2, 11) = "Value"
+    .TextMatrix(1, 12) = "Output2 Voltage"
+    .TextMatrix(1, 13) = "Output2 Voltage"
+    .TextMatrix(2, 12) = "Status"
+    .TextMatrix(2, 13) = "Value"
+    .TextMatrix(1, 14) = "Output3 Voltage"
+    .TextMatrix(1, 15) = "Output3 Voltage"
+    .TextMatrix(2, 14) = "Status"
+    .TextMatrix(2, 15) = "Value"
+
+    .TextMatrix(1, 16) = "OutputShortTest"
+    .TextMatrix(2, 16) = "OutputShortTest"
     
-    .TextMatrix(0, 27) = "Blinker Module"
-    .TextMatrix(0, 28) = "Blinker Module"
-    .TextMatrix(0, 29) = "Blinker Module"
-    .TextMatrix(0, 30) = "Blinker Module"
-    .TextMatrix(0, 31) = "Blinker Module"
-    .TextMatrix(0, 32) = "Blinker Module"
-    .TextMatrix(0, 33) = "Blinker Module"
-    .TextMatrix(1, 27) = "Result"
-    .TextMatrix(1, 28) = "Left Current"
-    .TextMatrix(1, 29) = "Left Voltage"
-    .TextMatrix(1, 30) = "Off Current"
-    .TextMatrix(1, 31) = "Off Voltage"
-    .TextMatrix(1, 32) = "Right Current"
-    .TextMatrix(1, 33) = "Right Voltage"
-    
-    .TextMatrix(0, 34) = "Horn Module"
-    .TextMatrix(0, 35) = "Horn Module"
-    .TextMatrix(0, 36) = "Horn Module"
-    .TextMatrix(1, 34) = "Result"
-    .TextMatrix(1, 35) = "On Current"
-    .TextMatrix(1, 37) = "On Voltage"
-    
-    .TextMatrix(0, 38) = "Cruise Module"
-    .TextMatrix(0, 39) = "Cruise Module"
-    .TextMatrix(0, 40) = "Cruise Module"
-    .TextMatrix(1, 38) = "Result"
-    .TextMatrix(1, 39) = "ON Current"
-    .TextMatrix(1, 40) = "ON Voltage"
-    
-    .TextMatrix(0, 41) = "Custom Module"
-    .TextMatrix(0, 42) = "Custom Module"
-    .TextMatrix(0, 43) = "Custom Module"
-    .TextMatrix(1, 41) = "Result"
-    .TextMatrix(1, 42) = "ON Current"
-    .TextMatrix(1, 43) = "ON Voltage"
-    
-    .TextMatrix(0, 44) = "Set/Reset Module"
-    .TextMatrix(0, 45) = "Set/Reset Module"
-    .TextMatrix(0, 46) = "Set/Reset Module"
-    .TextMatrix(1, 44) = "Result"
-    .TextMatrix(1, 45) = "ON Current"
-    .TextMatrix(1, 46) = "ON Voltage"
-    
-    
+    .TextMatrix(0, 17) = "With Load Testing"
+    .TextMatrix(0, 18) = "With Load Testing"
+    .TextMatrix(0, 19) = "With Load Testing"
+    .TextMatrix(0, 20) = "With Load Testing"
+    .TextMatrix(0, 21) = "With Load Testing"
+    .TextMatrix(0, 22) = "With Load Testing"
+    .TextMatrix(0, 23) = "With Load Testing"
+    .TextMatrix(0, 24) = "With Load Testing"
+    .TextMatrix(0, 25) = "With Load Testing"
+    .TextMatrix(0, 26) = "With Load Testing"
+
+    .TextMatrix(1, 17) = "Test Voltage"
+    .TextMatrix(1, 18) = "Test Voltage"
+    .TextMatrix(2, 17) = "Status"
+    .TextMatrix(2, 18) = "Value"
+    .TextMatrix(1, 19) = "Input Current"
+    .TextMatrix(1, 20) = "Input Current"
+    .TextMatrix(2, 19) = "Status"
+    .TextMatrix(2, 20) = "Value"
+    .TextMatrix(1, 21) = "Output Voltage"
+    .TextMatrix(1, 22) = "Output Voltage"
+    .TextMatrix(2, 21) = "Status"
+    .TextMatrix(2, 22) = "Value"
+    .TextMatrix(1, 23) = "Output Current"
+    .TextMatrix(1, 24) = "Output Current"
+    .TextMatrix(2, 23) = "Status"
+    .TextMatrix(2, 24) = "Value"
+    .TextMatrix(1, 25) = "Efficiency"
+    .TextMatrix(1, 26) = "Efficiency"
+    .TextMatrix(2, 25) = "Status"
+    .TextMatrix(2, 26) = "Value"
+      
     For Col = 1 To .Cols - 1
         .FixedAlignment(Col) = flexAlignCenterCenter
         .ColAlignment(Col) = flexAlignCenterCenter

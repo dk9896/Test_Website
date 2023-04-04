@@ -42,7 +42,7 @@ Begin VB.Form frmSplash
          EndProperty
          Height          =   360
          Left            =   2595
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   600
          Width           =   1965
       End
@@ -61,7 +61,7 @@ Begin VB.Form frmSplash
          EndProperty
          Height          =   360
          Left            =   4425
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   2220
          Width           =   2550
       End
@@ -80,27 +80,9 @@ Begin VB.Form frmSplash
          EndProperty
          Height          =   285
          Left            =   5625
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   2580
          Width           =   1350
-      End
-      Begin VB.Label lblCopyright 
-         Alignment       =   1  'Right Justify
-         Caption         =   "Copyright Authetic Engineers"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Left            =   4560
-         TabIndex        =   2
-         Top             =   2940
-         Width           =   2415
       End
       Begin VB.Label Label1 
          Caption         =   "With Barcode Printer and data traceability feature"
@@ -166,21 +148,21 @@ Private Sub Timer1_Timer()
 On Error Resume Next
      If flagok = True Then
         Timer1.Enabled = False
+        'frmreportanalysis.Show
         frmlogin.Show
-        
-        'Unload Me
+        Unload Me
      End If
 End Sub
 Private Sub LoadConnSetting()
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 
     Sql = "Select * from Common_Set where SetType ='CommonSet'" 'SetType = Settings Type
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
 
-        SQLpath = Rs("NetworkDB")
-        SQLbypass = Rs("NetworkDBBP")
+        SQLpath = rs("NetworkDB")
+        SQLbypass = rs("NetworkDBBP")
 
 
 End Sub
@@ -215,12 +197,12 @@ End Sub
 Private Sub DateFormatCheck()
 Dim strFormat As String
 
-If Day("01-02-03") = 1 And Month("01-02-03") = 2 Then '"DD/MM/yyyy"
+If Day("01-02-03") = 1 And month("01-02-03") = 2 Then '"DD/MM/yyyy"
     strFormat = "DD/MM/YYYY"
     Exit Sub
-ElseIf Day("01-02-03") = 2 And Month("01-02-03") = 1 Then '"MM/DD/yyyy"
+ElseIf Day("01-02-03") = 2 And month("01-02-03") = 1 Then '"MM/DD/yyyy"
     strFormat = "MM/DD/YYYY"
-ElseIf Day("01-02-03") = 3 And Month("01-02-03") = 2 Then '"YYYY/MM/DD"
+ElseIf Day("01-02-03") = 3 And month("01-02-03") = 2 Then '"YYYY/MM/DD"
     strFormat = "YYYY/MM/DD"
 Else
     strFormat = "Unknown Format"

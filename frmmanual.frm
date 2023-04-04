@@ -103,25 +103,168 @@ Begin VB.Form frmmanual
       TabIndex        =   0
       Top             =   120
       Width           =   17895
+      Begin VB.Frame Frame1 
+         Height          =   1215
+         Left            =   14280
+         TabIndex        =   27
+         Top             =   3720
+         Width           =   3375
+         Begin VB.TextBox txtChargerSupply 
+            Alignment       =   2  'Center
+            Height          =   375
+            Left            =   1920
+            TabIndex        =   30
+            Text            =   "00.00"
+            Top             =   240
+            Width           =   1095
+         End
+         Begin VB.CommandButton cmdChargerSupply 
+            Caption         =   "Send"
+            Height          =   375
+            Left            =   1920
+            TabIndex        =   29
+            Top             =   720
+            Width           =   1095
+         End
+         Begin VB.Label Label4 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Charger Supply"
+            ForeColor       =   &H00000000&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   28
+            Top             =   240
+            Width           =   1335
+         End
+      End
+      Begin VB.Frame Frame2 
+         Caption         =   "Online Data"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   2295
+         Left            =   14280
+         TabIndex        =   18
+         Top             =   1440
+         Width           =   3375
+         Begin VB.TextBox txtOD4 
+            Alignment       =   2  'Center
+            BackColor       =   &H00FFFFFF&
+            ForeColor       =   &H00000000&
+            Height          =   360
+            Left            =   1920
+            Locked          =   -1  'True
+            TabIndex        =   22
+            TabStop         =   0   'False
+            Text            =   "0"
+            Top             =   1800
+            Width           =   1110
+         End
+         Begin VB.TextBox txtOD3 
+            Alignment       =   2  'Center
+            BackColor       =   &H00FFFFFF&
+            ForeColor       =   &H00000000&
+            Height          =   360
+            Left            =   1920
+            Locked          =   -1  'True
+            TabIndex        =   21
+            TabStop         =   0   'False
+            Text            =   "0"
+            Top             =   1320
+            Width           =   1110
+         End
+         Begin VB.TextBox txtOD1 
+            Alignment       =   2  'Center
+            BackColor       =   &H00FFFFFF&
+            ForeColor       =   &H00000000&
+            Height          =   360
+            Left            =   1920
+            Locked          =   -1  'True
+            TabIndex        =   20
+            TabStop         =   0   'False
+            Text            =   "0"
+            Top             =   360
+            Width           =   1125
+         End
+         Begin VB.TextBox txtOd2 
+            Alignment       =   2  'Center
+            BackColor       =   &H00FFFFFF&
+            ForeColor       =   &H00000000&
+            Height          =   360
+            Left            =   1920
+            Locked          =   -1  'True
+            TabIndex        =   19
+            TabStop         =   0   'False
+            Text            =   "0"
+            Top             =   840
+            Width           =   1110
+         End
+         Begin VB.Label Label11 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Output Current"
+            ForeColor       =   &H00000000&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   26
+            Top             =   1800
+            Width           =   1335
+         End
+         Begin VB.Label Label12 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Output Voltage"
+            ForeColor       =   &H00000000&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   25
+            Top             =   1320
+            Width           =   1335
+         End
+         Begin VB.Label Label13 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Input Current"
+            ForeColor       =   &H00000000&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   24
+            Top             =   840
+            Width           =   1335
+         End
+         Begin VB.Label Label18 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Input Voltage"
+            ForeColor       =   &H00000000&
+            Height          =   255
+            Left            =   120
+            TabIndex        =   23
+            Top             =   360
+            Width           =   1215
+         End
+      End
       Begin VB.Frame Frame10 
          Caption         =   "Frame10"
          Height          =   1455
          Left            =   0
-         TabIndex        =   15
+         TabIndex        =   8
          Top             =   0
          Visible         =   0   'False
          Width           =   5775
          Begin VB.Frame Frame5 
             Height          =   975
             Left            =   240
-            TabIndex        =   16
+            TabIndex        =   9
             Top             =   240
             Width           =   5415
             Begin VB.TextBox Text1 
                Height          =   375
                Left            =   3120
                Locked          =   -1  'True
-               TabIndex        =   20
+               TabIndex        =   13
                Top             =   480
                Width           =   2175
             End
@@ -129,7 +272,7 @@ Begin VB.Form frmmanual
                Height          =   375
                Left            =   1320
                Locked          =   -1  'True
-               TabIndex        =   19
+               TabIndex        =   12
                Text            =   "127.0.0.1"
                Top             =   480
                Width           =   975
@@ -138,7 +281,7 @@ Begin VB.Form frmmanual
                Height          =   375
                Left            =   2400
                Locked          =   -1  'True
-               TabIndex        =   18
+               TabIndex        =   11
                Text            =   "1232"
                Top             =   480
                Width           =   615
@@ -147,7 +290,7 @@ Begin VB.Form frmmanual
                Height          =   375
                Left            =   120
                Locked          =   -1  'True
-               TabIndex        =   17
+               TabIndex        =   10
                Text            =   "127.0.0.1"
                Top             =   480
                Width           =   1095
@@ -165,7 +308,7 @@ Begin VB.Form frmmanual
                EndProperty
                Height          =   255
                Left            =   1440
-               TabIndex        =   23
+               TabIndex        =   16
                Top             =   240
                Width           =   615
             End
@@ -182,7 +325,7 @@ Begin VB.Form frmmanual
                EndProperty
                Height          =   255
                Left            =   2520
-               TabIndex        =   22
+               TabIndex        =   15
                Top             =   240
                Width           =   495
             End
@@ -200,7 +343,7 @@ Begin VB.Form frmmanual
                Height          =   255
                Index           =   4
                Left            =   240
-               TabIndex        =   21
+               TabIndex        =   14
                Top             =   240
                Width           =   495
             End
@@ -219,121 +362,10 @@ Begin VB.Form frmmanual
          EndProperty
          Height          =   750
          Left            =   120
-         TabIndex        =   6
-         Text            =   "CommandLine"
-         Top             =   8640
-         Width           =   17535
-      End
-      Begin VB.Frame Frame4 
-         Caption         =   "Online Data"
-         BeginProperty Font 
-            Name            =   "Arial"
-            Size            =   9.75
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   1935
-         Left            =   13920
          TabIndex        =   5
-         Top             =   1800
-         Width           =   3855
-         Begin VB.TextBox txtOd4 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   2295
-            Locked          =   -1  'True
-            TabIndex        =   25
-            Top             =   1800
-            Visible         =   0   'False
-            Width           =   1440
-         End
-         Begin VB.TextBox txtOd3 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   2295
-            Locked          =   -1  'True
-            TabIndex        =   9
-            Top             =   1320
-            Width           =   1440
-         End
-         Begin VB.TextBox txtOd1 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   2295
-            Locked          =   -1  'True
-            TabIndex        =   8
-            Top             =   360
-            Width           =   1440
-         End
-         Begin VB.TextBox txtOd2 
-            Alignment       =   2  'Center
-            Appearance      =   0  'Flat
-            Height          =   360
-            Left            =   2295
-            Locked          =   -1  'True
-            TabIndex        =   7
-            Top             =   840
-            Width           =   1455
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackColor       =   &H00808080&
-            BackStyle       =   0  'Transparent
-            Caption         =   "Wire Voltage (V)"
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Index           =   0
-            Left            =   120
-            TabIndex        =   26
-            Top             =   1800
-            Visible         =   0   'False
-            Width           =   1440
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackColor       =   &H00808080&
-            BackStyle       =   0  'Transparent
-            Caption         =   "IIIumination Current (A)"
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Index           =   3
-            Left            =   120
-            TabIndex        =   12
-            Top             =   1320
-            Width           =   1980
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackColor       =   &H00808080&
-            BackStyle       =   0  'Transparent
-            Caption         =   "Current (A)"
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Index           =   2
-            Left            =   120
-            TabIndex        =   11
-            Top             =   360
-            Width           =   945
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackColor       =   &H00808080&
-            BackStyle       =   0  'Transparent
-            Caption         =   "MVD (V)"
-            ForeColor       =   &H00000000&
-            Height          =   240
-            Index           =   1
-            Left            =   120
-            TabIndex        =   10
-            Top             =   840
-            Width           =   750
-         End
+         Text            =   "CommandLine"
+         Top             =   8880
+         Width           =   17535
       End
       Begin VB.CommandButton CmdClose 
          Caption         =   "Close"
@@ -343,25 +375,25 @@ Begin VB.Form frmmanual
          Picture         =   "frmmanual.frx":0000
          Style           =   1  'Graphical
          TabIndex        =   1
-         Top             =   5280
+         Top             =   7440
          UseMaskColor    =   -1  'True
          Width           =   1635
       End
       Begin VSFlex7Ctl.VSFlexGrid VSFInput 
-         Height          =   8055
+         Height          =   7695
          Left            =   120
-         TabIndex        =   13
+         TabIndex        =   6
          Top             =   1080
-         Width           =   6255
-         _cx             =   11033
-         _cy             =   14208
+         Width           =   6495
+         _cx             =   11456
+         _cy             =   13573
          _ConvInfo       =   1
          Appearance      =   1
          BorderStyle     =   1
          Enabled         =   -1  'True
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -442,20 +474,20 @@ Begin VB.Form frmmanual
          WallPaperAlignment=   9
       End
       Begin VSFlex7Ctl.VSFlexGrid VSFOutput 
-         Height          =   8055
-         Left            =   6600
-         TabIndex        =   14
+         Height          =   7695
+         Left            =   6720
+         TabIndex        =   7
          Top             =   1080
-         Width           =   7215
-         _cx             =   12726
-         _cy             =   14208
+         Width           =   7455
+         _cx             =   13150
+         _cy             =   13573
          _ConvInfo       =   1
          Appearance      =   1
          BorderStyle     =   1
          Enabled         =   -1  'True
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
-            Size            =   8.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -539,7 +571,7 @@ Begin VB.Form frmmanual
          Caption         =   "PLC Comm"
          Height          =   255
          Left            =   14280
-         TabIndex        =   24
+         TabIndex        =   17
          Top             =   1080
          Width           =   1575
       End
@@ -595,9 +627,11 @@ Dim sTextLines() As String
 Dim strArray() As String
 Dim WorkFile As String
 VSFInput.Cols = 3
-VSFInput.Rows = 49
+VSFInput.Rows = 33
+VSFInput.RowHeightMin = 600
+VSFOutput.RowHeightMin = 600
 VSFOutput.Cols = 4
-VSFOutput.Rows = 49
+VSFOutput.Rows = 33
 VSFInput.TextMatrix(0, 0) = "No."
 VSFInput.TextMatrix(0, 1) = "Input Desc"
 VSFInput.TextMatrix(0, 2) = "Status"
@@ -607,11 +641,11 @@ VSFOutput.TextMatrix(0, 2) = "Get Val"
 VSFOutput.TextMatrix(0, 3) = "Set Val"
 VSFInput.ColWidth(0) = 600
 VSFInput.ColWidth(1) = 4500
-VSFInput.ColWidth(2) = 800
+VSFInput.ColWidth(2) = 1000
 VSFOutput.ColWidth(0) = 600
 VSFOutput.ColWidth(1) = 4500
 VSFOutput.ColWidth(2) = 800
-VSFOutput.ColWidth(3) = 800
+VSFOutput.ColWidth(3) = 1000
 'VSFOutput.Col
     WorkFile = App.Path & "\IOList.csv"
     'Read the entire file
@@ -631,6 +665,8 @@ VSFOutput.ColWidth(3) = 800
         VSFInput.TextMatrix(i + 1, 1) = strArray(1)
         VSFOutput.TextMatrix(i + 1, 1) = strArray(3)
         VSFOutput.Cell(flexcpChecked, i + 1, 3) = flexUnchecked
+        VSFOutput.Cell(flexcpAlignment, i + 1, 3) = flexAlignCenterCenter
+        
      End If
     Next
 
@@ -651,6 +687,16 @@ If ChkY004.Value = 1 Then
     Timer5.Interval = 500
     Timer5.Enabled = True
 End If
+End Sub
+
+Private Sub cmdChargerSupply_Click()
+txtChargerSupply.Text = Format(txtChargerSupply.Text, "00.00")
+If Val(txtChargerSupply.Text) <= 20 Then
+PLcdata(245) = Val(txtChargerSupply.Text) * 100
+Else
+MsgBox "Please Enter Value Between 0 to 20"
+End If
+
 End Sub
 
 Private Sub CmdClose_Click()
@@ -745,7 +791,10 @@ End Sub
 
 Private Sub AssignPLCdata()
 On Error GoTo Error
-
+   txtOD1.Text = Format(PLcdata(102) / 100, "0.00")
+   txtOd2.Text = Format(PLcdata(103) / 1000, "0.000")
+   txtOD3.Text = Format(PLcdata(104) / 100, "0.00")
+   txtOD4.Text = Format(PLcdata(105) / 1000, "0.000")
 
 'txtOd1 = Format(PLcdata(10), "0")
 'txtOd2 = Format(PLcdata(11) / 1000, "0.000")
@@ -828,6 +877,10 @@ Private Sub LoadData()
 On Error GoTo Error
 PLcdata(240) = 2
 
+If flexgridvalue(VSFOutput, 1) = 1 And flexgridvalue(VSFOutput, 2) = 1 Then
+    VSFOutput.Cell(flexcpChecked, 1, 3) = flexUnchecked
+    VSFOutput.Cell(flexcpChecked, 2, 3) = flexUnchecked
+End If
 PLcdata(241) = &H1 * flexgridvalue(VSFOutput, 1)
 PLcdata(241) = PLcdata(241) + &H2 * flexgridvalue(VSFOutput, 2)
 PLcdata(241) = PLcdata(241) + &H4 * flexgridvalue(VSFOutput, 3)

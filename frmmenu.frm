@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "COMDLG32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form frmmenu 
    Caption         =   "Select Your Menu"
    ClientHeight    =   7770
@@ -96,7 +96,7 @@ Begin VB.Form frmmenu
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1095
-         Left            =   5280
+         Left            =   3000
          MaskColor       =   &H00FFFFFF&
          Picture         =   "frmmenu.frx":1298
          Style           =   1  'Graphical
@@ -412,6 +412,7 @@ End Sub
 
 Private Sub CmdPrintLabel_Click()
     frmPrintLabel.Show
+    Unload Me
 End Sub
 
 Private Sub cmdReports_Click()
@@ -478,9 +479,9 @@ Picture1.Top = (Screen.Height - Picture1.Height) / 2 - 400
 'Image1.Stretch = True
 
 
-LoadModelCombo CboModelName
+LoadModelCombo cbomodelname
 ModelName = GetSetting(App.Title, "LastModel", "LastModel")
-LastModel ModelName, CboModelName
+LastModel ModelName, cbomodelname
     
 UserAccess 'Loas Controls Using User
     
@@ -490,7 +491,7 @@ MsgBox Error, vbInformation
 End Sub
 Private Sub CboModelName_Click()
 
-ModelName = CboModelName.Text
+ModelName = cbomodelname.Text
 SaveSetting App.Title, "LastModel", "LastModel", ModelName
 'ModelPicture Image1, ModelName
 End Sub
@@ -503,28 +504,28 @@ mImage.Picture = LoadPicture(App.Path & "\WI\" & mPictureName & ".jpg")
 End Sub
 Private Sub LoadModelCombo(Combo As ComboBox)
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 Dim i As Integer
 
     Combo.Clear
     Sql = "Select * from Model_Set order by ModelName"
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
-    Do While Rs.EOF = False
-        Combo.AddItem Rs("ModelName")
-        Rs.MoveNext
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Do While rs.EOF = False
+        Combo.AddItem rs("ModelName")
+        rs.MoveNext
     Loop
     
 End Sub
 
 Private Sub LastModel(ByVal Model As String, Combo As ComboBox)
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 
     Sql = "Select * from Model_Set where ModelName='" & Model & "'"
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
-    If Rs.EOF = False Then
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    If rs.EOF = False Then
         Combo.Text = Model
     Else
         Combo.ListIndex = 0
@@ -561,14 +562,25 @@ Private Sub UserAccess()
 
 If AccessType = "0" Then 'Disable or Hide For Operators
     cmdsettings.Enabled = False
-    cmdUserConfig.Enabled = False
+    'cmdUserConfig.Enabled = False
+    cmdReports1.Enabled = False
     cmdBackup.Enabled = False
     CmdGenSet.Enabled = False
+    CmdPrintLabel.Visible = False
+    Command3.Visible = False
+    Command2.Visible = False
     
 ElseIf AccessType = "1" Then 'Disable or Hide for AccessType 1
-    cmdsettings.Enabled = False
-    CmdGenSet.Enabled = False
-
+'    cmdsettings.Enabled = False
+    'CmdGenSet.Enabled = False
+    cmdsettings.Enabled = True
+    'cmdUserConfig.Enabled = False
+    cmdReports1.Enabled = True
+    cmdBackup.Enabled = False
+    CmdGenSet.Enabled = True
+    CmdPrintLabel.Visible = False
+    Command3.Visible = False
+    Command2.Visible = False
 ElseIf AccessType = "2" Then 'Show All Which Will Disable or Hide For One
 
 End If

@@ -174,7 +174,7 @@ End Sub
 
 Private Sub CmdLogin_Click()
      On Error GoTo Err_Hndlr
-    Dim Rs As ADODB.Recordset
+    Dim rs As ADODB.Recordset
     Dim Sql As String
     Cnt = Cnt + 1
     
@@ -195,11 +195,11 @@ Private Sub CmdLogin_Click()
     End If
     'Sql = "select * from User_list where UserName='" & CboUser.Text & "' and ucode='" & txtUCode.Text & "' "
     Sql = "select * from User_list where UserName='" & txtusername.Text & "' and Pwd='" & txtpassword.Text & "' and UDelete='N'"
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
 
-    If Rs.EOF = True Then
-        If Trim(txtusername.Text) = "authentic" And Trim(txtpassword.Text) = "citnehtua" Then
+    If rs.EOF = True Then
+        If Trim(txtusername.Text) = "drautomation" And Trim(txtpassword.Text) = "noitamotuard" Then
             LoginUser = "authentic"
             LoginID = 1
             AccessType = 2
@@ -218,15 +218,15 @@ Private Sub CmdLogin_Click()
         Exit Sub
     End If
 
-    LoginUser = Trim(Rs("UserName"))
-    AccessType = Trim(Rs("AccessType"))
-    LoginID = Rs("UID")
-    If Rs("UDefault") = "Y" Then
+    LoginUser = Trim(rs("UserName"))
+    AccessType = Trim(rs("AccessType"))
+    LoginID = rs("UID")
+    If rs("UDefault") = "Y" Then
         UDefault = True
     Else
         UDefault = False
     End If
-    LoginCode = Trim(Rs("UCode"))
+    LoginCode = Trim(rs("UCode"))
     If UDefault = True Then
         frmmenu.Show
     Else
@@ -250,14 +250,14 @@ End Sub
 Private Sub ConnectToScanner()
 On Error GoTo Error
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 
     'To Load Com port in Monitor
     Sql = "Select * from Common_Set where SetType ='CommonSet'" 'SetType = Settings Type
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
 
-    ComPort = Rs("ComPort1")
+    ComPort = rs("ComPort1")
     InPacketSize = 1
     OutPacketSize = 1
     MSComm1.CommPort = ComPort
@@ -281,18 +281,18 @@ End Sub
 Private Sub Form_Load()
 On Error Resume Next
 Dim Sql As String
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 Dim i As Integer
 
     'CboUser.Clear
     ' To Fill Combo Box With User Name
     Sql = "Select * from User_list where  udelete='N'"
-    Set Rs = New ADODB.Recordset
-    Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
-    Do While Rs.EOF = False
-        CboUser.AddItem Rs("UserName"), i
+    Set rs = New ADODB.Recordset
+    rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+    Do While rs.EOF = False
+        CboUser.AddItem rs("UserName"), i
         i = i + 1
-        Rs.MoveNext
+        rs.MoveNext
     Loop
    
     ConnectToScanner
@@ -307,7 +307,7 @@ Private Sub MSComm1_OnComm()
     Timer1.Enabled = True
 End Sub
 Private Sub Timer1_Timer()
-Dim Rs As ADODB.Recordset
+Dim rs As ADODB.Recordset
 Dim Sql As String
 Dim Code As String
 Dim str1() As String
@@ -319,24 +319,24 @@ str1 = Split(Code, " ")
 txtUCode.Text = str1(1)
 
         Sql = "select * from User_list where UserName='" & CboUser.Text & "' and ucode='" & Val(txtUCode.Text) & "' and UDelete='N'"
-        Set Rs = New ADODB.Recordset
-        Rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
+        Set rs = New ADODB.Recordset
+        rs.Open Sql, Con, adOpenDynamic, adLockOptimistic
     
-    If Rs.EOF = True Then
+    If rs.EOF = True Then
         'MsgBox UCase("Invalid User Code"), vbCritical
          txtUCode.BackColor = vbRed
         Exit Sub
     End If
         
-    LoginUser = Trim(Rs("UserName"))
-    AccessType = Trim(Rs("AccessType"))
-    LoginID = Rs("UID")
-    If Rs("UDefault") = "Y" Then
+    LoginUser = Trim(rs("UserName"))
+    AccessType = Trim(rs("AccessType"))
+    LoginID = rs("UID")
+    If rs("UDefault") = "Y" Then
         UDefault = True
     Else
         UDefault = False
     End If
-    LoginCode = Trim(Rs("UCode"))
+    LoginCode = Trim(rs("UCode"))
     If UDefault = True Then
         frmmenu.Show
         Unload Me

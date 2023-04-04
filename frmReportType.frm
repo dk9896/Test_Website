@@ -8,14 +8,15 @@ Begin VB.Form frmReportType
    ScaleHeight     =   6990
    ScaleWidth      =   8475
    StartUpPosition =   3  'Windows Default
+   WindowState     =   2  'Maximized
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00004080&
       Height          =   5895
-      Left            =   240
+      Left            =   5400
       ScaleHeight     =   5835
       ScaleWidth      =   7875
       TabIndex        =   0
-      Top             =   360
+      Top             =   2280
       Width           =   7935
       Begin VB.CommandButton Command4 
          BackColor       =   &H0080C0FF&
@@ -129,6 +130,11 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Command1_Click()
+frmreportanalysis.Show
+Unload Me
+End Sub
+
 Private Sub Command2_Click()
  reporttype = 1
  frmReport.Show

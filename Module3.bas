@@ -1,4 +1,5 @@
 Attribute VB_Name = "Module3"
+
 Public Con100 As ADODB.Connection
 
 Public Sub Conn_2007()
@@ -32,11 +33,11 @@ MsgBox (Err.Description)
 End Function
 
 Public Function FieldExists(ByVal DBConn, TableName, FieldName As String) As Boolean
-Dim Rs As New ADODB.Recordset
+Dim rs As New ADODB.Recordset
 Dim FLD As ADODB.Field
 
-Rs.Open TableName, DBConn, adOpenStatic, adLockReadOnly, adCmdTable
-For Each FLD In Rs.Fields
+rs.Open TableName, DBConn, adOpenStatic, adLockReadOnly, adCmdTable
+For Each FLD In rs.Fields
     If LCase(FLD.Name) = LCase(FieldName) Then
         FieldExists = True
         Exit For
@@ -59,40 +60,44 @@ Dim ColArrey(100) As String
 TableName = "Model_Set"
 ColArrey(1) = "ModelName"
 ColArrey(2) = "ModelDesc"
-ColArrey(3) = "testVoltage"
-ColArrey(4) = "RPCheckTime"
-ColArrey(5) = "STCheckTime"
-ColArrey(6) = "Efficiency"
-ColArrey(7) = "OutputVoltMin"
-ColArrey(8) = "OutputVoltMax"
-ColArrey(9) = "OutputCurrentMin"
-ColArrey(10) = "OutputCurrentMax"
-ColArrey(11) = "VoltageOffset"
-ColArrey(12) = "CurrentOffset"
-ColArrey(13) = "PrintPartNo"
-ColArrey(14) = "PrintBarcodeLength"
-ColArrey(15) = "BarcodeLength"
-ColArrey(16) = "HardwareNo"
-ColArrey(17) = "SerialStartingtxt"
-ColArrey(18) = "VandorId"
-ColArrey(19) = "DotMarkingTime"
-    
-ColArrey(20) = "ModelNo"
-ColArrey(21) = "PartImage"
-ColArrey(22) = "PrinterBypass"
-ColArrey(23) = "Bypass1"
-ColArrey(24) = "Bypass2"
-ColArrey(25) = "Bypass3"
-ColArrey(26) = "Bypass4"
-ColArrey(27) = "Bypass5"
-ColArrey(28) = "Bypass6"
-ColArrey(29) = "Bypass7"
-ColArrey(30) = "Bypass8"
-ColArrey(31) = "batchcounter"
-ColArrey(32) = "CouplerCounter"
+ColArrey(3) = "CutoffVolt"
+ColArrey(4) = "OutputVolt1"
+ColArrey(5) = "OutputVolt2"
+ColArrey(6) = "OutputVolt3"
+ColArrey(7) = "testVoltage"
+ColArrey(8) = "testCurrent"
+ColArrey(9) = "EfficiencyMin"
+ColArrey(10) = "EfficiencyMax"
+ColArrey(11) = "InputCurrentMin"
+ColArrey(12) = "InputCurrentMax"
+ColArrey(13) = "OutputVoltMin"
+ColArrey(14) = "OutputVoltMax"
+ColArrey(15) = "OutputCurrentMin"
+ColArrey(16) = "OutputCurrentMax"
+ColArrey(17) = "VoltageOffset"
+ColArrey(18) = "CurrentOffset"
+ColArrey(19) = "PrintPartNo"
+ColArrey(20) = "HardwareNo"
+ColArrey(21) = "SerialStartingtxt"
+ColArrey(22) = "VandorId"
+ColArrey(23) = "DotMarkingTime"
+ColArrey(24) = "ModelNo"
+ColArrey(25) = "PartImage"
+ColArrey(26) = "CutoffVoltMin"
+ColArrey(27) = "OutputVolt1Min"
+ColArrey(28) = "OutputVolt2Min"
+ColArrey(29) = "OutputVolt3Min"
+ColArrey(30) = "CutoffVoltMax"
+ColArrey(31) = "OutputVolt1Max"
+ColArrey(32) = "OutputVolt2Max"
+ColArrey(33) = "OutputVolt3Max"
+ColArrey(34) = "PrinterBypass"
+ColArrey(35) = "EfficiencyOffset"
+For i = 0 To 13
+    ColArrey(36 + i) = "Bypass" & i + 1
+Next
 
-
-For Row = 1 To 32
+For Row = 1 To 49
     ColName = ColArrey(Row)
     If FieldExists(Con, TableName, ColName) = False Then
         X = CreateField(Con, TableName, ColName, "varchar(255) DEFAULT 0")
@@ -121,20 +126,36 @@ ColArrey(16) = "EmailBypass5"
 ColArrey(17) = "EmailBypass6"
 ColArrey(18) = "EmailBypass7"
 ColArrey(19) = "cycletime"
-For Row = 1 To 19
+ColArrey(20) = "Break1Enable"
+ColArrey(21) = "Break2Enable"
+ColArrey(22) = "Break3Enable"
+ColArrey(23) = "Break4Enable"
+ColArrey(24) = "Break5Enable"
+ColArrey(25) = "Break1Start"
+ColArrey(26) = "Break1End"
+ColArrey(27) = "Break2Start"
+ColArrey(28) = "Break2End"
+ColArrey(29) = "Break3Start"
+ColArrey(30) = "Break3End"
+ColArrey(31) = "Break4Start"
+ColArrey(32) = "Break4End"
+ColArrey(33) = "Break5Start"
+ColArrey(34) = "Break5End"
+ColArrey(35) = "Shift1Start"
+ColArrey(36) = "Shift1End"
+ColArrey(37) = "Shift2Start"
+ColArrey(38) = "Shift2End"
+ColArrey(39) = "Shift3Start"
+ColArrey(40) = "Shift3End"
+
+For Row = 1 To 40
     ColName = ColArrey(Row)
     If FieldExists(Con, TableName, ColName) = False Then
         X = CreateField(Con, TableName, ColName, "varchar(255) DEFAULT 0")
     End If
 Next
 
-    
-
-
 '------------------------------------
-
-
-
 TableName = "Model_Report_Counter"
 ColArrey(1) = "ModelName"
 ColArrey(2) = "DateTime"
@@ -155,10 +176,36 @@ For Row = 1 To 11
     End If
 Next
 
-'ColName = "AccessType"
-'If FieldExists(Con100, TableName, ColName) = False Then
-'    X = CreateField(Con100, TableName, ColName, "varchar(255) DEFAULT 0")
-'End If
+TableName = "Model_Report"
+ColArrey(1) = "Barcode"
+ColArrey(2) = "Result"
+ColArrey(3) = "ReversePolarity"
+ColArrey(4) = "CutOffVoltage"
+ColArrey(5) = "Output1"
+ColArrey(6) = "Output2"
+ColArrey(7) = "Output3"
+ColArrey(8) = "OutputShortTest"
+ColArrey(9) = "CutOffVoltageStatus"
+ColArrey(10) = "Output1Status"
+ColArrey(11) = "Output2Status"
+ColArrey(12) = "Output3Status"
+ColArrey(13) = "TestVoltage"
+ColArrey(14) = "InputCurrent"
+ColArrey(15) = "OPVoltage"
+ColArrey(16) = "OPCurrent"
+ColArrey(17) = "Efficiency"
+ColArrey(18) = "TestVoltageStatus"
+ColArrey(19) = "InputCurrentStatus"
+ColArrey(20) = "OPVoltageStatus"
+ColArrey(21) = "OPCurrentStatus"
+ColArrey(22) = "EfficiencyStatus"
+
+For Row = 1 To 22
+    ColName = ColArrey(Row)
+    If FieldExists(Con, TableName, ColName) = False Then
+        X = CreateField(Con, TableName, ColName, "varchar(255) DEFAULT 0")
+    End If
+Next
 '-=========================================
 
 'Sql = "create table Common_Set (ID Counter)"
@@ -183,4 +230,5 @@ Next
 Exit Sub
 Error:
 'Con100.Close
+MsgBox Err.Description
 End Sub
