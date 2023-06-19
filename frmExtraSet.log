@@ -1,0 +1,112 @@
+Line 636: Class MSComCtl2.DTPicker of control DTShift1Start was not a loaded control class.
+Line 649: Class MSComCtl2.DTPicker of control DTShift1End was not a loaded control class.
+Line 662: Class MSComCtl2.DTPicker of control DTShift2Start was not a loaded control class.
+Line 675: Class MSComCtl2.DTPicker of control DTShift2End was not a loaded control class.
+Line 688: Class MSComCtl2.DTPicker of control DTShift3Start was not a loaded control class.
+Line 701: Class MSComCtl2.DTPicker of control DTShift3End was not a loaded control class.
+Line 714: Class MSComCtl2.DTPicker of control DTBreak1Start was not a loaded control class.
+Line 727: Class MSComCtl2.DTPicker of control DTBreak1End was not a loaded control class.
+Line 740: Class MSComCtl2.DTPicker of control DTBreak2Start was not a loaded control class.
+Line 753: Class MSComCtl2.DTPicker of control DTBreak2End was not a loaded control class.
+Line 766: Class MSComCtl2.DTPicker of control DTBreak3Start was not a loaded control class.
+Line 779: Class MSComCtl2.DTPicker of control DTBreak3End was not a loaded control class.
+Line 792: Class MSComCtl2.DTPicker of control DTBreak4Start was not a loaded control class.
+Line 805: Class MSComCtl2.DTPicker of control DTBreak4End was not a loaded control class.
+Line 818: Class MSComCtl2.DTPicker of control DTBreak5Start was not a loaded control class.
+Line 831: Class MSComCtl2.DTPicker of control DTBreak5End was not a loaded control class.
+Line 642: The property name _ExtentX in DTShift1Start is invalid.
+Line 643: The property name _ExtentY in DTShift1Start is invalid.
+Line 644: The property name _Version in DTShift1Start is invalid.
+Line 645: The property name CustomFormat in DTShift1Start is invalid.
+Line 646: The property name Format in DTShift1Start is invalid.
+Line 647: The property name CurrentDate in DTShift1Start is invalid.
+Line 655: The property name _ExtentX in DTShift1End is invalid.
+Line 656: The property name _ExtentY in DTShift1End is invalid.
+Line 657: The property name _Version in DTShift1End is invalid.
+Line 658: The property name CustomFormat in DTShift1End is invalid.
+Line 659: The property name Format in DTShift1End is invalid.
+Line 660: The property name CurrentDate in DTShift1End is invalid.
+Line 668: The property name _ExtentX in DTShift2Start is invalid.
+Line 669: The property name _ExtentY in DTShift2Start is invalid.
+Line 670: The property name _Version in DTShift2Start is invalid.
+Line 671: The property name CustomFormat in DTShift2Start is invalid.
+Line 672: The property name Format in DTShift2Start is invalid.
+Line 673: The property name CurrentDate in DTShift2Start is invalid.
+Line 681: The property name _ExtentX in DTShift2End is invalid.
+Line 682: The property name _ExtentY in DTShift2End is invalid.
+Line 683: The property name _Version in DTShift2End is invalid.
+Line 684: The property name CustomFormat in DTShift2End is invalid.
+Line 685: The property name Format in DTShift2End is invalid.
+Line 686: The property name CurrentDate in DTShift2End is invalid.
+Line 694: The property name _ExtentX in DTShift3Start is invalid.
+Line 695: The property name _ExtentY in DTShift3Start is invalid.
+Line 696: The property name _Version in DTShift3Start is invalid.
+Line 697: The property name CustomFormat in DTShift3Start is invalid.
+Line 698: The property name Format in DTShift3Start is invalid.
+Line 699: The property name CurrentDate in DTShift3Start is invalid.
+Line 707: The property name _ExtentX in DTShift3End is invalid.
+Line 708: The property name _ExtentY in DTShift3End is invalid.
+Line 709: The property name _Version in DTShift3End is invalid.
+Line 710: The property name CustomFormat in DTShift3End is invalid.
+Line 711: The property name Format in DTShift3End is invalid.
+Line 712: The property name CurrentDate in DTShift3End is invalid.
+Line 720: The property name _ExtentX in DTBreak1Start is invalid.
+Line 721: The property name _ExtentY in DTBreak1Start is invalid.
+Line 722: The property name _Version in DTBreak1Start is invalid.
+Line 723: The property name CustomFormat in DTBreak1Start is invalid.
+Line 724: The property name Format in DTBreak1Start is invalid.
+Line 725: The property name CurrentDate in DTBreak1Start is invalid.
+Line 733: The property name _ExtentX in DTBreak1End is invalid.
+Line 734: The property name _ExtentY in DTBreak1End is invalid.
+Line 735: The property name _Version in DTBreak1End is invalid.
+Line 736: The property name CustomFormat in DTBreak1End is invalid.
+Line 737: The property name Format in DTBreak1End is invalid.
+Line 738: The property name CurrentDate in DTBreak1End is invalid.
+Line 746: The property name _ExtentX in DTBreak2Start is invalid.
+Line 747: The property name _ExtentY in DTBreak2Start is invalid.
+Line 748: The property name _Version in DTBreak2Start is invalid.
+Line 749: The property name CustomFormat in DTBreak2Start is invalid.
+Line 750: The property name Format in DTBreak2Start is invalid.
+Line 751: The property name CurrentDate in DTBreak2Start is invalid.
+Line 759: The property name _ExtentX in DTBreak2End is invalid.
+Line 760: The property name _ExtentY in DTBreak2End is invalid.
+Line 761: The property name _Version in DTBreak2End is invalid.
+Line 762: The property name CustomFormat in DTBreak2End is invalid.
+Line 763: The property name Format in DTBreak2End is invalid.
+Line 764: The property name CurrentDate in DTBreak2End is invalid.
+Line 772: The property name _ExtentX in DTBreak3Start is invalid.
+Line 773: The property name _ExtentY in DTBreak3Start is invalid.
+Line 774: The property name _Version in DTBreak3Start is invalid.
+Line 775: The property name CustomFormat in DTBreak3Start is invalid.
+Line 776: The property name Format in DTBreak3Start is invalid.
+Line 777: The property name CurrentDate in DTBreak3Start is invalid.
+Line 785: The property name _ExtentX in DTBreak3End is invalid.
+Line 786: The property name _ExtentY in DTBreak3End is invalid.
+Line 787: The property name _Version in DTBreak3End is invalid.
+Line 788: The property name CustomFormat in DTBreak3End is invalid.
+Line 789: The property name Format in DTBreak3End is invalid.
+Line 790: The property name CurrentDate in DTBreak3End is invalid.
+Line 798: The property name _ExtentX in DTBreak4Start is invalid.
+Line 799: The property name _ExtentY in DTBreak4Start is invalid.
+Line 800: The property name _Version in DTBreak4Start is invalid.
+Line 801: The property name CustomFormat in DTBreak4Start is invalid.
+Line 802: The property name Format in DTBreak4Start is invalid.
+Line 803: The property name CurrentDate in DTBreak4Start is invalid.
+Line 811: The property name _ExtentX in DTBreak4End is invalid.
+Line 812: The property name _ExtentY in DTBreak4End is invalid.
+Line 813: The property name _Version in DTBreak4End is invalid.
+Line 814: The property name CustomFormat in DTBreak4End is invalid.
+Line 815: The property name Format in DTBreak4End is invalid.
+Line 816: The property name CurrentDate in DTBreak4End is invalid.
+Line 824: The property name _ExtentX in DTBreak5Start is invalid.
+Line 825: The property name _ExtentY in DTBreak5Start is invalid.
+Line 826: The property name _Version in DTBreak5Start is invalid.
+Line 827: The property name CustomFormat in DTBreak5Start is invalid.
+Line 828: The property name Format in DTBreak5Start is invalid.
+Line 829: The property name CurrentDate in DTBreak5Start is invalid.
+Line 837: The property name _ExtentX in DTBreak5End is invalid.
+Line 838: The property name _ExtentY in DTBreak5End is invalid.
+Line 839: The property name _Version in DTBreak5End is invalid.
+Line 840: The property name CustomFormat in DTBreak5End is invalid.
+Line 841: The property name Format in DTBreak5End is invalid.
+Line 842: The property name CurrentDate in DTBreak5End is invalid.

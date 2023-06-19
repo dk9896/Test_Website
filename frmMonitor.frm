@@ -2205,6 +2205,9 @@ Dim j As Integer
          PLcdata(225) = Val(rs("OutputVolt2Max")) * 100
          PLcdata(226) = Val(rs("OutputVolt3Min")) * 100
          PLcdata(227) = Val(rs("OutputVolt3Max")) * 100
+         
+    PLcdata(228) = Val(rs("InputVoltageOffset")) * 100
+    PLcdata(229) = Val(rs("InputCurrentOffset")) * 1000
     
     txtModelDesc.Text = Trim(rs("ModelDesc"))
     If Val(txtCouplerCounter.Text) >= setCouplerCounter Then
@@ -2234,6 +2237,10 @@ Dim j As Integer
     PLcdata(230) = PLcdata(230) + &H20 * Val(rs("Bypass6"))
     PLcdata(230) = PLcdata(230) + &H40 * Val(rs("Bypass7"))
     PLcdata(230) = PLcdata(230) + &H80 * Val(rs("ByPass8"))
+    PLcdata(230) = PLcdata(230) + &H100 * Val(rs("Bypass15"))
+    PLcdata(230) = PLcdata(230) + &H200 * Val(rs("Bypass16"))
+    PLcdata(230) = PLcdata(230) + &H400 * Val(rs("Bypass17"))
+    
     PLcdata(231) = 0
     PLcdata(231) = PLcdata(231) + &H1 * Val(rs("Bypass9"))
     PLcdata(231) = PLcdata(231) + &H2 * Val(rs("Bypass10"))

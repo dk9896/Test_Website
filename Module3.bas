@@ -93,11 +93,13 @@ ColArrey(32) = "OutputVolt2Max"
 ColArrey(33) = "OutputVolt3Max"
 ColArrey(34) = "PrinterBypass"
 ColArrey(35) = "EfficiencyOffset"
-For i = 0 To 13
-    ColArrey(36 + i) = "Bypass" & i + 1
+ColArrey(36) = "InputVoltageOffset"
+ColArrey(37) = "InputCurrentOffset"
+For i = 0 To 16
+    ColArrey(38 + i) = "Bypass" & i + 1
 Next
 
-For Row = 1 To 49
+For Row = 1 To 54
     ColName = ColArrey(Row)
     If FieldExists(Con, TableName, ColName) = False Then
         X = CreateField(Con, TableName, ColName, "varchar(255) DEFAULT 0")

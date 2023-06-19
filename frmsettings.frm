@@ -22,153 +22,20 @@ Begin VB.Form frmsettings
    ScaleHeight     =   10935
    ScaleWidth      =   20250
    Begin VB.PictureBox Picture1 
-      Height          =   9735
+      Height          =   9855
       Left            =   480
-      ScaleHeight     =   9675
+      ScaleHeight     =   9795
       ScaleWidth      =   13875
       TabIndex        =   0
       Top             =   240
       Width           =   13935
-      Begin VB.Frame Frame4 
-         Height          =   1695
-         Left            =   120
-         TabIndex        =   63
-         Top             =   7800
-         Width           =   3975
-         Begin VB.TextBox txtEfficiencyoffset 
-            Alignment       =   2  'Center
-            Height          =   360
-            Left            =   2640
-            TabIndex        =   79
-            Text            =   "00"
-            Top             =   1200
-            Width           =   735
-         End
-         Begin VB.TextBox txtVoltageOffset 
-            Alignment       =   2  'Center
-            Height          =   360
-            Left            =   2640
-            TabIndex        =   65
-            Text            =   "0.000"
-            Top             =   240
-            Width           =   735
-         End
-         Begin VB.TextBox txtCurrentOffset 
-            Alignment       =   2  'Center
-            Height          =   360
-            Left            =   2640
-            TabIndex        =   64
-            Text            =   "0.000"
-            Top             =   720
-            Width           =   735
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "A"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   24
-            Left            =   3600
-            TabIndex        =   81
-            Top             =   1320
-            Width           =   120
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Efficiency Offset"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   22
-            Left            =   120
-            TabIndex        =   80
-            Top             =   1320
-            Width           =   1410
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Voltage Offset"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   7
-            Left            =   120
-            TabIndex        =   69
-            Top             =   360
-            Width           =   1230
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "Current Offset"
-            ForeColor       =   &H000040C0&
-            Height          =   240
-            Index           =   9
-            Left            =   120
-            TabIndex        =   68
-            Top             =   840
-            Width           =   1200
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "V"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   11
-            Left            =   3600
-            TabIndex        =   67
-            Top             =   360
-            Width           =   120
-         End
-         Begin VB.Label Label1 
-            AutoSize        =   -1  'True
-            BackStyle       =   0  'Transparent
-            Caption         =   "A"
-            BeginProperty Font 
-               Name            =   "Arial"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000040C0&
-            Height          =   210
-            Index           =   13
-            Left            =   3600
-            TabIndex        =   66
-            Top             =   840
-            Width           =   120
-         End
-      End
       Begin VB.Frame FrameDM 
          Caption         =   "With Load"
          ForeColor       =   &H000040C0&
-         Height          =   4095
+         Height          =   3975
          Left            =   4200
          TabIndex        =   18
-         Top             =   1560
+         Top             =   1440
          Width           =   3975
          Begin VB.OptionButton txtCurrOption3 
             Alignment       =   1  'Right Justify
@@ -323,7 +190,7 @@ Begin VB.Form frmsettings
             Index           =   12
             Left            =   3720
             TabIndex        =   57
-            Top             =   2640
+            Top             =   2160
             Width           =   120
          End
          Begin VB.Label Label1 
@@ -344,7 +211,7 @@ Begin VB.Form frmsettings
             Index           =   10
             Left            =   3720
             TabIndex        =   56
-            Top             =   2160
+            Top             =   2640
             Width           =   120
          End
          Begin VB.Label Label1 
@@ -890,11 +757,41 @@ Begin VB.Form frmsettings
       Begin VB.Frame Frame11 
          Caption         =   "Bypasses"
          ForeColor       =   &H000040C0&
-         Height          =   3615
+         Height          =   4335
          Left            =   4200
          TabIndex        =   23
-         Top             =   5880
+         Top             =   5400
          Width           =   3975
+         Begin VB.CheckBox ChkBypass 
+            Caption         =   "Bypass 2"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   16
+            Left            =   120
+            TabIndex        =   128
+            Top             =   3960
+            Width           =   2895
+         End
+         Begin VB.CheckBox ChkBypass 
+            Caption         =   "Bypass 1"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   15
+            Left            =   120
+            TabIndex        =   127
+            Top             =   3600
+            Width           =   2895
+         End
+         Begin VB.CheckBox ChkBypass 
+            Caption         =   "Wire LengthTesting Bypass"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   14
+            Left            =   120
+            TabIndex        =   126
+            Top             =   3240
+            Width           =   2895
+         End
          Begin VB.CheckBox ChkBypass 
             Caption         =   "PID Bypass"
             ForeColor       =   &H000040C0&
@@ -906,7 +803,7 @@ Begin VB.Form frmsettings
             Width           =   1815
          End
          Begin VB.CheckBox ChkBypass 
-            Caption         =   "Bypass - 1"
+            Caption         =   "Camera Bypass"
             ForeColor       =   &H000040C0&
             Height          =   240
             Index           =   7
@@ -1315,7 +1212,7 @@ Begin VB.Form frmsettings
          End
       End
       Begin VB.Frame Frame13 
-         Height          =   1215
+         Height          =   735
          Left            =   120
          TabIndex        =   33
          Top             =   6600
@@ -1488,6 +1385,223 @@ Begin VB.Form frmsettings
             TabIndex        =   40
             Top             =   840
             Width           =   1350
+         End
+      End
+      Begin VB.Frame Frame4 
+         Height          =   2415
+         Left            =   120
+         TabIndex        =   63
+         Top             =   7320
+         Width           =   3975
+         Begin VB.TextBox txtInputCurOffset 
+            Alignment       =   2  'Center
+            Height          =   360
+            Left            =   2640
+            TabIndex        =   121
+            Text            =   "0.000"
+            Top             =   1440
+            Width           =   735
+         End
+         Begin VB.TextBox txtInputVoltOffset 
+            Alignment       =   2  'Center
+            Height          =   360
+            Left            =   2640
+            TabIndex        =   120
+            Text            =   "0.000"
+            Top             =   1080
+            Width           =   735
+         End
+         Begin VB.TextBox txtEfficiencyoffset 
+            Alignment       =   2  'Center
+            Height          =   360
+            Left            =   2640
+            TabIndex        =   79
+            Text            =   "00"
+            Top             =   1920
+            Width           =   735
+         End
+         Begin VB.TextBox txtVoltageOffset 
+            Alignment       =   2  'Center
+            Height          =   360
+            Left            =   2640
+            TabIndex        =   65
+            Text            =   "0.000"
+            Top             =   240
+            Width           =   735
+         End
+         Begin VB.TextBox txtCurrentOffset 
+            Alignment       =   2  'Center
+            Height          =   360
+            Left            =   2640
+            TabIndex        =   64
+            Text            =   "0.000"
+            Top             =   600
+            Width           =   735
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "A"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   32
+            Left            =   3600
+            TabIndex        =   125
+            Top             =   1560
+            Width           =   120
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "V"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   31
+            Left            =   3600
+            TabIndex        =   124
+            Top             =   1200
+            Width           =   120
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Input Current Offset"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   30
+            Left            =   120
+            TabIndex        =   123
+            Top             =   1560
+            Width           =   1680
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Input Voltage Offset"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   29
+            Left            =   120
+            TabIndex        =   122
+            Top             =   1200
+            Width           =   1710
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "%"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   24
+            Left            =   3600
+            TabIndex        =   81
+            Top             =   2040
+            Width           =   150
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Efficiency Offset"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   22
+            Left            =   120
+            TabIndex        =   80
+            Top             =   2040
+            Width           =   1410
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Output Voltage Offset"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   7
+            Left            =   120
+            TabIndex        =   69
+            Top             =   360
+            Width           =   1875
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "Output Current Offset"
+            ForeColor       =   &H000040C0&
+            Height          =   240
+            Index           =   9
+            Left            =   120
+            TabIndex        =   68
+            Top             =   720
+            Width           =   1845
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "V"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   11
+            Left            =   3600
+            TabIndex        =   67
+            Top             =   360
+            Width           =   120
+         End
+         Begin VB.Label Label1 
+            AutoSize        =   -1  'True
+            BackStyle       =   0  'Transparent
+            Caption         =   "A"
+            BeginProperty Font 
+               Name            =   "Arial"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000040C0&
+            Height          =   210
+            Index           =   13
+            Left            =   3600
+            TabIndex        =   66
+            Top             =   720
+            Width           =   120
          End
       End
    End
@@ -1754,7 +1868,8 @@ Dim O, P As String
     rs("OutputCurrentMax") = Format(Val(txtOutputCurMax.Text), "0.000")
     rs("VoltageOffset") = Format(Val(txtVoltageOffset.Text), "00.00")
     rs("CurrentOffset") = Format(Val(txtCurrentOffset.Text), "0.000")
-    
+    rs("InputVoltageOffset") = Format(Val(txtInputVoltOffset.Text), "00.00")
+    rs("InputCurrentOffset") = Format(Val(txtInputCurOffset.Text), "0.000")
     
     rs("PrintPartNo") = txtPartNo.Text
     rs("HardwareNo") = txtHardwareVersion.Text
@@ -1766,7 +1881,7 @@ Dim O, P As String
     rs("ModelNo") = txtModelNo.Text
     rs("PartImage") = txtImagePath.Text
     rs("PrinterBypass") = Val(ChkBypass(2).Value)
-    For i = 0 To 13
+    For i = 0 To 16
      rs("Bypass" & i + 1) = Val(ChkBypass(i).Value)
     Next
     
@@ -1851,6 +1966,9 @@ Dim Sql As String
          txtOutputVolt2Max.Text = Format(Val(rs("OutputVolt2Max")), "0.00")
          txtOutputVolt3Max.Text = Format(Val(rs("OutputVolt3Max")), "0.00")
     
+    txtInputVoltOffset.Text = Format(Val(rs("InputVoltageOffset")), "00.00")
+    txtInputCurOffset.Text = Format(Val(rs("InputCurrentOffset")), "0.000")
+    
     txtPartNo.Text = rs("PrintPartNo")
     txtHardwareVersion.Text = rs("HardwareNo")
     'txtSerialNo.Text = rs("SerialStartingtxt")
@@ -1860,7 +1978,7 @@ Dim Sql As String
     
     txtModelNo.Text = rs("ModelNo")
     txtImagePath.Text = rs("PartImage")
-    For i = 0 To 13
+    For i = 0 To 16
       ChkBypass(i).Value = Val(rs("Bypass" & i + 1))
     Next
     
